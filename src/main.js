@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'jquery'
+import './jqEx'
 
 // slide-verify
 import slideVerify from '../static/slide-verify/slide-verify'

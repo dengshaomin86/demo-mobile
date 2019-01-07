@@ -39,6 +39,32 @@
             verify() {
                 this.$slideVerify.show();
             },
+
+            translate() {
+                $.ajaxJson('http://api.fanyi.baidu.com/api/trans/vip/translate', {
+                    q: '你好',  // 请求翻译query
+                    from: 'zh',  // 翻译源语言
+                    to: 'en',  // 译文语言
+                    appid: '',  // APP ID
+                    salt: '',  // 随机数
+                    sign: '',  // 签名 appid+q+salt+密钥 的MD5值
+                    abc: 123,
+                }, {
+                    before: function () {
+                        console.log('before');
+                    },
+                    yes: function () {
+                        console.log('yes');
+                    },
+                    no: function () {
+                        console.log('no');
+                    },
+                    over: function () {
+                        console.log('over');
+                    }
+                })
+            },
+
         },
         data() {
             return {
@@ -47,6 +73,7 @@
         },
         mounted() {
             console.log(1);
+            this.translate();
         }
     }
 </script>
