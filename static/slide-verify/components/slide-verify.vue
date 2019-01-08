@@ -1,86 +1,96 @@
 <template>
-    <div class="code-k-div" v-if="show">
-        <div class="code_bg"></div>
-        <div class="code-con">
-            <div class="code-img">
-                <div class="code-img-con">
-                    <div class="code-mask"><img src="./front.png"></div>
-                    <img src="./back.png"></div>
-                <div class="code-push">
-                    <i class="icon-login-bg icon-w-25 icon-push">刷新</i>
-                    <span class="code-tip" :class="codeVal===1?'code-tip-green':'code-tip-red'" v-html="codeTips"></span>
+    <div class="code-k-div" v-if="show" @touchend="end" @mouseup="end">
+        <div class="code_bg" @click.stop="close">
+            <div class="code-con" @click.stop>
+                <div class="code-img">
+                    <div class="code-img-con">
+                        <div class="code-mask"><img src="./front.png"></div>
+                        <img src="./back.png"></div>
+                    <div class="code-push">
+                        <i class="icon-login-bg icon-w-25 icon-push">刷新</i>
+                        <span class="code-tip" :class="codeVal===1?'code-tip-green':'code-tip-red'" v-html="codeTips"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="code-btn">
-                <div class="code-btn-img code-btn-m" :class="{'active':isDown}" @mousedown="mousedown" @mouseup="mouseup" @mousemove="mousemove"></div>
-                <span>按住滑块，拖动完成上方拼图</span>
+                <div class="code-btn">
+                    <div class="code-btn-img code-btn-m" :class="{'active':isDown, 'error':codeVal === 0}" @touchstart="start" @touchmove="move" v-if="isMobile"></div>
+                    <div class="code-btn-img code-btn-m" :class="{'active':isDown, 'error':codeVal === 0}" @mousedown="start" @mousemove="move" v-else></div>
+                    <span>按住滑块，拖动完成上方拼图</span>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import $ from '../libs/jquery.min'
-
     export default {
         name: "slide-verify",
         methods: {
-            //按钮拖动事件
-            mousedown(e) {
-                //清除提示信息
+            start() {
                 this.codeTips = '';
-                let event = e || window.event;
-                this.mX = event.pageX;
-                let btn = $('.code-btn');
-                this.dX = btn.offset().left;
-                this.dY = btn.offset().top;
-                this.isDown = true;  // 鼠标拖拽启
+                this.codeVal = '';
+                let btn = document.getElementsByClassName('code-btn')[0];
+                let box = document.getElementsByClassName('code-con')[0];
+                this.dX = btn.offsetLeft + box.offsetLeft;
+                this.isDown = true;
             },
 
-            //鼠标点击松手事件
-            mouseup(e) {
-                let lastX = $('.code-mask').offset().left - this.dX - 1;
-                this.isDown = false;  // 鼠标拖拽停止
-                this.checkCode(lastX);
-            },
-
-            // 滑动事件
-            mousemove(e) {
-                let event = e || window.event;
-                let x = event.pageX;  // 鼠标滑动时的X轴
+            end() {
                 if (this.isDown) {
-                    if (x > (this.dX + 30) && x < this.dX + $(".code-btn").width() - 20) {
-                        $('.code-btn-img').css({"left": (x - this.dX - 20) + "px"});  // div动态位置赋值
-                        $(".code-mask").css({"left": (x - this.dX - 30) + "px"});
+                    let slideImg = document.getElementsByClassName('code-mask')[0];
+                    let position = slideImg.offsetLeft;
+                    this.checkCode(position);
+                }
+                this.isDown = false;
+            },
+
+            move(e) {
+                let x = this.isMobile ? e.changedTouches[0].pageX : e.pageX;
+                let btn = document.getElementsByClassName('code-btn')[0];
+                let btnImg = document.getElementsByClassName('code-btn-img')[0];
+                let slideImg = document.getElementsByClassName('code-mask')[0];
+                if (this.isDown) {
+                    if (x > (this.dX + 30) && x < this.dX + btn.clientWidth - 20) {
+                        let dX = (x - this.dX - 20) + 'px';
+                        btnImg.style.left = dX;
+                        slideImg.style.left = dX;
                     }
                 }
             },
 
-            // 验证数据
             checkCode(position) {
-                console.log(position);
-                //模拟ajax
                 setTimeout(() => {
                     if (position % 2) {
                         this.checkCodeResult(1, "验证通过");
                     } else {
-                        $(".code-btn-img").addClass("error");
                         this.checkCodeResult(0, "验证不通过");
-                        this.reset();
                     }
                 }, 500)
             },
 
-            // 验证结果
             checkCodeResult(i, txt) {
                 this.codeVal = i;
                 this.codeTips = txt;
+                this.$emit('cb', i);
+                setTimeout(() => {
+                    if (i) {
+                        this.close()
+                    } else {
+                        this.reset()
+                    }
+                }, 1000);
             },
 
-            // 滑块重置
             reset() {
-                $(".code-mask").animate({"left": "0px"}, 200);
-                $(".code-btn-img").removeClass("error").animate({"left": "10px"}, 200);
+                this.codeVal = '';
+                this.codeTips = '';
+                let btnImg = document.getElementsByClassName('code-btn-img')[0];
+                let slideImg = document.getElementsByClassName('code-mask')[0];
+                btnImg.style.left = '0';
+                slideImg.style.left = '0';
+            },
+
+            close() {
+                console.log('close');
             },
 
         },
@@ -92,22 +102,14 @@
         },
         data: function () {
             return {
+                isMobile: true,
                 codeTips: '',
                 codeVal: '',
-                mX: 0,  // 定义鼠标X轴Y轴
-                mY: 0,
-                dX: 0,  // 定义滑动区域左、上位置
-                dY: 0,
-                isDown: false,  // mousedown标记
+                dX: 0,
+                isDown: false,
             }
         },
         mounted() {
-            //ie的事件监听，拖拽div时禁止选中内容，firefox与chrome已在css中设置过-moz-user-select: none; -webkit-user-select: none;
-            if (document.attachEvent) {
-                $(".code-btn-img").attachEvent('onselectstart', function () {
-                    return false;
-                });
-            }
         },
     }
 </script>
