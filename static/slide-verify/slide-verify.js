@@ -1,7 +1,13 @@
 // slide-verify.js
 import slideVerifyComponent from './components/slide-verify.vue'
 
-let $vm
+let $vm = null;
+let slideVerifyCb = null;
+let slideVerify = function (cb) {
+    $vm.init();
+    slideVerifyCb = cb;
+};
+
 export default {
     install(Vue, options) {
         if (!$vm) {
@@ -14,17 +20,6 @@ export default {
             document.body.appendChild($vm.$el);
         }
 
-        $vm.show = false;
-
-        let slideVerify = {
-            show() {
-                $vm.show = true;
-            },
-            hide() {
-                $vm.show = false;
-            }
-        };
-
         if (!Vue.$slideVerify) {
             Vue.$slideVerify = slideVerify;
         }
@@ -36,3 +31,5 @@ export default {
         })
     }
 }
+
+export {slideVerifyCb}

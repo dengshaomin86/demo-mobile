@@ -1,6 +1,6 @@
 <template>
     <div class="code-k-div" v-if="show" @touchend="end" @mouseup="end">
-        <div class="code_bg" @click.stop="close">
+        <div class="code_bg" v-show="showMain" @click.stop="close">
             <div class="code-con" @click.stop>
                 <div class="code-img">
                     <div class="code-img-con">
@@ -8,7 +8,7 @@
                         <img src="./back.png"></div>
                     <div class="code-push">
                         <i class="icon-login-bg icon-w-25 icon-push">刷新</i>
-                        <span class="code-tip" :class="codeVal===1?'code-tip-green':'code-tip-red'" v-html="codeTips"></span>
+                        <span class="code-tip" :class="codeVal?'code-tip-green':'code-tip-red'" v-html="codeTips"></span>
                     </div>
                 </div>
                 <div class="code-btn">
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+    import {slideVerifyCb} from './../slide-verify'
+
     export default {
         name: "slide-verify",
         methods: {
@@ -38,7 +40,7 @@
                 if (this.isDown) {
                     let slideImg = document.getElementsByClassName('code-mask')[0];
                     let position = slideImg.offsetLeft;
-                    this.checkCode(position);
+                    this.check(position);
                 }
                 this.isDown = false;
             },
@@ -57,27 +59,32 @@
                 }
             },
 
-            checkCode(position) {
-                setTimeout(() => {
-                    if (position % 2) {
-                        this.checkCodeResult(1, "验证通过");
-                    } else {
-                        this.checkCodeResult(0, "验证不通过");
-                    }
-                }, 500)
+            check(position) {
+                console.log(position);
+                if (position > 200 && position < 220) {
+                    this.codeVal = true;
+                    this.codeTips = "验证成功";
+                    setTimeout(() => {
+                        this.close()
+                    }, 1000);
+                } else {
+                    this.codeVal = false;
+                    this.codeTips = "验证失败";
+                    setTimeout(() => {
+                        this.reset()
+                    }, 1000);
+                }
             },
 
-            checkCodeResult(i, txt) {
-                this.codeVal = i;
-                this.codeTips = txt;
-                this.$emit('cb', i);
+            getInfo() {
                 setTimeout(() => {
-                    if (i) {
-                        this.close()
+                    if (1) {
+                        this.reset();
+                        this.showMain = true;
                     } else {
-                        this.reset()
+                        this.close();
                     }
-                }, 1000);
+                })
             },
 
             reset() {
@@ -90,18 +97,21 @@
             },
 
             close() {
-                console.log('close');
+                this.show = false;
+                this.showMain = false;
+                slideVerifyCb(this.codeVal);
+            },
+
+            init() {
+                this.show = true;
+                this.getInfo();
             },
 
         },
-        props: {
-            show: {
-                type: Boolean,
-                default: false
-            },
-        },
         data: function () {
             return {
+                show: false,
+                showMain: false,
                 isMobile: true,
                 codeTips: '',
                 codeVal: '',
@@ -143,8 +153,7 @@
     }
 
     .code-img {
-        margin: 5px 5px;
-        padding: 5px 5px;
+        margin: 10px;
         background-color: #f5f6f7;
     }
 
@@ -161,11 +170,14 @@
 
     .icon-push {
         cursor: pointer;
-        background-position: -149px -95px;
+        background-position: -149px -98px;
     }
 
     .code-push {
-        height: 25px;
+        height: 30px;
+        padding: 0 3px;
+        display: flex;
+        align-items: center;
     }
 
     .code-btn {
@@ -222,7 +234,7 @@
     }
 
     .code-tip {
-        padding-left: 10px;
+        padding-left: 5px;
         font-size: 12px;
         color: #999;
     }

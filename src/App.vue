@@ -37,7 +37,9 @@
             },
 
             verify() {
-                this.$slideVerify.show();
+                this.$slideVerify(function (res) {
+                    console.log('验证结果', res);
+                });
             },
 
             translate() {
@@ -72,7 +74,6 @@
             }
         },
         mounted() {
-            console.log(1);
             this.translate();
         }
     }
