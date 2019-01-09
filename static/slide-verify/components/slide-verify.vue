@@ -157,36 +157,49 @@
             img {
                 display: block;
             }
-        }
-    }
 
-    .icon-push {
-        cursor: pointer;
-        background-position: -149px -98px;
-    }
+            .code-img-con {
+                position: relative;
 
-    .code-push {
-        height: 30px;
-        padding: 0 3px;
-        display: flex;
-        align-items: center;
-        .iconfont {
-            font-size: 16px;
-            &.icon-shuaxin {
-                color: #666;
-                cursor: pointer;
-                font-weight: bold;
-            }
-            &.icon-icon-check-solid {
-                color: green;
-                & + .code-tip {
-                    color: green;
+                .code-mask {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 10;
                 }
             }
-            &.icon-jinggao {
-                color: red;
-                & + .code-tip {
-                    color: red;
+
+            .code-push {
+                height: 30px;
+                padding: 0 3px;
+                display: flex;
+                align-items: center;
+
+                .iconfont {
+                    font-size: 16px;
+                    &.icon-shuaxin {
+                        color: #666;
+                        cursor: pointer;
+                        font-weight: bold;
+                    }
+                    &.icon-icon-check-solid {
+                        color: green;
+                        & + .code-tip {
+                            color: green;
+                        }
+                    }
+                    &.icon-jinggao {
+                        color: red;
+                        & + .code-tip {
+                            color: red;
+                        }
+                    }
+                }
+
+                .code-tip {
+                    padding-left: 5px;
+                    font-size: 12px;
+                    color: #999;
                 }
             }
         }
@@ -205,63 +218,38 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
         span {
             font-size: 14px;
         }
+
+        .code-btn-m {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f5f6f7;
+            border: 1px solid #e1e1e1;
+            z-index: 5;
+            top: -8px;
+            left: 10px;
+            box-shadow: 0 0 3px #ccc;
+            cursor: pointer;
+            background-position: -63px 10px;
+
+            &.code-btn-img {
+                background-image: url(arrow.png);
+                background-repeat: no-repeat;
+                box-shadow: 0 0 3px #ccc;
+                &.active {
+                    background-position: -134px 10px;
+                    box-shadow: 0 0 8px #666;
+                }
+                &.error {
+                    background-position: 8px 10px;
+                }
+            }
+        }
     }
 
-    .code-btn-m {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #f5f6f7;
-        border: 1px solid #e1e1e1;
-        z-index: 5;
-        top: -8px;
-        left: 10px;
-        box-shadow: 0 0 3px #ccc;
-        cursor: pointer;
-        background-position: -63px 10px;
-    }
-
-    .code-btn-img {
-        background-image: url(arrow.png);
-        background-repeat: no-repeat;
-        box-shadow: 0 0 3px #ccc;
-    }
-
-    .code-btn-img.active {
-        background-position: -134px 10px;
-        box-shadow: 0 0 8px #666;
-    }
-
-    .code-btn-img.error {
-        background-position: 8px 10px;
-    }
-
-    .code-img-con {
-        position: relative;
-    }
-
-    .code-mask {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-    }
-
-    .code-tip {
-        padding-left: 5px;
-        font-size: 12px;
-        color: #999;
-    }
-
-    .code-tip-red {
-        color: red;
-    }
-
-    .code-tip-green {
-        color: green;
-    }
 </style>
