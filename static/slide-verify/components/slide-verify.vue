@@ -1,14 +1,17 @@
 <template>
-    <div class="code-k-div" v-if="show" @touchend="end" @mouseup="end">
+    <div class="slide-verify" v-if="show" @touchend="end" @mouseup="end">
         <div class="code_bg" v-show="showMain" @click.stop="close">
             <div class="code-con" @click.stop>
                 <div class="code-img">
                     <div class="code-img-con">
-                        <div class="code-mask"><img src="./front.png"></div>
-                        <img src="./back.png"></div>
+                        <div class="code-mask">
+                            <img src="./front.png">
+                        </div>
+                        <img src="./back.png">
+                    </div>
                     <div class="code-push">
-                        <i class="icon-login-bg icon-w-25 icon-push">刷新</i>
-                        <span class="code-tip" :class="codeVal?'code-tip-green':'code-tip-red'" v-html="codeTips"></span>
+                        <i class="iconfont" :class="{'icon-shuaxin':codeVal==='', 'icon-icon-check-solid':codeVal===true, 'icon-jinggao':codeVal===false}"></i>
+                        <span class="code-tip" v-html="codeTips"></span>
                     </div>
                 </div>
                 <div class="code-btn">
@@ -125,6 +128,8 @@
 </script>
 
 <style scoped lang="scss">
+    @import "./iconfont/iconfont.css";
+
     .code_bg {
         position: fixed;
         top: 0;
@@ -133,39 +138,26 @@
         bottom: 0;
         background-color: rgba(0, 0, 0, .5);
         z-index: 99;
-    }
-
-    .icon-login-bg {
-        background-image: url(loginicon.png);
-        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .code-con {
-        position: absolute;
-        top: 100px;
         width: 320px;
-        left: 50%;
-        margin-left: -160px;
+        margin-bottom: 200px;
         background-color: #fff;
         z-index: 100;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-    }
+        user-select: none;
 
-    .code-img {
-        margin: 10px;
-        background-color: #f5f6f7;
-    }
+        .code-img {
+            margin: 10px;
+            background-color: #f5f6f7;
 
-    .code-img img {
-        display: block;
-    }
-
-    .icon-w-25 {
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        text-indent: -9999px;
+            img {
+                display: block;
+            }
+        }
     }
 
     .icon-push {
@@ -178,6 +170,26 @@
         padding: 0 3px;
         display: flex;
         align-items: center;
+        .iconfont {
+            font-size: 16px;
+            &.icon-shuaxin {
+                color: #666;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            &.icon-icon-check-solid {
+                color: green;
+                & + .code-tip {
+                    color: green;
+                }
+            }
+            &.icon-jinggao {
+                color: red;
+                & + .code-tip {
+                    color: red;
+                }
+            }
+        }
     }
 
     .code-btn {
