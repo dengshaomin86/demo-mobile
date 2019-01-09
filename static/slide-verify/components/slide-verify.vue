@@ -190,6 +190,12 @@
         background-color: #f5f6f7;
         border-radius: 15px;
         border: 1px solid #e1e1e1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+            font-size: 14px;
+        }
     }
 
     .code-btn-m {
