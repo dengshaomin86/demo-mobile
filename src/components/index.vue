@@ -6,7 +6,6 @@
             <li v-for="item in list" @click="share(item)">{{item}}</li>
         </ul>
 
-        <button @click="verify">滑块验证</button>
         <router-link to="/login">login</router-link>
 
     </div>
@@ -41,12 +40,6 @@
                         window.open("http://www.linkedin.com/shareArticle?url=" + encodeURIComponent(location.href), "sharer", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");
                         break;
                 }
-            },
-
-            verify() {
-                this.$slideVerify(function (res) {
-                    console.log('验证结果', res);
-                });
             },
 
             translate() {

@@ -34,6 +34,7 @@ h1 {
   background-color: #4dabff;
   color: #fff;
   position: relative;
+  overflow-x: hidden;
   &:before {
     display: table;
     content: '';

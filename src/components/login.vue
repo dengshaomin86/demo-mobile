@@ -35,13 +35,16 @@
         left: 0;
         right: 0;
         bottom: 0;
+        font-size: 0;
     }
 
     .login-con {
         position: relative;
         z-index: 1;
-        padding-top: 2rem;
+        padding: 2rem 0;
         color: #fff;
+        max-height: 100%;
+        overflow-x: hidden;
 
         .welcome {
             font-size: 0.7rem;
