@@ -2,6 +2,7 @@
     <div class="tl-con">
         <div id="particlesCon"></div>
         <div class="login-con">
+            <h1 class="welcome">welcome</h1>
             <form class="form-con">
                 <div class="form-con-bg">
                     <div class="form-con-logo">
@@ -39,11 +40,22 @@
     .login-con {
         position: relative;
         z-index: 1;
+        padding-top: 2rem;
+        color: #fff;
+
+        .welcome {
+            font-size: 0.7rem;
+            line-height: 1rem;
+            font-family: 'AbductionII', "Microsoft YaHei UI", Arial, cursive;
+            width: 8.5rem;
+            margin: 0 auto 1rem;
+        }
 
         .form-con {
             width: 7rem;
-            margin: 4rem auto 0;
+            margin: 0 auto;
             padding-top: 1.2rem;
+            position: relative;
 
             .form-con-bg {
                 background-color: rgba(255, 255, 255, 0.3);
@@ -67,9 +79,7 @@
             &-logo {
                 width: 2rem;
                 height: 2rem;
-                background-color: rgba(255, 255, 255, 0.3);
                 border-radius: 100%;
-                padding: 4px;
                 position: absolute;
                 top: 0.2rem;
                 left: 50%;
@@ -78,8 +88,8 @@
                 align-items: center;
                 justify-content: center;
                 img {
-                    width: 70%;
-                    height: 70%;
+                    width: 100%;
+                    height: 100%;
                 }
             }
 
@@ -119,6 +129,7 @@
             text-transform: uppercase;
             font-size: 0.4rem;
             color: #fff;
+            font-family: "Jellyka_-_Love_and_Passion", "Microsoft YaHei UI", Arial, cursive;
         }
 
         &-link {
@@ -290,7 +301,7 @@
                     switch (key) {
                         case 'username':
                             if (data[key].toLowerCase() !== 'dsm') {
-                                alert('User does not exist');
+                                alert('Username does not exist');
                                 return false
                             }
                             break;
