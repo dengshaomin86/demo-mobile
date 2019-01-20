@@ -10,7 +10,6 @@
         <router-link to="/login">login</router-link>
 
     </div>
-
 </template>
 
 <style scoped lang="scss">
