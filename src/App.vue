@@ -6,6 +6,13 @@
     </div>
 </template>
 
+<style scoped lang="scss">
+    #app {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
 <script>
     export default {
         name: 'app',
@@ -17,7 +24,3 @@
         },
     }
 </script>
-
-<style scoped lang="scss">
-
-</style>
