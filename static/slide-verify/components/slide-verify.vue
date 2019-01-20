@@ -83,7 +83,9 @@
                 setTimeout(() => {
                     if (1) {
                         this.reset();
-                        this.showMain = true;
+                        this.$nextTick(() => {
+                            this.showMain = true;
+                        });
                     } else {
                         this.close();
                     }

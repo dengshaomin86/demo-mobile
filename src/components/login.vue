@@ -1,5 +1,5 @@
 <template>
-    <div class="tl-con">
+    <div class="tl-con" @keyup.enter="submit">
         <div id="particlesCon"></div>
         <div class="login-con">
             <h1 class="welcome">welcome</h1>
