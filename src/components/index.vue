@@ -15,7 +15,14 @@
     .list {
         li {
             cursor: pointer;
+            line-height: 1rem;
+            margin-left: 1rem;
         }
+    }
+
+    a {
+        line-height: 1rem;
+        margin-left: 1rem;
     }
 
 </style>
