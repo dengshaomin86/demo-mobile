@@ -17,6 +17,8 @@
             </form>
 
             <button class="login-con-btn" @click="submit">login</button>
+            <router-link to="" tag="button" class="login-con-link">sign up</router-link>
+            <router-link to="" tag="button" class="login-con-link">forgot password?</router-link>
         </div>
     </div>
 
@@ -113,9 +115,23 @@
             display: block;
             background-color: rgba(255, 255, 255, 0.3);
             box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 0 5px #4dabff;
             text-transform: uppercase;
             font-size: 0.4rem;
             color: #fff;
+        }
+
+        &-link {
+            display: block;
+            width: 7rem;
+            margin: 0.6rem auto 0;
+            font-size: 0.4rem;
+            color: #fff;
+            font-style: italic;
+            text-transform: capitalize;
+            text-align: center;
+            text-decoration: underline;
+            text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
         }
     }
 </style>
