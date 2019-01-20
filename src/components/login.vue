@@ -2,8 +2,21 @@
     <div class="tl-con">
         <div id="particlesCon"></div>
         <div class="login-con">
-            <h1>login</h1>
-            <router-link to="/index">index</router-link>
+            <form class="form-con">
+                <div class="form-con-bg">
+                    <div class="form-con-logo">
+                        <img src="../assets/images/logo/logo.png">
+                    </div>
+                    <div class="form-con-item">
+                        <input type="text" placeholder="username" v-model="username"/>
+                    </div>
+                    <div class="form-con-item">
+                        <input type="password" placeholder="password" v-model="password"/>
+                    </div>
+                </div>
+            </form>
+
+            <button class="login-con-btn" @click="submit">login</button>
         </div>
     </div>
 
@@ -13,7 +26,7 @@
     #particlesCon {
         width: 100%;
         height: 100%;
-        background-color: #4dabff;
+        background: #4dabff linear-gradient(to right bottom, #9c27b0, #4dabff);
         position: absolute;
         top: 0;
         left: 0;
@@ -24,6 +37,86 @@
     .login-con {
         position: relative;
         z-index: 1;
+
+        .form-con {
+            width: 7rem;
+            margin: 4rem auto 0;
+            padding-top: 1.2rem;
+
+            .form-con-bg {
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 0.2rem;
+                padding: 1.2rem 0 0.3rem;
+                box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
+                &:before {
+                    display: block;
+                    content: '';
+                    width: 2.4rem;
+                    height: 1.2rem;
+                    background-color: inherit;
+                    border-radius: 1.2rem 1.2rem 0 0;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    margin-left: -1.2rem;
+                }
+            }
+
+            &-logo {
+                width: 2rem;
+                height: 2rem;
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 100%;
+                padding: 4px;
+                position: absolute;
+                top: 0.2rem;
+                left: 50%;
+                margin-left: -1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+
+            &-item {
+                padding: 0 0.5rem;
+                height: 1.1rem;
+                display: flex;
+                align-items: center;
+                &:last-of-type {
+                    input {
+                        border: none;
+                    }
+                }
+                input {
+                    width: 100%;
+                    height: 1.1rem;
+                    color: #fff;
+                    font-size: 0.4rem;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.5);
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+
+        &-btn {
+            width: 7rem;
+            height: 1.1rem;
+            border-radius: 0.2rem;
+            margin: 1rem auto;
+            display: block;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            font-size: 0.4rem;
+            color: #fff;
+        }
     }
 </style>
 
@@ -141,9 +234,67 @@
                 })
             },
 
+            submit() {
+                let data = {
+                    username: this.username,
+                    password: this.password,
+                };
+
+                if (this.checkEmpty(data)) {
+                    this.verify(data);
+                }
+            },
+
+            checkEmpty(data) {
+                for (let key in data) {
+                    if (data[key] === '') {
+                        alert('Please enter ' + key);
+                        return false
+                    }
+                }
+                return true
+            },
+
+            verify(data) {
+                this.$slideVerify((res) => {
+                    if (res) {
+                        this.login(data);
+                    }
+                });
+            },
+
+            login(data) {
+                if (this.check(data)) {
+                    console.log('Login success');
+                }
+            },
+
+            check(data) {
+                for (let key in data) {
+                    switch (key) {
+                        case 'username':
+                            if (data[key].toLowerCase() !== 'dsm') {
+                                alert('User does not exist');
+                                return false
+                            }
+                            break;
+                        case 'password':
+                            if (data[key] !== '123') {
+                                alert('Wrong password');
+                                return false
+                            }
+                            break;
+                    }
+                }
+                return true
+            },
+
         },
         data() {
-            return {}
+            return {
+                username: '',
+                password: '',
+            }
         },
         mounted() {
             this.particlesInit();
