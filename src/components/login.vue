@@ -113,6 +113,11 @@
                         color: rgba(255, 255, 255, 0.5);
                         text-transform: capitalize;
                     }
+                    &:focus {
+                        &::placeholder {
+                            color: rgba(255, 255, 255, 0.8);
+                        }
+                    }
                 }
             }
         }
@@ -275,7 +280,7 @@
             checkEmpty(data) {
                 for (let key in data) {
                     if (data[key] === '') {
-                        alert('Please enter ' + key);
+                        console.warn('Please enter ' + key);
                         return false
                     }
                 }
@@ -293,6 +298,7 @@
             login(data) {
                 if (this.check(data)) {
                     console.log('Login success');
+                    this.$router.push('/index');
                 }
             },
 
@@ -301,13 +307,13 @@
                     switch (key) {
                         case 'username':
                             if (data[key].toLowerCase() !== 'dsm') {
-                                alert('Username does not exist');
+                                console.warn('Username does not exist');
                                 return false
                             }
                             break;
                         case 'password':
                             if (data[key] !== '123') {
-                                alert('Wrong password');
+                                console.warn('Wrong password');
                                 return false
                             }
                             break;
