@@ -9,15 +9,7 @@ let router = new Router({
     routes: [
         {
             path: '/',
-            name: 'index',
-            component: index,
-            meta: {
-                title: 'index',
-            },
-        },
-        {
-            path: '/index',
-            redirect: '/',
+            redirect: '/login',
         },
         {
             path: '/login',
@@ -26,7 +18,19 @@ let router = new Router({
             meta: {
                 title: 'login',
             },
-        }
+        },
+        {
+            path: '/index',
+            name: 'index',
+            component: index,
+            meta: {
+                title: 'index',
+            },
+        },
+        {
+            path: '*',
+            redirect: '/',
+        },
     ]
 });
 
