@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import index from '@/components/index'
 import login from '@/components/login'
 
 Vue.use(Router);
@@ -9,11 +9,15 @@ let router = new Router({
     routes: [
         {
             path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld,
+            name: 'index',
+            component: index,
             meta: {
-                title: 'HelloWorld',
+                title: 'index',
             },
+        },
+        {
+            path: '/index',
+            redirect: '/',
         },
         {
             path: '/login',

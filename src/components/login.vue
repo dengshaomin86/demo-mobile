@@ -1,16 +1,25 @@
 <template>
     <div class="tl-con">
-        login
+        <h1>login</h1>
+        <router-link to="/index">index</router-link>
     </div>
 
 </template>
 
-<script>
-    export default {
-        name: "login"
-    }
-</script>
-
-<style scoped>
+<style scoped lang="scss">
 
 </style>
+
+<script>
+    export default {
+        name: "login",
+        methods: {},
+        data() {
+            return {}
+        },
+        mounted() {
+        },
+        activated() {
+        },
+    }
+</script>
