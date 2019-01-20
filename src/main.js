@@ -6,15 +6,18 @@ import router from './router'
 import 'jquery'
 import './jqEx'
 
+import './assets/sass/common.scss'
+
 // slide-verify
 import slideVerify from '../static/slide-verify/slide-verify'
+
 Vue.use(slideVerify)
 
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: {App},
+    template: '<App/>'
 })

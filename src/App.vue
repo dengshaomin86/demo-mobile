@@ -12,6 +12,7 @@
         </ul>
 
         <button @click="verify">滑块验证</button>
+        <router-link to="/login" tag="button" @click="verify">login</router-link>
 
     </div>
 </template>
