@@ -301,6 +301,10 @@
             login(data) {
                 if (this.check(data)) {
                     console.log('Login success');
+                    localStorage.setItem('app-info', JSON.stringify({
+                        username: this.username,
+                        password: this.password,
+                    }));
                     this.$router.push('/index');
                 }
             },
@@ -336,6 +340,12 @@
             this.particlesInit();
         },
         activated() {
+        },
+        beforeRouteEnter(to, from, next) {
+            next((vm) => {
+                vm.username = localStorage.getItem('app-info') ? JSON.parse(localStorage.getItem('app-info')).username : '';
+                vm.password = '';
+            });
         },
     }
 </script>
