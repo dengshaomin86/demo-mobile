@@ -1,17 +1,14 @@
 <template>
     <div class="tl-con">
-        <h1>index</h1>
+        <h1>mine</h1>
 
         <ul class="list">
             <li v-for="item in list" @click="share(item)">{{item}}</li>
             <li><i class="fas fa-sort-down"></i></li>
-            <li v-for="item in imgList">
-                <img :data-i="item.src" :src="item.src">
-            </li>
         </ul>
 
         <router-link to="/login">login</router-link>
-        <router-link to="/mine">mine</router-link>
+        <router-link to="/index">index</router-link>
 
     </div>
 </template>
@@ -22,9 +19,6 @@
             cursor: pointer;
             line-height: 1rem;
             margin-left: 1rem;
-            img {
-                max-width: 100%;
-            }
         }
     }
 
@@ -37,7 +31,7 @@
 
 <script>
     export default {
-        name: "index",
+        name: "mine",
         methods: {
             share(key) {
                 console.log(key);
@@ -85,34 +79,13 @@
         },
         data() {
             return {
-                list: ['twitter', 'facebook', 'google', 'linkedIn'],
-                imgList: [
-                    {
-                        path: 'http://45.120.45.138:8220/userfiles/37/ad/20190127-143209-03337.png',
-                    },
-                    {
-                        path: 'http://45.120.45.138:8220/userfiles/37/ad/20190127-143209-033371111.png',
-                    },
-                    {
-                        path: 'http://45.120.45.138:8220/userfiles/37/ad/20190127-143209-03337.png',
-                    },
-                    {
-                        path: 'http://45.120.45.138:8220/userfiles/37/ad/20190127-143209-033371111.png',
-                    },
-                ],
-                logo: 'static/logo.png'
+                list: ['twitter', 'facebook', 'google', 'linkedIn']
             }
         },
         mounted() {
             this.translate();
         },
         activated() {
-            this.imgList.map((item) => {
-                this.IsHasImg(item.path, this.logo, (r) => {
-                    item.src = r;
-                    this.$forceUpdate();
-                })
-            });
         },
     }
 </script>
