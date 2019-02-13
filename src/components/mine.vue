@@ -56,29 +56,23 @@
                 }
             },
 
-            translate() {
-                $.ajaxJson('http://api.fanyi.baidu.com/api/trans/vip/translate', {
-                    q: '你好',  // 请求翻译query
-                    from: 'zh',  // 翻译源语言
-                    to: 'en',  // 译文语言
-                    appid: '',  // APP ID
-                    salt: '',  // 随机数
-                    sign: '',  // 签名 appid+q+salt+密钥 的MD5值
-                    abc: 123,
-                }, {
-                    before: function () {
-                        console.log('before');
+            languageApi() {
+                axios.get('http://218.93.127.26:1111/api/v1/languageApi', {
+                    params: {
+                        cmd: 'getIsChineseNow',
+                        AppName: 'Web',
+                        _isAjax: true,
+                        LangID: 2,
+                        ScopeIDEq: 1,
+                        _: new Date().getTime(),
                     },
-                    yes: function () {
-                        console.log('yes');
-                    },
-                    no: function () {
-                        console.log('no');
-                    },
-                    over: function () {
-                        console.log('over');
-                    }
-                })
+                    // loading: false,
+                }).then(function (res) {
+                    console.log(res);
+                }).catch(function (error) {
+                    console.log('error', error);
+                });
+
             },
 
             // 节流
@@ -94,7 +88,7 @@
             }
         },
         mounted() {
-            this.translate();
+            this.languageApi();
         },
         activated() {
         },

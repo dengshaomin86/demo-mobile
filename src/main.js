@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import 'jquery'
 import './jqEx'
+import './axios'
 
 import './assets/sass/common.scss'
 
