@@ -5,6 +5,9 @@
         <ul class="list">
             <li v-for="item in list" @click="share(item)">{{item}}</li>
             <li><i class="fas fa-sort-down"></i></li>
+            <li>
+                <input type="text" placeholder="请输入搜索内容" @input="search" v-model="searchText">
+            </li>
         </ul>
 
         <router-link to="/login">login</router-link>
@@ -30,6 +33,8 @@
 </style>
 
 <script>
+    let lodash = require('lodash');
+
     export default {
         name: "mine",
         methods: {
@@ -76,10 +81,16 @@
                 })
             },
 
+            // 节流
+            search: lodash.debounce(function () {
+                console.log(this.searchText);
+            }, 500),
+
         },
         data() {
             return {
-                list: ['twitter', 'facebook', 'google', 'linkedIn']
+                list: ['twitter', 'facebook', 'google', 'linkedIn'],
+                searchText: '',
             }
         },
         mounted() {
