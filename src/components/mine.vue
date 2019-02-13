@@ -75,6 +75,24 @@
 
             },
 
+            translate() {
+                axios.get('http://api.fanyi.baidu.com/api/trans/vip/translate', {
+                    params: {
+                        q: '你好',  // 请求翻译query
+                        from: 'zh',  // 翻译源语言
+                        to: 'en',  // 译文语言
+                        appid: '',  // APP ID
+                        salt: '',  // 随机数
+                        sign: '',  // 签名 appid+q+salt+密钥 的MD5值
+                    },
+                }).then(function (res) {
+                    console.log(res);
+                }).catch(function (error) {
+                    console.log('error', error);
+                });
+
+            },
+
             // 节流
             search: lodash.debounce(function () {
                 console.log(this.searchText);

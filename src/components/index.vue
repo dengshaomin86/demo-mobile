@@ -104,7 +104,6 @@
             }
         },
         mounted() {
-            this.translate();
         },
         activated() {
             this.imgList.map((item) => {
