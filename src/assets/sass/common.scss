@@ -39,4 +39,10 @@ h1 {
     display: table;
     content: '';
   }
+  button, input {
+    color: #fff;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
 }
