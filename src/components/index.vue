@@ -103,8 +103,7 @@
                 logo: 'static/logo.png'
             }
         },
-        mounted() {
-        },
+        mounted() {},
         activated() {
             this.imgList.map((item) => {
                 this.IsHasImg(item.path, this.logo, (r) => {
