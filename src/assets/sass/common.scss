@@ -46,3 +46,24 @@ h1 {
     }
   }
 }
+
+// transition - slide
+.slide-into-enter, .slide-back-leave-to {
+  transform: translateX(100%);
+}
+
+.slide-into-enter-to {
+  transform: translateX(0);
+}
+
+.slide-into-enter-to, .slide-back-leave, .slide-back-leave-to {
+  z-index: 1;
+}
+
+.slide-into-leave-to, .slide-back-enter, .slide-back-enter-to {
+  z-index: 0;
+}
+
+.slide-into-enter-active, .slide-into-leave-active, .slide-back-enter-active, .slide-back-leave-active {
+  transition: 0.3s;
+}

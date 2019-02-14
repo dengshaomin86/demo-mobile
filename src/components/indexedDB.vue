@@ -4,6 +4,8 @@
 
         <ul class="list">
             <li @click="add">add</li>
+            <li @click="del">del</li>
+            <li @click="edit">edit</li>
             <li @click="get">get</li>
         </ul>
 
@@ -42,17 +44,21 @@
                 this.request = window.indexedDB.open("testDB", 1); //第一个参数是数据库的名称，第二个参数是数据库的版本号。版本号可以在升级数据库时用来调整数据库结构和数据
 
                 let request = this.request;
-                request.onsuccess = (event) => {
-                    console.log("成功打开DB");
-                    this.db = event.target.result;
-                };
-                request.onerror = (event) => {
-                    console.log("打开DB失败", event);
-                };
                 request.onupgradeneeded = (event) => {
                     console.log("Upgrading");
                     this.db = event.target.result;
                     let objectStore = this.db.createObjectStore("students", {keyPath: "rollNo"});
+                };
+                request.onsuccess = (event) => {
+                    console.log("成功打开DB");
+                    this.db = event.target.result;
+                    console.log(this.db);
+                };
+                request.onerror = (event) => {
+                    console.log("打开DB失败", event);
+                };
+                request.onblocked = (event) => {
+                    console.log("连接未关闭 onblocked", event);
                 };
             },
 
@@ -91,6 +97,7 @@
             // 查看
             get() {
                 // 查---通过key取出对象，即往get()方法里传入对象的key值，取出相应的对象
+                console.log(this.db.transaction(["students"], "readwrite").objectStore("students"));
                 let request = this.db.transaction(["students"], "readwrite").objectStore("students").get('rollNo1');
                 request.onsuccess = function (event) {
                     console.log("Name : " + request.result.name);
@@ -102,7 +109,8 @@
                 // 改---为了更新一个对象，首先要把它取出来，修改，然后再放回去
                 let transaction = this.db.transaction(["students"], "readwrite");
                 let objectStore = transaction.objectStore("students");
-                let request = objectStore.get(rollNo);
+                let request = objectStore.get('rollNo1');
+                let name = 'name' + Math.random();
                 request.onsuccess = function (event) {
                     console.log("Updating : " + request.result.name + " to " + name);
                     request.result.name = name;
