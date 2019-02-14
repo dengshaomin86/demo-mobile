@@ -1,0 +1,120 @@
+{
+  "list": [
+    {
+      "key": "auto",
+      "value": "自动检测"
+    },
+    {
+      "key": "zh",
+      "value": "中文"
+    },
+    {
+      "key": "cht",
+      "value": "繁体中文"
+    },
+    {
+      "key": "en",
+      "value": "英语"
+    },
+    {
+      "key": "yue",
+      "value": "粤语"
+    },
+    {
+      "key": "wyw",
+      "value": "文言文"
+    },
+    {
+      "key": "jp",
+      "value": "日语"
+    },
+    {
+      "key": "kor",
+      "value": "韩语"
+    },
+    {
+      "key": "fra",
+      "value": "法语"
+    },
+    {
+      "key": "spa",
+      "value": "西班牙语"
+    },
+    {
+      "key": "th",
+      "value": "泰语"
+    },
+    {
+      "key": "ara",
+      "value": "阿拉伯语"
+    },
+    {
+      "key": "ru",
+      "value": "俄语"
+    },
+    {
+      "key": "pt",
+      "value": "葡萄牙语"
+    },
+    {
+      "key": "de",
+      "value": "德语"
+    },
+    {
+      "key": "it",
+      "value": "意大利语"
+    },
+    {
+      "key": "el",
+      "value": "希腊语"
+    },
+    {
+      "key": "nl",
+      "value": "荷兰语"
+    },
+    {
+      "key": "pl",
+      "value": "波兰语"
+    },
+    {
+      "key": "bul",
+      "value": "保加利亚语"
+    },
+    {
+      "key": "est",
+      "value": "爱沙尼亚语"
+    },
+    {
+      "key": "dan",
+      "value": "丹麦语"
+    },
+    {
+      "key": "fin",
+      "value": "芬兰语"
+    },
+    {
+      "key": "cs",
+      "value": "捷克语"
+    },
+    {
+      "key": "rom",
+      "value": "罗马尼亚语"
+    },
+    {
+      "key": "slo",
+      "value": "斯洛文尼亚语"
+    },
+    {
+      "key": "swe",
+      "value": "瑞典语"
+    },
+    {
+      "key": "hu",
+      "value": "匈牙利语"
+    },
+    {
+      "key": "vie",
+      "value": "越南语"
+    }
+  ]
+}

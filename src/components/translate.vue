@@ -4,7 +4,8 @@
 
         <ul class="list">
             <li>
-                <input type="text" placeholder="请输入搜索内容" @input="search" v-model="searchText">
+                <input type="text" placeholder="请输入要翻译的内容" @input="search" v-model="searchText">
+                <p>译: {{translateText}}</p>
             </li>
         </ul>
 
@@ -39,16 +40,15 @@
         methods: {
             // 节流
             search: lodash.debounce(function () {
-                console.log(this.searchText);
-                this.searchText && this.translate(this.searchText);
+                this.searchText ? this.translate(this.searchText) : this.translateText = '';
             }, 500),
 
             // 百度翻译
             translate(text) {
-                let q = text || '你好';
+                let q = text;
                 let appID = '20190214000266633';
-                let salt = Math.random();
                 let key = 'dQz1WyRWp2TLzkZOSEOb';
+                let salt = Math.random();
                 let sign = appID + q + salt + key;
 
                 axios.get('/api/trans/vip/translate', {
@@ -60,21 +60,37 @@
                         salt: salt,  // 随机数
                         sign: md5(sign),  // 签名 appid+q+salt+密钥 的MD5值
                     },
-                }).then(function (res) {
+                }).then((res) => {
                     console.log(res);
-                }).catch(function (error) {
+                    this.translateText = res.data.trans_result[0].dst;
+                }).catch((error) => {
                     console.log('error', error);
                 });
 
+            },
+
+            // 获取语言列表
+            getLangList() {
+                axios.get('static/data/langList.json', {
+                    loading: false,
+                }).then((res) => {
+                    console.log(res);
+                    this.langList = res.data.list;
+                }).catch((error) => {
+                    console.log('error', error);
+                });
             },
 
         },
         data() {
             return {
                 searchText: '',
+                translateText: '',
+                langList: [],
             }
         },
         mounted() {
+            this.getLangList();
         },
         activated() {
         },
