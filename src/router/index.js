@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import index from '@/components/index'
 import login from '@/components/login'
 import mine from '@/components/mine'
+import translate from '@/components/translate'
 
 Vue.use(Router);
 
@@ -34,6 +35,14 @@ let router = new Router({
             component: mine,
             meta: {
                 title: 'mine',
+            },
+        },
+        {
+            path: '/translate',
+            name: 'translate',
+            component: translate,
+            meta: {
+                title: 'translate',
             },
         },
         {
