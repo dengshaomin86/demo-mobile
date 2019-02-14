@@ -58,7 +58,7 @@
 
             // 增加
             add() {
-                // 增——往ObjectStore里新增对象
+                // 增---往ObjectStore里新增对象
                 // 为了往数据库里新增数据，我们首先需要创建一个事务，并要求具有读写权限。在indexedDB里任何的存取对象的操作都需要放在事务里执行。
                 let transaction = this.db.transaction(["students"], "readwrite");
 
@@ -83,14 +83,14 @@
 
             // 删除
             del() {
-                // 删——ObjectStore里删除对象
+                // 删---ObjectStore里删除对象
                 // 删除跟新增一样，需要创建事务，然后调用删除接口，通过key删除对象
                 this.db.transaction(["students"], "readwrite").objectStore("students").delete('rollNo1');
             },
 
             // 查看
             get() {
-                // 查——通过key取出对象，即往get()方法里传入对象的key值，取出相应的对象
+                // 查---通过key取出对象，即往get()方法里传入对象的key值，取出相应的对象
                 let request = this.db.transaction(["students"], "readwrite").objectStore("students").get('rollNo1');
                 request.onsuccess = function (event) {
                     console.log("Name : " + request.result.name);
@@ -99,7 +99,7 @@
 
             // 修改
             edit() {
-                // 改—— 为了更新一个对象，首先要把它取出来，修改，然后再放回去
+                // 改---为了更新一个对象，首先要把它取出来，修改，然后再放回去
                 let transaction = this.db.transaction(["students"], "readwrite");
                 let objectStore = transaction.objectStore("students");
                 let request = objectStore.get(rollNo);
