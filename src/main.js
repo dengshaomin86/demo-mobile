@@ -6,6 +6,7 @@ import router from './router'
 import 'jquery'
 import './jqEx'
 import './axios'
+import './indexedDB'
 
 import './assets/sass/common.scss'
 

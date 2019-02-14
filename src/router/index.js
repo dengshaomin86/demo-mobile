@@ -4,6 +4,7 @@ import index from '@/components/index'
 import login from '@/components/login'
 import mine from '@/components/mine'
 import translate from '@/components/translate'
+import indexedDB from '@/components/indexedDB'
 
 Vue.use(Router);
 
@@ -43,6 +44,14 @@ let router = new Router({
             component: translate,
             meta: {
                 title: 'translate',
+            },
+        },
+        {
+            path: '/indexedDB',
+            name: 'indexedDB',
+            component: indexedDB,
+            meta: {
+                title: 'indexedDB',
             },
         },
         {

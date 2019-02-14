@@ -5,6 +5,7 @@
         <ul class="list">
             <router-link to="/index" tag="li">index</router-link>
             <router-link to="/translate" tag="li">translate</router-link>
+            <router-link to="/indexedDB" tag="li">indexedDB</router-link>
         </ul>
 
         <router-link to="/login">login</router-link>
