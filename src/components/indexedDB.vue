@@ -9,6 +9,7 @@
             <li @click="get">get</li>
             <li @click="getByIndex">索引name</li>
             <li @click="readAll">readAll</li>
+            <li @click="getAll">getAll</li>
             <li @click="closeDB(db)">关闭数据库</li>
             <li @click="delDB('testDB')">删除数据库</li>
         </ul>
@@ -49,8 +50,17 @@
             },
 
             // 删除数据库
-            delDB(name) {
-                window.indexedDB.deleteDatabase(name);
+            delDB() {
+                console.log('delDB');
+                let DBDeleteRequest = window.indexedDB.deleteDatabase('testDB');
+
+                DBDeleteRequest.onerror = function (event) {
+                    console.log('Error 删除数据库失败');
+                };
+
+                DBDeleteRequest.onsuccess = function (event) {
+                    console.log('success 删除数据库成功');
+                };
             },
 
             // 创建
@@ -207,13 +217,25 @@
                     let cursor = event.target.result;
 
                     if (cursor) {
-                        console.log('rollNo: ' + cursor.key);
-                        console.log('Name: ' + cursor.value.name);
+                        console.log(cursor.value);
                         cursor.continue();
                     } else {
                         console.log('没有更多数据了！');
                     }
                 };
+            },
+
+            getAll() {
+                // objectStore.getAll() --- 获取所有记录
+                // objectStore.getAll(query) --- 获取所有符合指定主键或 IDBKeyRange 的记录
+                // objectStore.getAll(query, count) --- 指定获取记录的数量
+
+                let objectStore = this.db.transaction('students').objectStore('students');
+                let req = objectStore.getAll();
+                // let req = objectStore.getAll('rollNo1');
+                req.onsuccess = function (e) {
+                    console.log(e.target.result);
+                }
             },
 
             // 修改
