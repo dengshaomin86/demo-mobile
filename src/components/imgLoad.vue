@@ -4,7 +4,9 @@
 
         <ul class="list">
             <li v-for="item in imgList">
-                <img :data-i="item.src" :src="item.src">
+                <div class="img" :style="'background-image: url('+item.src+')'">
+                    <!--<img :data-i="item.src" :src="item.src">-->
+                </div>
             </li>
         </ul>
 
@@ -15,10 +17,23 @@
 
 <style scoped lang="scss">
     .list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding: 0.2rem;
+
         li {
-            cursor: pointer;
-            line-height: 1rem;
-            margin-left: 1rem;
+            width: 4.4rem;
+            background-color: rebeccapurple;
+            margin-bottom: 0.4rem;
+            .img {
+                width: inherit;
+                height: 4.4rem;
+                background: url("../assets/images/logo/logo.png") no-repeat center center;
+                background-size: cover;
+            }
             img {
                 max-width: 100%;
             }
