@@ -3,13 +3,13 @@
         <h1>mine</h1>
 
         <ul class="list">
-            <router-link to="/index" tag="li">index</router-link>
             <router-link to="/translate" tag="li">translate</router-link>
             <router-link to="/indexedDB" tag="li">indexedDB</router-link>
             <router-link to="/share" tag="li">share</router-link>
             <router-link to="/imgLoad" tag="li">imgLoad</router-link>
         </ul>
 
+        <router-link to="/index">index</router-link>
         <router-link to="/login">login</router-link>
     </div>
 </template>
