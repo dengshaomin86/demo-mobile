@@ -5,6 +5,8 @@ import login from '@/components/login'
 import mine from '@/components/mine'
 import translate from '@/components/translate'
 import indexedDB from '@/components/indexedDB'
+import share from '@/components/share'
+import imgLoad from '@/components/imgLoad'
 
 Vue.use(Router);
 
@@ -52,6 +54,22 @@ let router = new Router({
             component: indexedDB,
             meta: {
                 title: 'indexedDB',
+            },
+        },
+        {
+            path: '/share',
+            name: 'share',
+            component: share,
+            meta: {
+                title: 'share',
+            },
+        },
+        {
+            path: '/imgLoad',
+            name: 'imgLoad',
+            component: imgLoad,
+            meta: {
+                title: 'imgLoad',
             },
         },
         {
