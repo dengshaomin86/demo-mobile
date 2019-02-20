@@ -87,4 +87,8 @@ router.beforeEach((to, from, next) => {
     next()
 });
 
+Vue.prototype.$back = () => {
+    return router.back()
+};
+
 export default router

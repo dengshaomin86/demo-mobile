@@ -11,6 +11,7 @@
         </ul>
 
         <router-link to="/mine">mine</router-link>
+        <a @click="$back">back</a>
 
     </div>
 </template>
