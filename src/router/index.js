@@ -7,6 +7,7 @@ import translate from '@/components/translate'
 import indexedDB from '@/components/indexedDB'
 import share from '@/components/share'
 import imgLoad from '@/components/imgLoad'
+import baiduMap from '@/components/baiduMap'
 
 Vue.use(Router);
 
@@ -70,6 +71,14 @@ let router = new Router({
             component: imgLoad,
             meta: {
                 title: 'imgLoad',
+            },
+        },
+        {
+            path: '/baiduMap',
+            name: 'baiduMap',
+            component: baiduMap,
+            meta: {
+                title: 'baiduMap',
             },
         },
         {
