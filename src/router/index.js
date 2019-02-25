@@ -8,6 +8,7 @@ import indexedDB from '@/components/indexedDB'
 import share from '@/components/share'
 import imgLoad from '@/components/imgLoad'
 import baiduMap from '@/components/baiduMap'
+import transform from '@/components/transform'
 
 Vue.use(Router);
 
@@ -79,6 +80,14 @@ let router = new Router({
             component: baiduMap,
             meta: {
                 title: 'baiduMap',
+            },
+        },
+        {
+            path: '/transform',
+            name: 'transform',
+            component: transform,
+            meta: {
+                title: 'transform',
             },
         },
         {
