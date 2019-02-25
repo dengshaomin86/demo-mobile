@@ -1,0 +1,3 @@
+@mixin cubeUrl($n) {
+  background-image: url("../assets/images/transform/card#{$n}.jpg");
+}
