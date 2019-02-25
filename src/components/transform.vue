@@ -13,11 +13,17 @@
 </template>
 
 <style scoped lang="scss">
+    .tl-con {
+        /*transform-style: preserve-3d; // 3d空间*/
+        /*perspective: 800px; // 它被成为视距或者紧身*/
+        /*perspective-origin: 50% 50%; // 中心点*/
+    }
+
     .card {
         width: 300px;
         height: 200px;
         position: relative;
-        transform-style: preserve-3d;
+        transform-style: preserve-3d; // 3d空间
         transition: 1s;
         &:hover {
             transform: rotateY(180deg); //当鼠标移动到上面时让他旋转180°
