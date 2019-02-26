@@ -1,6 +1,6 @@
 <template>
     <div class="tl-con">
-        <h1>baiduMap</h1>
+        <h1>BMap</h1>
 
         <div id="map"></div>
 
@@ -32,8 +32,36 @@
 
 <script>
     export default {
-        name: "baiduMap",
+        name: "BMap",
         methods: {
+            loadMapJS() {
+                let self = this;
+
+                if (!document.getElementById('BMap')) {
+                    let ak = '4MMeD1D97IwjG7XLr9GgW1fSEn3IUsQc';
+                    let url = window.location.protocol + '//api.map.baidu.com/getscript?v=2.0&ak=' + ak + '&services=&t=20190123111209';
+
+                    let head = document.getElementsByTagName('head')[0];
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = url;
+                    script.setAttribute('id', 'BMap');
+                    script.onload = script.onreadystatechange = function () {
+                        if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+                            script.onload = script.onreadystatechange = null;
+                            console.log('BMap load');
+                            self.mapInit();
+                        }
+                    };
+                    head.appendChild(script);
+                    window.BMap_loadScriptTime = (new Date).getTime();
+
+                } else {
+                    self.mapInit();
+                }
+
+            },
+
             mapInit() {
                 //创建和初始化地图函数：
                 function initMap() {
@@ -141,7 +169,7 @@
         mounted() {
         },
         activated() {
-            this.mapInit();
+            this.loadMapJS();
         },
     }
 </script>

@@ -7,7 +7,7 @@
             <router-link to="/indexedDB" tag="li">indexedDB</router-link>
             <router-link to="/share" tag="li">share</router-link>
             <router-link to="/imgLoad" tag="li">imgLoad</router-link>
-            <router-link to="/baiduMap" tag="li">baiduMap</router-link>
+            <router-link to="/BMap" tag="li">BMap</router-link>
             <router-link to="/transform" tag="li">transform</router-link>
         </ul>
 
