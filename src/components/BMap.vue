@@ -162,9 +162,7 @@
 
         },
         data() {
-            return {
-                list: ['twitter', 'facebook', 'google', 'linkedIn'],
-            }
+            return {}
         },
         mounted() {
         },
