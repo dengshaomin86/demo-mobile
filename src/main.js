@@ -11,9 +11,23 @@ import './indexedDB'
 import './assets/sass/common.scss'
 
 // slide-verify
-import slideVerify from '../static/slide-verify/slide-verify'
+import slideVerify from '../static/plugin/slide-verify'
 
 Vue.use(slideVerify);
+
+// 自动翻译
+import autoTranslate from '../static/plugin/auto-translate'
+
+autoTranslate.initData({
+    from: 'auto',
+    to: 'jp',
+    // webApi:'https://你自己的项目翻译接口地址URL',
+    // list: {"例如我是中文咯": "data"}, // 同步加载本地语言包（json对象）。list 和  directory 别同时设置
+    directory: '/static/language/', // 异步加载语言包（json文件路径）
+    automatic: true, // 开启是否需要百度自动翻译，如果不需要百度自动翻译false即可
+});
+
+Vue.use(autoTranslate);
 
 // import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import 'font-awesome/css/font-awesome.min.css'
@@ -35,19 +49,6 @@ Vue.prototype.IsHasImg = (imgSrc, defaultSrc, cb) => {
 
 };
 
-
-// 自动翻译
-import language from 'jj_language'
-
-language.initData({
-    from: 'auto',
-    to: 'jp',
-    //list:{'例如我是中文咯':'data'}, // 同步加载本地语言包; list 和  directory 别同时设置
-    //directory:'/language/', // 异步加载语言包
-    automatic: true, // 开启是否需要百度自动翻译，如果不需要百度自动翻译false即可
-});
-
-Vue.use(language);
 
 new Vue({
     el: '#app',

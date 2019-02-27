@@ -25,7 +25,7 @@
 </template>
 
 <script>
-    import {slideVerifyCb} from './../slide-verify'
+    import {slideVerifyCb} from '../index'
 
     export default {
         name: "slide-verify",

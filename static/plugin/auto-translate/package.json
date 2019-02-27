@@ -1,0 +1,31 @@
+{
+  "_from": "jj_language",
+  "_id": "jj_language@1.3.1",
+  "_inBundle": false,
+  "_integrity": "sha512-N0WLv0PdLozpPgZTt2zTxuZc62PFjPJs4mBCu8IBg8O7XazhMVpsXv0pY8/7KdHIOs41EZu2+yO2C/OElIYC+Q==",
+  "_location": "/jj_language",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "jj_language",
+    "name": "jj_language",
+    "escapedName": "jj_language",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/jj_language/-/jj_language-1.3.1.tgz",
+  "_shasum": "8fc6269a17b2ce7f4f03f201c027d32c28714276",
+  "_spec": "jj_language",
+  "_where": "C:\\Users\\Administrator\\Desktop\\project\\vue__webpack__1546567658488",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "main": "index.js",
+  "name": "jj_language",
+  "version": "1.3.1"
+}
