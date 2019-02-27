@@ -13,13 +13,13 @@ import './assets/sass/common.scss'
 // slide-verify
 import slideVerify from '../static/slide-verify/slide-verify'
 
-Vue.use(slideVerify)
+Vue.use(slideVerify);
 
 // import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 // 生产提示
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 Vue.prototype.IsHasImg = (imgSrc, defaultSrc, cb) => {
     let obj = new Image();
