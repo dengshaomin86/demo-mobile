@@ -20,13 +20,24 @@
                 let obj = new Image();
                 obj.src = this.src;
 
+                // 图片被加载完成后所触发的事件（需要图片的加载完全，没有图片也就没有onload）
                 obj.onload = () => {
                     this.FSrc = this.src;
                 };
 
-                obj.onerror = () => {
+                // 加载对象及属性完成（无论src是否有值，成功与否，只要获取到image，就可以执行）
+                if (obj.complete) {
+                    // console.log('complete');
+                }
+
+                // 加载时是否显示默认图
+                if (this.showDefault) {
                     this.FSrc = this.error || this.defaultSrc;
-                };
+                } else {
+                    obj.onerror = () => {
+                        this.FSrc = this.error || this.defaultSrc;
+                    };
+                }
             },
         },
         props: ['src', 'error'],
@@ -34,6 +45,7 @@
             return {
                 FSrc: '',
                 defaultSrc: 'static/logo.png',
+                showDefault: true,
             }
         },
         mounted() {
