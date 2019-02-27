@@ -2,13 +2,13 @@
     <div class="tl-con">
         <h1>mine</h1>
 
-        <ul class="list">
-            <router-link to="/translate" tag="li"><i class="fa fa-globe"></i>translate</router-link>
-            <router-link to="/indexedDB" tag="li"><i class="fa fa-database"></i>indexedDB</router-link>
-            <router-link to="/share" tag="li"><i class="fa fa-share-alt"></i>share</router-link>
-            <router-link to="/imgLoad" tag="li"><i class="fa fa-file-image-o"></i>imgLoad</router-link>
-            <router-link to="/BMap" tag="li"><i class="fa fa-location-arrow"></i>BMap</router-link>
-            <router-link to="/transform" tag="li"><i class="fa fa-cube"></i>transform</router-link>
+        <ul class="list fa-ul">
+            <router-link tag="li" to="/translate"><i class="fa fa-globe fa-fw fa-li"></i>translate</router-link>
+            <router-link tag="li" to="/indexedDB"><i class="fa fa-database fa-fw fa-li"></i>indexedDB</router-link>
+            <router-link tag="li" to="/share"><i class="fa fa-share-alt fa-fw fa-li"></i>share</router-link>
+            <router-link tag="li" to="/imgLoad"><i class="fa fa-file-image-o fa-fw fa-li"></i>imgLoad</router-link>
+            <router-link tag="li" to="/BMap"><i class="fa fa-location-arrow fa-fw fa-li"></i>BMap</router-link>
+            <router-link tag="li" to="/transform"><i class="fa fa-cube fa-fw fa-li"></i>transform</router-link>
         </ul>
 
         <router-link to="/index">index</router-link>
@@ -18,12 +18,17 @@
 
 <style scoped lang="scss">
     .list {
+        margin: 0;
         li {
             cursor: pointer;
             line-height: 1rem;
-            margin-left: 1rem;
+            margin-left: 0.5rem;
+            display: flex;
+            align-items: center;
             .fa {
-                margin-right: 5px;
+                position: relative;
+                top: 0;
+                left: 0;
             }
         }
     }
