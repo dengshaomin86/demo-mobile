@@ -4,9 +4,7 @@
 
         <ul class="list">
             <li v-for="item in imgList">
-                <div class="img" :style="'background-image: url('+item.src+')'">
-                    <!--<img :data-i="item.src" :src="item.src">-->
-                </div>
+                <d-lazy-load :src="item.path" :error="error"></d-lazy-load>
             </li>
         </ul>
 
@@ -27,17 +25,9 @@
 
         li {
             width: 4.4rem;
+            height: 4.4rem;
             background-color: rebeccapurple;
             margin-bottom: 0.4rem;
-            .img {
-                width: inherit;
-                height: 4.4rem;
-                background: url("../assets/images/logo/logo.png") no-repeat center center;
-                background-size: cover;
-            }
-            img {
-                max-width: 100%;
-            }
         }
     }
 
@@ -68,18 +58,12 @@
                         path: 'http://45.120.45.138:8220/userfiles/37/ad/20190127-143209-033371111.png',
                     },
                 ],
-                logo: 'static/logo.png',
+                error: require('../assets/images/logo/logo.png'),
             }
         },
         mounted() {
         },
         activated() {
-            this.imgList.map((item) => {
-                this.IsHasImg(item.path, this.logo, (r) => {
-                    item.src = r;
-                    this.$forceUpdate();
-                })
-            });
         },
     }
 </script>

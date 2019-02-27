@@ -27,11 +27,7 @@
 <script>
     export default {
         name: "d-loading",
-        methods: {
-            show() {
-                this.flag = true;
-            },
-        },
+        methods: {},
         data: function () {
             return {
                 flag: false,

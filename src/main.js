@@ -8,6 +8,7 @@ import './jqEx'
 import './axios'
 import './indexedDB'
 import './assets/sass/common.scss'
+import '../static/plugin/d-lazy-load'
 import "font-awesome/scss/font-awesome.scss"
 import slideVerify from '../static/plugin/slide-verify'
 import loading from '../static/plugin/d-loading'
@@ -28,21 +29,6 @@ Vue.use(autoTranslate);
 
 // 生产提示
 Vue.config.productionTip = false;
-
-Vue.prototype.IsHasImg = (imgSrc, defaultSrc, cb) => {
-    let obj = new Image();
-    obj.src = imgSrc;
-
-    obj.onload = function () {
-        cb(imgSrc)
-    };
-
-    obj.onerror = function () {
-        cb(defaultSrc)
-    };
-
-};
-
 
 new Vue({
     el: '#app',
