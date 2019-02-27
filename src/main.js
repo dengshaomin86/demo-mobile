@@ -7,18 +7,10 @@ import 'jquery'
 import './jqEx'
 import './axios'
 import './indexedDB'
-
 import './assets/sass/common.scss'
-
-// font-awesome
 import "font-awesome/scss/font-awesome.scss"
-
-// slide-verify
 import slideVerify from '../static/plugin/slide-verify'
-
-Vue.use(slideVerify);
-
-// 自动翻译
+import loading from '../static/plugin/d-loading'
 import autoTranslate from '../static/plugin/auto-translate'
 
 autoTranslate.initData({
@@ -30,6 +22,8 @@ autoTranslate.initData({
     automatic: true, // 开启是否需要百度自动翻译，如果不需要百度自动翻译false即可
 });
 
+Vue.use(slideVerify);
+Vue.use(loading);
 Vue.use(autoTranslate);
 
 // 生产提示

@@ -1,30 +1,26 @@
 import component from './components/index.vue'
 
-let $vm = null;
-let loading = function (cb) {
-    $vm.init();
-};
-
 export default {
     install(Vue, options) {
+        let $vm = null;
         if (!$vm) {
-            const slideVerifyPlugin = Vue.extend(component);
+            const loadingPlugin = Vue.extend(component);
 
-            $vm = new slideVerifyPlugin({
+            $vm = new loadingPlugin({
                 el: document.createElement('div')
             });
 
             document.body.appendChild($vm.$el);
         }
 
-        if (!Vue.$loading) {
-            Vue.$loading = loading;
+        Vue.prototype.$loading = {
+            show() {
+                $vm.flag = true;
+            },
+            close() {
+                $vm.flag = false;
+            },
         }
 
-        Vue.mixin({
-            created() {
-                this.$loading = Vue.$loading;
-            }
-        })
     }
 }

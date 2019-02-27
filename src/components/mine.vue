@@ -69,6 +69,7 @@
         mounted() {
         },
         activated() {
+            this.languageApi();
         },
     }
 </script>

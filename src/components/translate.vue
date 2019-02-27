@@ -9,7 +9,6 @@
             </li>
             <li v-text="echo('自动百度翻译，优先本地语言库')"></li>
             <li v-text="echo(text)"></li>
-            <li><i class="fa fa-spinner fa-pulse fa-3x"></i></li>
         </ul>
 
         <router-link to="/login">login</router-link>
@@ -74,7 +73,7 @@
 
             // 获取语言列表
             getLangList() {
-                axios.get('static/data/langList.json', {
+                axios.get('static/language/langList.json', {
                     loading: false,
                 }).then((res) => {
                     console.log(res);
