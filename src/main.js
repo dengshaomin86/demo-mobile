@@ -12,6 +12,7 @@ import './assets/sass/common.scss'
 
 // slide-verify
 import slideVerify from '../static/slide-verify/slide-verify'
+
 Vue.use(slideVerify)
 
 // import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
@@ -32,11 +33,25 @@ Vue.prototype.IsHasImg = (imgSrc, defaultSrc, cb) => {
         cb(defaultSrc)
     };
 
-}
+};
+
+
+// 自动翻译
+import language from 'jj_language'
+
+language.initData({
+    from: 'auto',
+    to: 'jp',
+    //list:{'例如我是中文咯':'data'}, // 同步加载本地语言包; list 和  directory 别同时设置
+    //directory:'/language/', // 异步加载语言包
+    automatic: true, // 开启是否需要百度自动翻译，如果不需要百度自动翻译false即可
+});
+
+Vue.use(language);
 
 new Vue({
     el: '#app',
     router,
     components: {App},
     template: '<App/>'
-})
+});

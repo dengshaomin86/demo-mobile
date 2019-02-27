@@ -7,6 +7,8 @@
                 <input type="text" placeholder="请输入要翻译的内容" @input="search" v-model="searchText">
                 <p>译: {{translateText}}</p>
             </li>
+            <li v-text="echo('自动百度翻译，优先本地语言库')"></li>
+            <li v-text="echo(text)"></li>
         </ul>
 
         <router-link to="/login">login</router-link>
@@ -87,6 +89,7 @@
                 searchText: '',
                 translateText: '',
                 langList: [],
+                text: '还好',
             }
         },
         mounted() {
