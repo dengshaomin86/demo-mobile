@@ -3,12 +3,12 @@
         <h1>mine</h1>
 
         <ul class="list">
-            <router-link to="/translate" tag="li">translate</router-link>
-            <router-link to="/indexedDB" tag="li">indexedDB</router-link>
-            <router-link to="/share" tag="li">share</router-link>
-            <router-link to="/imgLoad" tag="li">imgLoad</router-link>
-            <router-link to="/BMap" tag="li">BMap</router-link>
-            <router-link to="/transform" tag="li">transform</router-link>
+            <router-link to="/translate" tag="li"><i class="fa fa-globe"></i>translate</router-link>
+            <router-link to="/indexedDB" tag="li"><i class="fa fa-database"></i>indexedDB</router-link>
+            <router-link to="/share" tag="li"><i class="fa fa-share-alt"></i>share</router-link>
+            <router-link to="/imgLoad" tag="li"><i class="fa fa-file-image-o"></i>imgLoad</router-link>
+            <router-link to="/BMap" tag="li"><i class="fa fa-location-arrow"></i>BMap</router-link>
+            <router-link to="/transform" tag="li"><i class="fa fa-cube"></i>transform</router-link>
         </ul>
 
         <router-link to="/index">index</router-link>
@@ -22,6 +22,9 @@
             cursor: pointer;
             line-height: 1rem;
             margin-left: 1rem;
+            .fa {
+                margin-right: 5px;
+            }
         }
     }
 

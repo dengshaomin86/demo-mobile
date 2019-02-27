@@ -10,6 +10,9 @@ import './indexedDB'
 
 import './assets/sass/common.scss'
 
+// font-awesome
+import "font-awesome/scss/font-awesome.scss"
+
 // slide-verify
 import slideVerify from '../static/plugin/slide-verify'
 
@@ -28,9 +31,6 @@ autoTranslate.initData({
 });
 
 Vue.use(autoTranslate);
-
-// import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
-import 'font-awesome/css/font-awesome.min.css'
 
 // 生产提示
 Vue.config.productionTip = false;
