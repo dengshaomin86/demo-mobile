@@ -31,7 +31,7 @@
                 }
 
                 // 加载时是否显示默认图
-                if (this.showDefault) {
+                if (this.showDefault !== false && this.showDefaultFlag) {
                     this.FSrc = this.error || this.defaultSrc;
                 } else {
                     obj.onerror = () => {
@@ -40,12 +40,12 @@
                 }
             },
         },
-        props: ['src', 'error'],
+        props: ['src', 'error', 'showDefault'],
         data: function () {
             return {
                 FSrc: '',
                 defaultSrc: 'static/logo.png',
-                showDefault: true,
+                showDefaultFlag: true,
             }
         },
         mounted() {
