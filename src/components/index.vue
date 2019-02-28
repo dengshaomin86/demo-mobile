@@ -2,9 +2,11 @@
     <div class="tl-con">
         <h1>index</h1>
 
-        <ul class="list">
-            <li><i class="fas fa-sort-down"></i></li>
-        </ul>
+        <div class="slideBox">
+            <d-slide>
+                <d-slide-item v-for="(item, idx) in 3" :key="idx">{{item}}</d-slide-item>
+            </d-slide>
+        </div>
 
         <router-link to="/login">login</router-link>
         <router-link to="/mine">mine</router-link>
@@ -13,17 +15,14 @@
 </template>
 
 <style scoped lang="scss">
-    .list {
-        li {
-            cursor: pointer;
-            line-height: 1rem;
-            margin-left: 1rem;
-        }
-    }
-
     a {
         line-height: 1rem;
         margin-left: 1rem;
+    }
+
+    .slideBox {
+        width: 100%;
+        height: 200px;
     }
 
 </style>
