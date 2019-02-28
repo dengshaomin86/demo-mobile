@@ -8,6 +8,10 @@
             </d-slide>
         </div>
 
+        <div class="btnBox">
+            <button @click="submit" ref="btn">submit</button>
+        </div>
+
         <router-link to="/login">login</router-link>
         <router-link to="/mine">mine</router-link>
 
@@ -25,12 +29,41 @@
         height: 200px;
     }
 
+    .btnBox {
+        button {
+            display: block;
+            margin: 30px auto;
+            width: 70%;
+            height: 50px;
+            background-color: #1d1d41;
+            text-transform: uppercase;
+        }
+    }
+
 </style>
 
 <script>
     export default {
         name: "index",
-        methods: {},
+        methods: {
+            submit() {
+                axios.get('http://218.93.127.26:1111/api/v1/languageApi', {
+                    params: {
+                        cmd: 'getIsChineseNow',
+                        AppName: 'Web',
+                        _isAjax: true,
+                        LangID: 2,
+                        ScopeIDEq: 1,
+                        _: new Date().getTime(),
+                    },
+                    btn: this.$refs.btn,
+                }).then(function (res) {
+                    console.log(res);
+                }).catch(function (error) {
+                    console.log('error', error);
+                });
+            },
+        },
         data() {
             return {}
         },

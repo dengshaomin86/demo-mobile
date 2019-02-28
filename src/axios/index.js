@@ -8,6 +8,16 @@ axios.interceptors.request.use(function (config) {
         // console.log('loading start', config);
         Vue.prototype.$loading.show();
     }
+
+    // 按钮禁用
+    if (config.btn) {
+        console.log('btn disable', config.btn);
+        config.btn.setAttribute('disabled', true);
+        config.btn.setAttribute('data-text', config.btn.innerText);
+        config.btn.innerText = 'loading';
+        config.btn.style.opacity = '0.7';
+    }
+
     return config;
 }, function (error) {
     // 对请求错误做些什么
