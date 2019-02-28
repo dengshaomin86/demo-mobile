@@ -16,7 +16,7 @@ axios.interceptors.request.use(function (config) {
     if (btn) {
         btn.setAttribute('disabled', true);
         btn.setAttribute('data-text', btn.innerText);
-        btn.innerText = 'loading';
+        btn.innerText = config.btn.text || 'loading';
         btn.style.opacity = '0.7';
     }
 
