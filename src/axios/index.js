@@ -43,9 +43,14 @@ axios.interceptors.response.use(function (response) {
     return response
 }, function (error) {
     // 对响应错误做点什么
+    console.log(arguments);
     console.log('error', 'loading end', error);
     Vue.prototype.$loading.close();
     return Promise.reject(error)
 });
+
+function reqEnd(res) {
+
+}
 
 window.axios = axios;
