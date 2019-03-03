@@ -55,7 +55,7 @@ function reqEnd(res) {
         btn.style.opacity = '1';
     }
 
-    // toast
+    // toast（默认请求失败提示。true-请求成功提示；false-失败不提示）
     if (res.request.status === 200) {
         if (res.config && res.config.toast) {
             Vue.prototype.$toast({
