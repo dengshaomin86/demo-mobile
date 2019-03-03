@@ -1,4 +1,4 @@
-import component from './components/index.vue'
+import component from './components/toast'
 
 export default {
     install(Vue, options) {
@@ -13,14 +13,15 @@ export default {
             document.body.appendChild($vm.$el);
         }
 
-        Vue.prototype.$loading = {
-            show() {
-                $vm.flag = true;
-            },
-            hide() {
-                $vm.flag = false;
-            },
-        }
+        let Toast = () => {
+            $vm.flag = true;
+        };
+
+        Toast.hide = () => {
+            $vm.flag = false;
+        };
+
+        Vue.prototype.$toast = Toast;
 
     }
 }

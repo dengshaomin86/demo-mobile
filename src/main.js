@@ -13,6 +13,7 @@ import '../static/plugin/d-lazy-load'
 import "font-awesome/scss/font-awesome.scss"
 import slideVerify from '../static/plugin/slide-verify'
 import loading from '../static/plugin/d-loading'
+import toast from '../static/plugin/d-toast'
 import autoTranslate from '../static/plugin/auto-translate'
 
 autoTranslate.initData({
@@ -26,6 +27,7 @@ autoTranslate.initData({
 
 Vue.use(slideVerify);
 Vue.use(loading);
+Vue.use(toast);
 Vue.use(autoTranslate);
 
 // 生产提示

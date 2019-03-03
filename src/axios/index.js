@@ -45,7 +45,7 @@ axios.interceptors.response.use(function (response) {
 
 function reqEnd(res) {
     // loading
-    Vue.prototype.$loading.close();
+    Vue.prototype.$loading.hide();
 
     // 按钮解禁
     let btn = res.config.btn;
