@@ -57,10 +57,9 @@
                         _: new Date().getTime(),
                     },
                     btn: this.$refs.btn,
+                    toast: true,
                 }).then(function (res) {
-                    console.log(res);
                 }).catch(function (error) {
-                    console.log('error', error);
                 });
             },
         },
@@ -70,11 +69,6 @@
         mounted() {
         },
         activated() {
-            this.$toast({
-                text: 'toast',
-                type: 'correct',
-            });
-
         },
     }
 </script>

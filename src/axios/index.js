@@ -48,12 +48,32 @@ function reqEnd(res) {
     Vue.prototype.$loading.hide();
 
     // 按钮解禁
-    let btn = res.config.btn;
+    let btn = res.config && res.config.btn;
     if (btn) {
         btn.removeAttribute('disabled');
         btn.innerText = btn.getAttribute('data-text');
         btn.style.opacity = '1';
     }
+
+    // toast
+    if (res.request.status === 200) {
+        if (res.config && res.config.toast) {
+            if (res.data.message) {
+                Vue.prototype.$toast({
+                    text: res.data.message,
+                    type: 'correct',
+                });
+            } else {
+                console.warn('No message');
+            }
+        }
+    } else if (res.config && res.config.toast !== false) {
+        Vue.prototype.$toast({
+            text: res.message,
+            type: 'error',
+        });
+    }
+
 }
 
 window.axios = axios;
