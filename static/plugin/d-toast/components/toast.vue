@@ -1,6 +1,6 @@
 <template>
     <div class="d-toast" v-if="flag">
-        <div class="d-toast-con">
+        <div class="d-toast-con" @click="clickToHide">
             <i class="iconfont" :class="'icon-'+type" v-if="type"></i>
             <div class="d-toast-con-content" v-html="text"></div>
         </div>
@@ -51,11 +51,23 @@
             show() {
                 this.flag = true;
                 if (this.time) {
-                    setTimeout(() => {
+                    clearTimeout(this.timeOut);
+                    this.timeOut = setTimeout(() => {
                         this.flag = false;
                     }, this.time);
                 }
             },
+
+            // 双击关闭
+            clickToHide() {
+                let duration = new Date().getTime() - this.firstClick;
+                this.firstClick = new Date().getTime();
+                if (duration < 500) {
+                    clearTimeout(this.timeOut);
+                    this.flag = false;
+                }
+            },
+
         },
         data: function () {
             return {
@@ -63,6 +75,8 @@
                 text: '',
                 type: 'warn-rt', // 可选类型：correct/error/warn/warn-rt
                 time: 2000, // 持续时间
+                timeOut: null,
+                firstClick: 0,
             }
         },
         mounted() {
