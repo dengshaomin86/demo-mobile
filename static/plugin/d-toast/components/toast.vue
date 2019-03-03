@@ -49,6 +49,11 @@
         name: "d-toast",
         methods: {
             show() {
+                if (!this.text) {
+                    console.warn('No toast message');
+                    return
+                }
+
                 this.flag = true;
                 if (this.time) {
                     clearTimeout(this.timeOut);

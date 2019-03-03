@@ -58,14 +58,10 @@ function reqEnd(res) {
     // toast
     if (res.request.status === 200) {
         if (res.config && res.config.toast) {
-            if (res.data.message) {
-                Vue.prototype.$toast({
-                    text: res.data.message,
-                    type: 'correct',
-                });
-            } else {
-                console.warn('No message');
-            }
+            Vue.prototype.$toast({
+                text: res.data.message,
+                type: 'correct',
+            });
         }
     } else if (res.config && res.config.toast !== false) {
         Vue.prototype.$toast({
