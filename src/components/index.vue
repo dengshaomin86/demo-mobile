@@ -70,10 +70,10 @@
         mounted() {
         },
         activated() {
-            this.$toast();
-            setTimeout(() => {
-                this.$toast.hide();
-            }, 2000)
+            this.$toast({
+                text: 'toast',
+                type: 'correct',
+            });
 
         },
     }

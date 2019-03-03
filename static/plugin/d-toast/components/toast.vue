@@ -2,7 +2,7 @@
     <div class="d-toast" v-if="flag">
         <div class="d-toast-con">
             <i class="iconfont" :class="'icon-'+type" v-if="type"></i>
-            <div class="d-toast-con-content">introduction</div>
+            <div class="d-toast-con-content" v-html="text"></div>
         </div>
     </div>
 </template>
@@ -47,11 +47,22 @@
 <script>
     export default {
         name: "d-toast",
-        methods: {},
+        methods: {
+            show() {
+                this.flag = true;
+                if (this.time) {
+                    setTimeout(() => {
+                        this.flag = false;
+                    }, this.time);
+                }
+            },
+        },
         data: function () {
             return {
                 flag: false,
-                type: 'warn-rt', // correct/error/warn/warn-rt
+                text: '',
+                type: 'warn-rt', // 可选类型：correct/error/warn/warn-rt
+                time: 2000, // 持续时间
             }
         },
         mounted() {

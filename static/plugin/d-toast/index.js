@@ -13,8 +13,9 @@ export default {
             document.body.appendChild($vm.$el);
         }
 
-        let Toast = () => {
-            $vm.flag = true;
+        let Toast = (opts) => {
+            $vm = Object.assign($vm, opts);
+            $vm.show();
         };
 
         Toast.hide = () => {
