@@ -10,6 +10,7 @@ import './indexedDB'
 import './assets/sass/common.scss'
 import '../static/plugin/d-slide'
 import '../static/plugin/d-lazy-load'
+import "./assets/fontawesome-free-5.7.2-web/css/all.css"
 import "font-awesome/scss/font-awesome.scss"
 import slideVerify from '../static/plugin/slide-verify'
 import loading from '../static/plugin/d-loading'
