@@ -66,4 +66,5 @@ h1 {
 
 .slide-into-enter-active, .slide-into-leave-active, .slide-back-enter-active, .slide-back-leave-active {
   transition: 0.3s;
+  position: absolute;
 }
