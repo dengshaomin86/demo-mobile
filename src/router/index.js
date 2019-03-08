@@ -9,6 +9,7 @@ import share from '@/components/share'
 import imgLoad from '@/components/imgLoad'
 import BMap from '@/components/BMap'
 import transform from '@/components/transform'
+import loadingStyle from '@/components/loadingStyle'
 
 Vue.use(Router);
 
@@ -88,6 +89,14 @@ let router = new Router({
             component: transform,
             meta: {
                 title: 'transform',
+            },
+        },
+        {
+            path: '/loadingStyle',
+            name: 'loadingStyle',
+            component: loadingStyle,
+            meta: {
+                title: 'loadingStyle',
             },
         },
         {
