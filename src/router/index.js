@@ -10,6 +10,7 @@ import imgLoad from '@/components/imgLoad'
 import BMap from '@/components/BMap'
 import transform from '@/components/transform'
 import loadingStyle from '@/components/loadingStyle'
+import computed from '@/components/computed'
 
 Vue.use(Router);
 
@@ -97,6 +98,14 @@ let router = new Router({
             component: loadingStyle,
             meta: {
                 title: 'loadingStyle',
+            },
+        },
+        {
+            path: '/computed',
+            name: 'computed',
+            component: computed,
+            meta: {
+                title: 'computed',
             },
         },
         {

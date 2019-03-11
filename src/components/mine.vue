@@ -3,13 +3,7 @@
         <h1>mine</h1>
 
         <ul class="list fa-ul">
-            <router-link tag="li" to="/translate"><i class="fa fa-globe fa-fw fa-li"></i>translate</router-link>
-            <router-link tag="li" to="/indexedDB"><i class="fa fa-database fa-fw fa-li"></i>indexedDB</router-link>
-            <router-link tag="li" to="/share"><i class="fa fa-share-alt fa-fw fa-li"></i>share</router-link>
-            <router-link tag="li" to="/imgLoad"><i class="fa fa-file-image-o fa-fw fa-li"></i>imgLoad</router-link>
-            <router-link tag="li" to="/BMap"><i class="fa fa-location-arrow fa-fw fa-li"></i>BMap</router-link>
-            <router-link tag="li" to="/transform"><i class="fa fa-cube fa-fw fa-li"></i>transform</router-link>
-            <router-link tag="li" to="/loadingStyle"><i class="fa fa-cube fa-fw fa-li"></i>loadingStyle</router-link>
+            <router-link tag="li" :to="item" v-for="(item, idx) in list" :key="idx"><i class="fa fa-globe fa-fw fa-li"></i>{{item}}</router-link>
         </ul>
 
         <router-link to="/index">index</router-link>
@@ -65,7 +59,18 @@
             },
         },
         data() {
-            return {}
+            return {
+                list: [
+                    'translate',
+                    'indexedDB',
+                    'share',
+                    'imgLoad',
+                    'BMap',
+                    'transform',
+                    'loadingStyle',
+                    'computed',
+                ],
+            }
         },
         mounted() {
         },
