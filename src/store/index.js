@@ -1,6 +1,9 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.prototype.$local = {
+Vue.use(Vuex);
+
+const $local = {
     key: "app-data",
     set(key, data) {
         let $data = localStorage.getItem(this.key);
@@ -21,3 +24,5 @@ Vue.prototype.$local = {
         localStorage.setItem(this.key, JSON.stringify($data));
     }
 };
+
+Vue.prototype.$local = $local;
