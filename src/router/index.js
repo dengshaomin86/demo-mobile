@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/components/index'
+// tab
+import tab from '@/components/tab/tab'
+import index from '@/components/tab/index'
+import mine from '@/components/tab/mine'
+
 import login from '@/components/login'
-import mine from '@/components/mine'
 import translate from '@/components/translate'
 import indexedDB from '@/components/indexedDB'
 import share from '@/components/share'
@@ -29,20 +32,28 @@ let router = new Router({
             },
         },
         {
-            path: '/index',
-            name: 'index',
-            component: index,
-            meta: {
-                title: 'index',
-            },
-        },
-        {
-            path: '/mine',
-            name: 'mine',
-            component: mine,
-            meta: {
-                title: 'mine',
-            },
+            path: '/tab',
+            redirect: '/index',
+            name: 'tab',
+            component: tab,
+            children: [
+                {
+                    path: '/index',
+                    name: 'index',
+                    component: index,
+                    meta: {
+                        title: 'index',
+                    },
+                },
+                {
+                    path: '/mine',
+                    name: 'mine',
+                    component: mine,
+                    meta: {
+                        title: 'mine',
+                    },
+                },
+            ]
         },
         {
             path: '/translate',
