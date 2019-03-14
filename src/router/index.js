@@ -118,7 +118,7 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
     // 如果设置标题，拦截后设置标题
     if (to.meta.title) {
-        document.title = to.meta.title
+        document.title = to.meta.title.toUpperCase()
     }
     next()
 });
