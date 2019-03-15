@@ -69,6 +69,7 @@
                     'transform',
                     'loadingStyle',
                     'computed',
+                    'svg',
                 ],
             }
         },

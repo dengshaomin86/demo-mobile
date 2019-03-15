@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <transition name="slide-into">
+        <transition :name="transition">
             <keep-alive>
                 <router-view></router-view>
             </keep-alive>

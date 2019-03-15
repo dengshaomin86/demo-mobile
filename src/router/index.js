@@ -14,6 +14,7 @@ import BMap from '@/components/BMap'
 import transform from '@/components/transform'
 import loadingStyle from '@/components/loadingStyle'
 import computed from '@/components/computed'
+import svg from '@/components/svg'
 
 Vue.use(Router);
 
@@ -120,6 +121,14 @@ let router = new Router({
             },
         },
         {
+            path: '/svg',
+            name: 'svg',
+            component: svg,
+            meta: {
+                title: 'svg',
+            },
+        },
+        {
             path: '*',
             redirect: '/',
         },
@@ -131,11 +140,20 @@ router.beforeEach((to, from, next) => {
     if (to.meta.title) {
         document.title = to.meta.title.toUpperCase()
     }
+
+    // 重置transition
+    setTimeout(() => {
+        Vue.prototype.transition = "slide-into";
+    });
+
     next()
 });
 
 Vue.prototype.$back = () => {
+    Vue.prototype.transition = "slide-back";
     return router.back()
 };
+
+Vue.prototype.transition = "slide-into";
 
 export default router
