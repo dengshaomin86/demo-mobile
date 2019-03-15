@@ -1,20 +1,30 @@
 <template>
     <div class="tl-con">
-        <h1>computed</h1>
+        <v-header>
+            <h1>computed</h1>
+        </v-header>
 
-        <router-link to="/mine">mine</router-link>
-        <a @click="$back">back</a>
-
-        <div>
-            <input type="text" v-model="amount">
-            <input type="text" v-model="amountCalc">
-        </div>
+        <main>
+            <div>
+                <input type="text" v-model="amount">
+                <input type="text" v-model="amountCalc" disabled>
+            </div>
+        </main>
 
     </div>
 </template>
 
 <style scoped lang="scss">
+    input {
+        border: 1px solid #ccc;
+        &:focus {
+            border-color: #ffb516;
+        }
+    }
 
+    main {
+        padding: 15px;
+    }
 </style>
 
 <script>
@@ -24,6 +34,7 @@
         data() {
             return {
                 amount: '',
+                list: [],
             }
         },
         mounted() {
@@ -32,7 +43,7 @@
         },
         computed: {
             amountCalc: function () {
-                return this.amount + 'aaaaaaaa'
+                return this.amount + 'computed'
             }
         },
     }

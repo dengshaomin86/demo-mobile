@@ -1,6 +1,8 @@
 <template>
     <div class="tl-con">
-        <h1>loading-style</h1>
+        <v-header>
+            <h1>loading-style</h1>
+        </v-header>
 
         <div style="width: 60px;height: 60px;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-pacman">
