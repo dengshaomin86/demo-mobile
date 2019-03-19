@@ -31,7 +31,6 @@
     }
 
     .slide-con {
-        max-width: 100%;
         margin: auto;
         overflow: hidden;
         position: relative;
@@ -69,6 +68,7 @@
             }
         }
     }
+
 </style>
 
 <script>
