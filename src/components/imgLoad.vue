@@ -6,6 +6,9 @@
             <li v-for="item in imgList">
                 <d-lazy-load :src="item.path" :error="error"></d-lazy-load>
             </li>
+            <li>
+                <d-lazy-load :src="path" :error="error"></d-lazy-load>
+            </li>
         </ul>
 
         <router-link to="/mine">mine</router-link>
@@ -57,13 +60,20 @@
                     {
                         path: 'http://45.120.45.138:8220/userfiles/37/ad/20190127-143209-033371111.png',
                     },
+                    {
+                        path: 'http://run.techmmvv.com/userfiles/18/im/normal/20190319-181134-46072.jpg',
+                    },
                 ],
+                path: '',
                 error: require('../assets/images/logo/logo.png'),
             }
         },
         mounted() {
         },
         activated() {
+            setTimeout(() => {
+                this.path = "http://run.techmmvv.com/userfiles/18/im/normal/20190319-181134-46072.jpg";
+            }, 1)
         },
     }
 </script>

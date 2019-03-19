@@ -54,6 +54,16 @@
                 });
             },
 
+            getData() {
+                axios.get('/node/users/info', {
+                    params: {
+                        id: 3
+                    },
+                }).then(function (res) {
+                    console.log(res);
+                })
+            },
+
         },
         data() {
             return {}
@@ -61,6 +71,7 @@
         mounted() {
         },
         activated() {
+            this.getData();
         },
     }
 </script>
