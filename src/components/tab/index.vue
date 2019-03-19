@@ -2,11 +2,7 @@
     <div class="tl-con">
         <h1>index</h1>
 
-        <div class="slideBox">
-            <d-slide>
-                <d-slide-item v-for="(item, idx) in 3" :key="idx">{{item}}</d-slide-item>
-            </d-slide>
-        </div>
+        <v-slide class="slide"></v-slide>
 
         <div class="btnBox">
             <button @click="submit" ref="btn">submit</button>
@@ -19,13 +15,8 @@
 </template>
 
 <style scoped lang="scss">
-    a {
-        line-height: 1rem;
-        margin-left: 1rem;
-    }
-
-    .slideBox {
-        width: 100%;
+    .slide {
+        width: 300px;
         height: 200px;
     }
 
@@ -62,6 +53,7 @@
                 }).catch(function (error) {
                 });
             },
+
         },
         data() {
             return {}
