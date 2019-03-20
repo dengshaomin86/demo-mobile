@@ -8,7 +8,7 @@
 </template>
 
 <style scoped lang="scss">
-    @import "./iconfont/iconfont.css";
+    @import "iconfont/iconfont.css";
 
     .d-toast {
         position: fixed;

@@ -51,5 +51,12 @@
         mounted() {
             this.judgeImg();
         },
+        watch: {
+            src: function (n, o) {
+                if (n) {
+                    this.judgeImg();
+                }
+            }
+        }
     }
 </script>

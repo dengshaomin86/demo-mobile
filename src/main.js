@@ -10,13 +10,12 @@ import './store'
 import './indexedDB'
 import './components/section'
 import './assets/sass/common.scss'
-import '../static/plugin/d-slide'
-import '../static/plugin/d-lazy-load'
+import '../static/plugin/DUI/d-slide'
+import '../static/plugin/DUI/d-lazy-load'
 import "./assets/fontawesome-free-5.7.2-web/css/all.css"
 import "font-awesome/scss/font-awesome.scss"
 import slideVerify from '../static/plugin/slide-verify'
-import loading from '../static/plugin/d-loading'
-import toast from '../static/plugin/d-toast'
+import {$loading, $toast} from '../static/plugin/DUI'
 import autoTranslate from '../static/plugin/auto-translate'
 
 autoTranslate.initData({
@@ -29,8 +28,8 @@ autoTranslate.initData({
 });
 
 Vue.use(slideVerify);
-Vue.use(loading);
-Vue.use(toast);
+Vue.use($loading);
+Vue.use($toast);
 Vue.use(autoTranslate);
 
 /**
