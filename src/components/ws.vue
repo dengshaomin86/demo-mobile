@@ -70,7 +70,10 @@
         methods: {
             pageInit() {
                 ws.message = this.message;
-                ws.connect();
+                ws.connect({
+                    id: 1,
+                    name: "user1"
+                });
             },
 
             send() {
@@ -79,10 +82,16 @@
                     content: this.content,
                 });
                 ws.send(this.content);
+                this.content = "";
             },
 
-            message(data) {
-                console.log('msg', data);
+            message(msg) {
+                console.log('msg', msg);
+                let data = JSON.parse(msg.data);
+                this.list.push({
+                    type: 'g',
+                    content: data.content,
+                });
             },
 
         },

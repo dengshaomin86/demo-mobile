@@ -1,8 +1,9 @@
 const ws = {
     main: null,
-    url: 'localhost:8085?name=d001',
-    connect() {
-        this.main = new WebSocket('ws://' + this.url);
+    url: 'ws://localhost:8085',
+    connect(data) {
+        let params = data ? '?id=' + data.id + '&name=' + data.name : '';
+        this.main = new WebSocket(this.url + params);
         this.main.onopen = this.open;
         this.main.onmessage = this.message;
         this.main.onerror = this.error;
