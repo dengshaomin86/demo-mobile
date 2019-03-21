@@ -15,6 +15,7 @@ import transform from '@/components/transform'
 import loadingStyle from '@/components/loadingStyle'
 import computed from '@/components/computed'
 import svg from '@/components/svg'
+import ws from '@/components/ws'
 
 Vue.use(Router);
 
@@ -126,6 +127,14 @@ let router = new Router({
             component: svg,
             meta: {
                 title: 'svg',
+            },
+        },
+        {
+            path: '/ws',
+            name: 'ws',
+            component: ws,
+            meta: {
+                title: 'ws',
             },
         },
         {
