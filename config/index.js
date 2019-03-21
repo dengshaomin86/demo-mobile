@@ -11,13 +11,13 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
-            '/api': {//接口
-                target: 'http://api.fanyi.baidu.com',//要访问的源
-                changeOrigin: true //允许跨域
+            '/api': {
+                target: 'http://api.fanyi.baidu.com', // 要访问的源
+                changeOrigin: true // 允许跨域
             },
-            '/node': {//接口
-                target: 'http://localhost:3000',//要访问的源
-                changeOrigin: true, //允许跨域
+            '/node': {
+                target: 'http://localhost:3000',
+                changeOrigin: true,
                 pathRewrite: {
                     '^/node': ''
                 }

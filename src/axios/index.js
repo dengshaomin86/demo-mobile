@@ -1,10 +1,22 @@
 import Vue from 'vue'
 import axios from 'axios'
 
+const servers = process.env.servers;
+Vue.prototype.servers = servers;
+console.log(servers);
+
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
     // console.log('request start', config);
+
+    console.log(config);
+    console.log(config.url);
+    // url
+    console.log(config.server);
+    config.url = servers[config.server || 'host'] + config.url;
+
+    console.log(config.url);
 
     // loading
     if (config.loading !== false) {
