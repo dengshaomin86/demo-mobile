@@ -12,46 +12,26 @@
 </template>
 
 <style scoped lang="scss">
-    main {
-        padding: 15px;
-    }
+
 </style>
 
 <script>
+    import ws from './../ws'
+
     export default {
         name: "ws",
         methods: {
-            wsInit() {
-                let url = 'ws://redpacket_chat.techmmvv.com/chat/v2';
-                // let url = 'ws://localhost:8085?name=d001';
-                this.ws = new WebSocket(url);
-                // 客户端接收消息
-                this.ws.onopen = (event) => {
-                    console.log('onopen');
-                    // this.ws.send('abc');
-                };
-                this.ws.onmessage = (event) => {
-                    console.log('onmessage', event);
-                };
-                // 出错
-                this.ws.onerror = (error) => {
-                    console.log(error);
-                };
-                // 关闭
-                this.ws.onclose = () => {
-                    console.log('webSocket断开连接')
-                }
+            pageInit() {
+                ws.connect();
             },
         },
         data() {
-            return {
-                ws: null,
-            }
+            return {}
         },
         mounted() {
         },
         activated() {
-            this.wsInit();
+            this.pageInit();
         },
     }
 </script>
