@@ -70,6 +70,7 @@
                     'loadingStyle',
                     'computed',
                     'svg',
+                    'ws',
                 ],
             }
         },

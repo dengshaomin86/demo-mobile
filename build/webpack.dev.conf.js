@@ -91,7 +91,7 @@ module.exports = new Promise((resolve, reject) => {
                     : undefined
             }))
 
-            // open
+            // browser open
             cp.exec('start chrome http://localhost:' + port)
 
             resolve(devWebpackConfig)
