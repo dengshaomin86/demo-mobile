@@ -9,6 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
+const cp = require('child_process')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -89,6 +90,9 @@ module.exports = new Promise((resolve, reject) => {
                     ? utils.createNotifierCallback()
                     : undefined
             }))
+
+            // browser open
+            cp.exec('start chrome http://localhost:' + port)
 
             resolve(devWebpackConfig)
         }

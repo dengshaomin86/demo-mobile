@@ -11,6 +11,11 @@ axios.interceptors.request.use(function (config) {
         Vue.prototype.$loading.show();
     }
 
+    // params
+    config.params = Object.assign({
+        _t: new Date().getTime()
+    }, config.params);
+
     // 按钮禁用
     let btn = config.btn;
     if (btn) {
