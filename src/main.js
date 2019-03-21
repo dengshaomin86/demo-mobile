@@ -32,6 +32,12 @@ Vue.use($loading);
 Vue.use($toast);
 Vue.use(autoTranslate);
 
+/**
+ * process.env.NODE_ENV
+ * dev: development
+ * build: production
+ */
+
 // 生产提示
 Vue.config.productionTip = false;
 
