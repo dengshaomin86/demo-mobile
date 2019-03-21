@@ -14,6 +14,9 @@ const ws = {
     message(data) {
         console.log('msg', data);
     },
+    send(data) {
+        this.main.send(data);
+    },
     error(error) {
         console.log(error);
     },
