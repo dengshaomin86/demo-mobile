@@ -12,6 +12,10 @@
 </template>
 
 <style scoped lang="scss">
+    h1 {
+        text-transform: uppercase;
+    }
+
     .list {
         margin: 0;
         li {
@@ -38,27 +42,7 @@
 <script>
     export default {
         name: "mine",
-        methods: {
-            languageApi() {
-                axios.get('http://218.93.127.26:1111/api/v1/languageApi', {
-                    params: {
-                        cmd: 'getIsChineseNow',
-                        AppName: 'Web',
-                        _isAjax: true,
-                        LangID: 2,
-                        ScopeIDEq: 1,
-                        _: new Date().getTime(),
-                    },
-                    // loading: false,
-                    server: "static",
-                }).then(function (res) {
-                    console.log(res);
-                }).catch(function (error) {
-                    console.log('error', error);
-                });
-
-            },
-        },
+        methods: {},
         data() {
             return {
                 list: [
@@ -78,7 +62,6 @@
         mounted() {
         },
         activated() {
-            this.languageApi();
         },
     }
 </script>
