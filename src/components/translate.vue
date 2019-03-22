@@ -1,6 +1,8 @@
 <template>
     <div class="tl-con">
-        <h1>translate</h1>
+        <v-header>
+            <h1>translate</h1>
+        </v-header>
 
         <ul class="list">
             <li>
@@ -10,9 +12,6 @@
             <li v-text="echo('自动百度翻译，优先本地语言库')"></li>
             <li v-text="echo(text)"></li>
         </ul>
-
-        <router-link to="/login">login</router-link>
-        <router-link to="/mine">mine</router-link>
 
     </div>
 </template>
@@ -24,11 +23,6 @@
             line-height: 1rem;
             margin-left: 1rem;
         }
-    }
-
-    a {
-        line-height: 1rem;
-        margin-left: 1rem;
     }
 
 </style>
