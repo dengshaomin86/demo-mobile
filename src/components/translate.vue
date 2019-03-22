@@ -73,6 +73,7 @@
             getLangList() {
                 axios.get('static/language/langList.json', {
                     loading: false,
+                    server: "static",
                 }).then((res) => {
                     console.log(res);
                     this.langList = res.data.list;
@@ -91,7 +92,7 @@
             }
         },
         mounted() {
-            // this.getLangList();
+            this.getLangList();
         },
         activated() {
         },

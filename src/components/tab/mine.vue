@@ -50,6 +50,7 @@
                         _: new Date().getTime(),
                     },
                     // loading: false,
+                    server: "static",
                 }).then(function (res) {
                     console.log(res);
                 }).catch(function (error) {
