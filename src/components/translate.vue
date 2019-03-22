@@ -62,7 +62,7 @@
                         salt: salt,  // 随机数
                         sign: md5(sign),  // 签名 appid+q+salt+密钥 的MD5值
                     },
-                    server: 'translate'
+                    server: 'translate',
                 }).then((res) => {
                     console.log(res);
                     this.translateText = res.data.trans_result[0].dst;

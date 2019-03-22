@@ -4,13 +4,17 @@ import axios from 'axios'
 const servers = process.env.servers;
 Vue.prototype.servers = servers;
 
+// default opts
+// axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '' : '';
+
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
     // console.log('request start', config);
 
     // url
-    config.url = servers[config.server || 'host'] + config.url;
+    axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '' : servers[config.server || 'host'];
+    // config.url = servers[config.server || 'host'] + config.url;
 
     // loading
     if (config.loading !== false) {
