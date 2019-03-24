@@ -5,13 +5,20 @@
         </v-header>
 
         <main>
+            <div class="users">
+                <p>选择用户：</p>
+                <ul>
+                    <li :class="{'active':user.id===item.id}" v-for="(item,idx) in users" :key="idx" @click="user=item">{{item.name}}</li>
+                </ul>
+            </div>
+
             <div class="textarea-con">
                 <textarea v-model="content"></textarea>
                 <button @click="send">send</button>
             </div>
 
             <ul class="list">
-                <li :class="{'r':item.type==='m'}" v-for="(item,idx) in list" :key="idx">
+                <li :class="{'r':item.from.id===user.id}" v-for="(item,idx) in list" :key="idx">
                     <p>{{item.content}}</p>
                 </li>
             </ul>
@@ -21,6 +28,34 @@
 </template>
 
 <style scoped lang="scss">
+    ul {
+        list-style: none;
+    }
+
+    .users {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        p {
+            margin-right: 15px;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                margin-right: 15px;
+                padding: 5px 10px;
+                &.active {
+                    background-color: #3f51b5;
+                    transition: 0.5s;
+                }
+                &:active {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
     .textarea-con {
         padding: 15px;
         textarea {
@@ -69,29 +104,31 @@
         name: "ws",
         methods: {
             pageInit() {
+                this.user = this.users[0];
+
                 ws.message = this.message;
-                ws.connect({
-                    id: 1,
-                    name: "user1"
-                });
+                ws.connect(this.user);
             },
 
             send() {
-                this.list.push({
-                    type: 'm',
+                let to = this.users.filter(item => {
+                    return item.id !== this.user.id
+                })[0];
+
+                let data = {
+                    from: this.user,
+                    to: to,
                     content: this.content,
-                });
-                ws.send(this.content);
+                };
+                this.list.push(data);
+                ws.send(JSON.stringify(data));
                 this.content = "";
             },
 
             message(msg) {
                 console.log('msg', msg);
                 let data = JSON.parse(msg.data);
-                this.list.push({
-                    type: 'g',
-                    content: data.content,
-                });
+                this.list.push(data);
             },
 
         },
@@ -99,6 +136,17 @@
             return {
                 content: '',
                 list: [],
+                users: [
+                    {
+                        id: 1,
+                        name: 'user1',
+                    },
+                    {
+                        id: 2,
+                        name: 'user2',
+                    }
+                ],
+                user: {},
             }
         },
         mounted() {
