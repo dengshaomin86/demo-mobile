@@ -16,6 +16,7 @@ import loadingStyle from '@/components/loadingStyle'
 import computed from '@/components/computed'
 import svg from '@/components/svg'
 import ws from '@/components/ws'
+import font from '@/components/font'
 
 Vue.use(Router);
 
@@ -135,6 +136,14 @@ let router = new Router({
             component: ws,
             meta: {
                 title: 'ws',
+            },
+        },
+        {
+            path: '/font',
+            name: 'font',
+            component: font,
+            meta: {
+                title: 'font',
             },
         },
         {

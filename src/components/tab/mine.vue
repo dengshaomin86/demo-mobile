@@ -56,6 +56,7 @@
                     'computed',
                     'svg',
                     'ws',
+                    'font',
                 ],
             }
         },
