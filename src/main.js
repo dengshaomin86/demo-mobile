@@ -30,7 +30,7 @@ autoTranslate.initData({
 Vue.use(slideVerify);
 Vue.use($loading);
 Vue.use($toast);
-Vue.use(autoTranslate);
+// Vue.use(autoTranslate);
 
 /**
  * process.env.NODE_ENV

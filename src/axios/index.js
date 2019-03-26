@@ -48,7 +48,7 @@ axios.interceptors.response.use(function (response) {
     // console.log(arguments);
     reqEnd(arguments[0]);
 
-    return response
+    return response.data
 }, function (error) {
     // 对响应错误做点什么
     // console.log('error', 'loading end', error);
