@@ -146,7 +146,7 @@
 
             // zh
             getData() {
-                axios.get('static/language/1.json', {
+                axios.get('static/language/zh.json', {
                     loading: false,
                     server: "static",
                 }).then((res) => {
@@ -212,6 +212,17 @@
                 return text
             },
 
+            // 对象属性排序
+            objKeySort(obj) {
+                //先用Object内置类的keys方法获取要排序对象的属性名，再利用Array原型上的sort方法对获取的属性名进行排序，newkey是一个数组
+                let newkey = Object.keys(obj).sort();
+                let newObj = {}; // 创建一个新的对象，用于存放排好序的键值对
+                for (let i = 0; i < newkey.length; i++) {
+                    newObj[newkey[i]] = obj[newkey[i]]; // 向新创建的对象中按照排好的顺序依次增加键值对
+                }
+                return newObj
+            },
+
             chooseLang(item) {
                 this.trLang = item;
             },
@@ -236,6 +247,18 @@
         },
         mounted() {
             this.getLangList();
+            let obj = {
+                abc: '123',
+                dbc: '123',
+                cbc: '123',
+                bbc: {
+                    abc: '123',
+                    dbc: '123',
+                    cbc: '123',
+                },
+                123: '123',
+            };
+            console.log(this.objKeySort(obj));
             // this.getData();
         },
         activated() {
