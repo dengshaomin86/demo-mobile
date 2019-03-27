@@ -81,7 +81,9 @@
     "transfer23": "今日新增",
     "transfer24": "人",
     "transfer25": "团队",
-    "transfer26": "实时累计："
+    "transfer26": "实时累计：",
+    "transfer27": "接收人手机号后{num}位",
+    "transfer28": "请输入接收人手机号后{num}位"
   },
   "addAddress": {
     "addAddress1": "添加地址",
@@ -287,7 +289,11 @@
     "exchange8": "可获得",
     "exchange9": "获得股权基金数量：",
     "exchange10": "确认兑换",
-    "exchange11": "兑换"
+    "exchange11": "兑换",
+    "exchange12": "关于兑换汇率",
+    "exchange13": "1、兑换功能不收取任何手续费；",
+    "exchange14": "2、兑换汇率取自火币、币安以及OKEX三大交易所汇率均价。在币价稳定的行情下，双向兑换汇率损失不超过0.5%；",
+    "exchange15": "3、由于汇率跟随行情实时波动，在币价波动较大的行情下，双向操作可能造成单边资产显著增多或缩水，请用户悉知。"
   },
   "team_bill": {
     "team_bill1": "团队业绩",

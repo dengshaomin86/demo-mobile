@@ -19,7 +19,7 @@
                 <p>{{targetLang.value}}({{targetLang.key}})</p>
             </div>
             <button @click="getData">翻译</button>
-            <textarea v-model="translateDataStr"></textarea>
+            <!--<textarea v-model="translateDataStr"></textarea>-->
             <textarea v-model="objSortStr"></textarea>
         </div>
 
