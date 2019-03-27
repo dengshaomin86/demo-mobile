@@ -153,6 +153,8 @@
                 }).then((res) => {
                     console.log(res);
                     if (typeof res === 'object') {
+                        this.translateOldData = res;
+
                         for (let v1 in res) {
 
                             switch (typeof res[v1]) {
@@ -202,11 +204,13 @@
                     this.translateData[v1] = this.translateData[v1] || {};
                     this.translateData[v1][v2] = this.capitalize(res.trans_result[0].dst);
                     this.translateDataStr = JSON.stringify(this.translateData);
-                    this.objSortStr = JSON.stringify(this.keySort(this.translateData));
+                    // this.objSortStr = JSON.stringify(this.keySort(this.translateData));
+                    this.objSortStr = JSON.stringify(this.keySortOld(this.translateOldData, this.translateData));
 
                 })
             },
 
+            // 首字母大写
             capitalize(text) {
                 if (text && typeof text === 'string') {
                     text = text.substr(0, 1).toUpperCase() + text.substr(1)
@@ -241,6 +245,34 @@
 
             },
 
+            // 按原来属性顺序排序
+            keySortOld(oldObj, data) {
+                let NewObj = {};
+                for (let key in oldObj) {
+
+                    switch (typeof oldObj[key]) {
+                        case "string":
+                            NewObj[key] = data[key];
+                            break;
+                        case "object":
+                            NewObj[key] = {};
+                            let obj2nd = oldObj[key];
+                            for (let key2nd in obj2nd) {
+                                switch (typeof obj2nd[key2nd]) {
+                                    case "string":
+                                        NewObj[key][key2nd] = data[key] ? data[key][key2nd] : undefined;
+                                        break;
+                                    case "object":
+                                        break;
+                                }
+                            }
+                            break;
+                    }
+
+                }
+                return NewObj
+            },
+
             chooseLang(item) {
                 this.trLang = item;
             },
@@ -253,6 +285,7 @@
                 langList: [],
                 text: '还好',
 
+                translateOldData: {},
                 translateData: {},
                 translateDataStr: '',
 
