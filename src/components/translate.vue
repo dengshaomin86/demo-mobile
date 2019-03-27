@@ -16,7 +16,7 @@
         <div class="tr-con">
             <div class="choose" @click="chooseFlag=true">
                 <p>选择目标语言</p>
-                <p>{{trLang.value}}({{trLang.key}})</p>
+                <p>{{targetLang.value}}({{targetLang.key}})</p>
             </div>
             <button @click="getData">翻译</button>
             <textarea v-model="translateDataStr"></textarea>
@@ -26,7 +26,7 @@
         <template v-if="chooseFlag">
             <div class="language-con" @click="chooseFlag=false">
                 <ul class="language-con-list" @click.stop>
-                    <li :class="{'active':trLang.key===item.key}" v-for="(item, idx) in langList" :key="idx" @click="chooseLang(item)">{{item.value}}</li>
+                    <li :class="{'active':targetLang.key===item.key}" v-for="(item, idx) in langList" :key="idx" @click="chooseLang(item)">{{item.value}}</li>
                 </ul>
             </div>
         </template>
@@ -154,6 +154,9 @@
                     console.log(res);
                     if (typeof res === 'object') {
                         this.translateOldData = res;
+                        this.objLength = this.getObjLength(res);
+                        console.log('objLength', this.objLength);
+                        this.translateSecond = 0;
 
                         for (let v1 in res) {
 
@@ -192,7 +195,7 @@
                     params: {
                         q: q,  // 请求翻译query
                         from: 'zh',  // 翻译源语言
-                        to: this.trLang.key || 'en',  // 译文语言
+                        to: this.targetLang.key || 'en',  // 译文语言
                         appid: appID,  // APP ID
                         salt: salt,  // 随机数
                         sign: md5(sign),  // 签名 appid+q+salt+密钥 的MD5值
@@ -203,9 +206,14 @@
                     // console.log(res.trans_result[0].dst);
                     this.translateData[v1] = this.translateData[v1] || {};
                     this.translateData[v1][v2] = this.capitalize(res.trans_result[0].dst);
-                    this.translateDataStr = JSON.stringify(this.translateData);
-                    // this.objSortStr = JSON.stringify(this.keySort(this.translateData));
-                    this.objSortStr = JSON.stringify(this.keySortOld(this.translateOldData, this.translateData));
+
+                    this.translateSecond++;
+                    if (this.translateSecond === this.objLength) {
+                        console.log('end');
+                        this.translateDataStr = JSON.stringify(this.translateData);
+                        // this.objSortStr = JSON.stringify(this.keySort(this.translateData));
+                        this.objSortStr = JSON.stringify(this.keySortOld(this.translateOldData, this.translateData));
+                    }
 
                 })
             },
@@ -273,8 +281,36 @@
                 return NewObj
             },
 
+            // 获取对象长度
+            getObjLength(obj) {
+                let length = 0;
+                for (let key in obj) {
+                    switch (typeof obj[key]) {
+                        case "string":
+                            length++;
+                            break;
+                        case "object":
+                            let obj2nd = obj[key];
+                            for (let key2nd in obj2nd) {
+                                switch (typeof obj2nd[key2nd]) {
+                                    case "string":
+                                        length++;
+                                        break;
+                                    case "object":
+                                        break;
+                                }
+                            }
+                            break;
+                    }
+                }
+
+                return length
+
+            },
+
+            // 选择翻译目标语言
             chooseLang(item) {
-                this.trLang = item;
+                this.targetLang = item;
             },
 
         },
@@ -290,12 +326,14 @@
                 translateDataStr: '',
 
                 chooseFlag: false,
-                trLang: {
+                targetLang: {
                     key: "en",
                     value: "英语"
                 },
 
                 objSortStr: '',
+                objLength: 0,
+                translateSecond: 0,
             }
         },
         mounted() {
