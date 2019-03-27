@@ -20,6 +20,7 @@
             </div>
             <button @click="getData">翻译</button>
             <textarea v-model="translateDataStr"></textarea>
+            <textarea v-model="objSortStr"></textarea>
         </div>
 
         <template v-if="chooseFlag">
@@ -139,14 +140,14 @@
                     loading: false,
                     server: "static",
                 }).then((res) => {
-                    console.log(res);
+                    // console.log(res);
                     this.langList = res.list;
                 })
             },
 
             // zh
             getData() {
-                axios.get('static/language/zh.json', {
+                axios.get('static/language/1.json', {
                     loading: false,
                     server: "static",
                 }).then((res) => {
@@ -200,7 +201,8 @@
                     // console.log(res.trans_result[0].dst);
                     this.translateData[v1] = this.translateData[v1] || {};
                     this.translateData[v1][v2] = this.capitalize(res.trans_result[0].dst);
-                    this.translateDataStr = JSON.stringify(this.translateData)
+                    this.translateDataStr = JSON.stringify(this.translateData);
+                    this.objSortStr = JSON.stringify(this.keySort(this.translateData));
 
                 })
             },
@@ -213,14 +215,30 @@
             },
 
             // 对象属性排序
-            objKeySort(obj) {
-                //先用Object内置类的keys方法获取要排序对象的属性名，再利用Array原型上的sort方法对获取的属性名进行排序，newkey是一个数组
-                let newkey = Object.keys(obj).sort();
-                let newObj = {}; // 创建一个新的对象，用于存放排好序的键值对
-                for (let i = 0; i < newkey.length; i++) {
-                    newObj[newkey[i]] = obj[newkey[i]]; // 向新创建的对象中按照排好的顺序依次增加键值对
+            keySort(obj) {
+                let NewKey = Object.keys(obj).sort();
+                let NewObj = {};
+                NewKey.forEach(item => {
+                    NewObj[item] = obj[item];
+                });
+
+                // 二级排序
+                for (let key in NewObj) {
+                    let obj2nd = NewObj[key];
+                    switch (typeof obj2nd) {
+                        case "object":
+                            let NewKey2nd = Object.keys(obj2nd).sort();
+                            let NewObj2nd = {};
+                            NewKey2nd.forEach(item => {
+                                NewObj2nd[item] = obj2nd[item];
+                            });
+                            NewObj[key] = NewObj2nd;
+                            break;
+                    }
                 }
-                return newObj
+
+                return NewObj
+
             },
 
             chooseLang(item) {
@@ -242,24 +260,13 @@
                 trLang: {
                     key: "en",
                     value: "英语"
-                }
+                },
+
+                objSortStr: '',
             }
         },
         mounted() {
             this.getLangList();
-            let obj = {
-                abc: '123',
-                dbc: '123',
-                cbc: '123',
-                bbc: {
-                    abc: '123',
-                    dbc: '123',
-                    cbc: '123',
-                },
-                123: '123',
-            };
-            console.log(this.objKeySort(obj));
-            // this.getData();
         },
         activated() {
         },
