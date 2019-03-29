@@ -17,6 +17,7 @@ import computed from '@/components/computed'
 import svg from '@/components/svg'
 import ws from '@/components/ws'
 import font from '@/components/font'
+import touch from '@/components/touch'
 
 Vue.use(Router);
 
@@ -144,6 +145,14 @@ let router = new Router({
             component: font,
             meta: {
                 title: 'font',
+            },
+        },
+        {
+            path: '/touch',
+            name: 'touch',
+            component: touch,
+            meta: {
+                title: 'touch',
             },
         },
         {
