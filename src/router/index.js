@@ -18,6 +18,7 @@ import svg from '@/components/svg'
 import ws from '@/components/ws'
 import font from '@/components/font'
 import touch from '@/components/touch'
+import grid from '@/components/grid'
 
 Vue.use(Router);
 
@@ -153,6 +154,14 @@ let router = new Router({
             component: touch,
             meta: {
                 title: 'touch',
+            },
+        },
+        {
+            path: '/grid',
+            name: 'grid',
+            component: grid,
+            meta: {
+                title: 'grid',
             },
         },
         {

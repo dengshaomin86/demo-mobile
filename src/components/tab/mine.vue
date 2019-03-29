@@ -58,6 +58,7 @@
                     'ws',
                     'font',
                     'touch',
+                    'grid',
                 ],
             }
         },
