@@ -291,14 +291,18 @@
             },
 
             verify(data) {
-                this.$slideVerify((res) => {
-                    if (res) {
-                        this.login(data);
-                    }
-                });
+                if (0) {
+                    this.$slideVerify((res) => {
+                        if (res) {
+                            this.login(data);
+                        }
+                    });
+                } else {
+                    this.login(data);
+                }
             },
 
-            login(data) {
+            login1(data) {
                 if (this.check(data)) {
                     console.log('Login success');
                     localStorage.setItem('app-info', JSON.stringify({
@@ -307,6 +311,25 @@
                     }));
                     this.$router.push('/index');
                 }
+            },
+
+            login(data) {
+                axios.get('/login', {
+                    params: {
+                        username: this.username,
+                        password: this.password,
+                    },
+                }).then(res => {
+                    console.log(res);
+                    console.log(res.message);
+                    if (res.flag) {
+                        localStorage.setItem('app-info', JSON.stringify({
+                            username: this.username,
+                            password: this.password,
+                        }));
+                        // this.$router.push('/index');
+                    }
+                })
             },
 
             check(data) {

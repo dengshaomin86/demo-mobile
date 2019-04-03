@@ -55,7 +55,7 @@
             },
 
             getData() {
-                axios.get('/node/users/info', {
+                axios.get('/users/info', {
                     params: {
                         id: 3
                     },

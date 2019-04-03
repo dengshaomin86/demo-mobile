@@ -13,8 +13,7 @@ axios.interceptors.request.use(function (config) {
     // console.log('request start', config);
 
     // url
-    axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '' : servers[config.server || 'host'];
-    // config.url = servers[config.server || 'host'] + config.url;
+    config.url = servers[config.server || 'host'] + config.url;
 
     // loading
     if (config.loading !== false) {
