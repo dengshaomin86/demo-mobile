@@ -29,7 +29,7 @@
     #particlesCon {
         width: 100%;
         height: 100%;
-        background: #4dabff linear-gradient(to right bottom, #9c27b0, #4dabff);
+        background: #4dabff linear-gradient(to right bottom, #153bb0, #4dabff);
         position: absolute;
         top: 0;
         left: 0;
@@ -323,11 +323,8 @@
                     console.log(res);
                     console.log(res.message);
                     if (res.flag) {
-                        localStorage.setItem('app-info', JSON.stringify({
-                            username: this.username,
-                            password: this.password,
-                        }));
-                        // this.$router.push('/index');
+                        this.$local.set('userInfo', res.data);
+                        this.$router.push('/index');
                     }
                 })
             },

@@ -16,6 +16,7 @@ import loadingStyle from '@/components/loadingStyle'
 import computed from '@/components/computed'
 import svg from '@/components/svg'
 import ws from '@/components/ws'
+import friends from '@/components/friends'
 import font from '@/components/font'
 import touch from '@/components/touch'
 import grid from '@/components/grid'
@@ -138,6 +139,14 @@ let router = new Router({
             component: ws,
             meta: {
                 title: 'ws',
+            },
+        },
+        {
+            path: '/friends',
+            name: 'friends',
+            component: friends,
+            meta: {
+                title: 'friends',
             },
         },
         {

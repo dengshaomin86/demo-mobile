@@ -1,17 +1,10 @@
 <template>
     <div class="tl-con">
         <v-header>
-            <h1>ws</h1>
+            <h1>{{friend.name||'ws'}}</h1>
         </v-header>
 
         <main>
-            <div class="users">
-                <p>选择用户：</p>
-                <ul>
-                    <li :class="{'active':user.id===item.id}" v-for="(item,idx) in users" :key="idx" @click="user=item">{{item.name}}</li>
-                </ul>
-            </div>
-
             <div class="textarea-con">
                 <textarea v-model="content"></textarea>
                 <button @click="send">send</button>
@@ -30,30 +23,6 @@
 <style scoped lang="scss">
     ul {
         list-style: none;
-    }
-
-    .users {
-        display: flex;
-        align-items: center;
-        padding: 15px;
-        p {
-            margin-right: 15px;
-        }
-        ul {
-            display: flex;
-            align-items: center;
-            li {
-                margin-right: 15px;
-                padding: 5px 10px;
-                &.active {
-                    background-color: #3f51b5;
-                    transition: 0.5s;
-                }
-                &:active {
-                    opacity: 0.7;
-                }
-            }
-        }
     }
 
     .textarea-con {
@@ -104,10 +73,28 @@
         name: "ws",
         methods: {
             pageInit() {
-                this.user = this.users[0];
+                this.clean();
+            },
+
+            clean() {
+                Object.assign(this.$data, this.$options.data());
+                this.user = this.$local.get('userInfo');
 
                 ws.message = this.message;
                 ws.connect(this.user);
+
+                this.getInfo();
+            },
+
+            getInfo() {
+                axios.get('/users/info', {
+                    params: {
+                        id: this.$route.query.id,
+                    },
+                }).then(res => {
+                    console.log(res);
+                    this.friend = res.data;
+                })
             },
 
             send() {
@@ -147,6 +134,7 @@
                     }
                 ],
                 user: {},
+                friend: {},
             }
         },
         mounted() {

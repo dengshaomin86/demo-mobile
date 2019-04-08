@@ -55,6 +55,7 @@
                     'loadingStyle',
                     'computed',
                     'svg',
+                    'friends',
                     'ws',
                     'font',
                     'touch',
