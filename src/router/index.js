@@ -21,6 +21,7 @@ import font from '@/components/font'
 import touch from '@/components/touch'
 import grid from '@/components/grid'
 import canvas from '@/components/canvas'
+import scroll from '@/components/scroll'
 
 Vue.use(Router);
 
@@ -180,6 +181,14 @@ let router = new Router({
             component: canvas,
             meta: {
                 title: 'canvas',
+            },
+        },
+        {
+            path: '/scroll',
+            name: 'scroll',
+            component: scroll,
+            meta: {
+                title: 'scroll',
             },
         },
         {
