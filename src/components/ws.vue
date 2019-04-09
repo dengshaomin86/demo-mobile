@@ -98,13 +98,9 @@
             },
 
             send() {
-                let to = this.users.filter(item => {
-                    return item.id !== this.user.id
-                })[0];
-
                 let data = {
                     from: this.user,
-                    to: to,
+                    to: this.friend,
                     content: this.content,
                 };
                 this.list.push(data);
@@ -123,16 +119,6 @@
             return {
                 content: '',
                 list: [],
-                users: [
-                    {
-                        id: 1,
-                        name: 'user1',
-                    },
-                    {
-                        id: 2,
-                        name: 'user2',
-                    }
-                ],
                 user: {},
                 friend: {},
             }
