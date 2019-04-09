@@ -14,11 +14,19 @@ export default {
         }
 
         let Toast = (opts) => {
-            if (typeof opts !== 'object') {
-                opts = {
-                    type: '',
-                    text: JSON.stringify(opts),
-                };
+            switch (typeof opts) {
+                case 'string':
+                    opts = {
+                        type: '',
+                        text: opts,
+                    };
+                    break;
+                default:
+                    opts = {
+                        type: '',
+                        text: JSON.stringify(opts),
+                    };
+                    break;
             }
             $vm = Object.assign($vm, opts);
             $vm.show();
