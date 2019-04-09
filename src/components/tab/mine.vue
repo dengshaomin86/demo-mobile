@@ -61,6 +61,7 @@
                     'touch',
                     'grid',
                     'canvas',
+                    'scroll',
                 ],
             }
         },

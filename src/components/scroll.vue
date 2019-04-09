@@ -13,6 +13,7 @@
 <style scoped lang="scss">
     main {
         padding: 15px;
+        background-color: rebeccapurple;
     }
 </style>
 
