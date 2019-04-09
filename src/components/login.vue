@@ -161,6 +161,15 @@
     export default {
         name: "login",
         methods: {
+            pageInit() {
+                this.clean();
+            },
+
+            clean() {
+                Object.assign(this.$data, this.$options.data());
+                this.username = this.$local.get('userInfo') ? this.$local.get('userInfo').name : '';
+            },
+
             particlesInit() {
                 particlesJS("particlesCon", {
                     particles: {
@@ -284,6 +293,7 @@
                 for (let key in data) {
                     if (data[key] === '') {
                         console.warn('Please enter ' + key);
+                        this.$toast('Please enter ' + key);
                         return false
                     }
                 }
@@ -321,7 +331,7 @@
                     },
                 }).then(res => {
                     console.log(res);
-                    console.log(res.message);
+                    this.$toast(res.message);
                     if (res.flag) {
                         this.$local.set('userInfo', res.data);
                         this.$router.push('/index');
@@ -335,12 +345,14 @@
                         case 'username':
                             if (data[key].toLowerCase() !== 'dsm') {
                                 console.warn('Username does not exist');
+                                this.$toast('Username does not exist');
                                 return false
                             }
                             break;
                         case 'password':
                             if (data[key] !== '123') {
                                 console.warn('Wrong password');
+                                this.$toast('Wrong password');
                                 return false
                             }
                             break;
@@ -360,12 +372,10 @@
             this.particlesInit();
         },
         activated() {
+            this.pageInit();
         },
         beforeRouteEnter(to, from, next) {
-            next((vm) => {
-                vm.username = localStorage.getItem('app-info') ? JSON.parse(localStorage.getItem('app-info')).username : '';
-                vm.password = '';
-            });
+            next();
         },
     }
 </script>
