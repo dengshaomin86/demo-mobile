@@ -14,6 +14,12 @@ export default {
         }
 
         let Toast = (opts) => {
+            if (typeof opts !== 'object') {
+                opts = {
+                    type: '',
+                    text: JSON.stringify(opts),
+                };
+            }
             $vm = Object.assign($vm, opts);
             $vm.show();
         };
