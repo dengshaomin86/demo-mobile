@@ -60,6 +60,7 @@
                     'font',
                     'touch',
                     'grid',
+                    'canvas',
                 ],
             }
         },

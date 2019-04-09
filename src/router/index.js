@@ -20,6 +20,7 @@ import friends from '@/components/friends'
 import font from '@/components/font'
 import touch from '@/components/touch'
 import grid from '@/components/grid'
+import canvas from '@/components/canvas'
 
 Vue.use(Router);
 
@@ -171,6 +172,14 @@ let router = new Router({
             component: grid,
             meta: {
                 title: 'grid',
+            },
+        },
+        {
+            path: '/canvas',
+            name: 'canvas',
+            component: canvas,
+            meta: {
+                title: 'canvas',
             },
         },
         {
