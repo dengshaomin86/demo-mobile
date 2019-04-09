@@ -21,6 +21,8 @@ export default {
                         text: opts,
                     };
                     break;
+                case 'object':
+                    break;
                 default:
                     opts = {
                         type: '',
