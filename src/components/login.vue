@@ -17,7 +17,7 @@
                 </div>
             </form>
 
-            <button class="login-con-btn" @click="submit">login</button>
+            <button class="login-con-btn ripple" @click="submit">login</button>
             <router-link to="" tag="button" class="login-con-link">sign up</router-link>
             <router-link to="" tag="button" class="login-con-link">forgot password?</router-link>
         </div>
@@ -152,6 +152,35 @@
             text-decoration: underline;
             text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6);
         }
+    }
+
+    // 水波纹
+    .ripple {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ripple:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, #666 10%, transparent 10%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform .3s, opacity .5s;
+    }
+
+    .ripple:active:after {
+        transform: scale(0, 0);
+        opacity: .3;
+        transition: 0s;
     }
 </style>
 
