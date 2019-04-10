@@ -31,8 +31,7 @@
     "busy": "當前網絡繁忙，請稍後再試",
     "error": "服務器出錯，請聯系系統管理員",
     "submit": "提交",
-    "search": "蒐索",
-    "loginSuccess": "登入成功"
+    "search": "蒐索"
   },
   "index": {
     "welcome": "Hi，歡迎您",
@@ -42,6 +41,8 @@
     "exchange": "兌換",
     "charging": "充幣",
     "withdraw": "提幣",
+    "bonusRecharge": "獎金充值",
+    "bonusWithdraw": "獎金提現",
     "reg": "注册",
     "invite": "邀請好友",
     "team": "團隊業績",
@@ -51,9 +52,7 @@
     "index2": "邀請好友",
     "index3": "您當前無法",
     "index4": "，請前往啟動帳號",
-    "close": "暫未開放",
-    "new": "最新消息",
-    "red": "歡樂搶紅包"
+    "close": "暫未開放"
   },
   "transfer": {
     "transfer1": "轉帳記錄",
@@ -70,20 +69,7 @@
     "transfer12": "確認",
     "transfer13": "請輸入轉帳數量",
     "transfer14": "驗證管道",
-    "transfer15": "請選擇驗證管道",
-    "transfer16": "我的團隊人數",
-    "transfer17": "團隊總人數",
-    "transfer18": "今日新增人數",
-    "transfer19": "親密夥伴",
-    "transfer20": "普通朋友",
-    "transfer21": "通過你的邀請直接注册的用戶",
-    "transfer22": "你邀請的用戶所邀請的用戶",
-    "transfer23": "今日新增",
-    "transfer24": "人",
-    "transfer25": "團隊",
-    "transfer26": "實时累計：",
-    "transfer27": "接收人手機號後{num}位",
-    "transfer28": "請輸入接收人手機號後{num}位"
+    "transfer15": "請選擇驗證管道"
   },
   "addAddress": {
     "addAddress1": "添加地址",
@@ -161,14 +147,11 @@
     "mine5": "邀請好友",
     "mine6": "留言諮詢",
     "mine7": "語言",
-    "mine8": "關於星耀",
+    "mine8": "關於SIC",
     "mine9": "安全退出",
     "mine10": "選擇語言",
     "mine11": "您確認要退出？",
-    "mine12": "個人中心",
-    "mine13": "夥伴（人）",
-    "mine14": "團隊（人）",
-    "mine15": "收益（USDT）"
+    "mine12": "個人中心"
   },
   "about": {
     "about1": "關於我們",
@@ -200,7 +183,7 @@
   },
   "invite_bill": {
     "invite_bill1": "邀請記錄",
-    "invite_bill2": "被邀請人完成首次購買遊戲才能獲得邀請獎勵",
+    "invite_bill2": "被邀請人完成首次購買礦機才能獲得邀請獎勵",
     "invite_bill3": "帳號ID",
     "invite_bill4": "注册日期",
     "invite_bill5": "啟動日期",
@@ -274,10 +257,6 @@
     "personal6": "用戶昵稱",
     "personal7": "啟動時間"
   },
-  "nickname": {
-    "nickname1": "修改昵稱",
-    "nickname2": "昵稱"
-  },
   "exchange": {
     "exchange1": "兌換記錄",
     "exchange2": "資金兌換",
@@ -289,16 +268,12 @@
     "exchange8": "可獲得",
     "exchange9": "獲得股權基金數量：",
     "exchange10": "確認兌換",
-    "exchange11": "兌換",
-    "exchange12": "關於兌換匯率",
-    "exchange13": "1、兌換功能不收取任何手續費；",
-    "exchange14": "2、兌換匯率取自火幣、幣安以及OKEX三大交易所匯率均價。在幣價穩定的行情下，雙向兌換匯率損失不超過0.5%；",
-    "exchange15": "3、由於匯率跟隨行情實时波動，在幣價波動較大的行情下，雙向操作可能造成單邊資產顯著增多或縮水，請用戶悉知。"
+    "exchange11": "兌換"
   },
   "team_bill": {
     "team_bill1": "團隊業績",
     "team_bill2": "注册人數",
-    "team_bill3": "購買遊戲人數",
+    "team_bill3": "理財人數",
     "team_bill4": "團隊總業績",
     "team_bill5": "今日新增業績"
   },
@@ -316,7 +291,7 @@
     "receipt7": "接收人ID"
   },
   "assetDetail": {
-    "assetDetail": "購買遊戲",
+    "assetDetail": "購買礦機",
     "assetDetail1": "可用",
     "assetDetail2": "歷史充幣總額",
     "assetDetail3": "歷史所得金額",
@@ -341,15 +316,15 @@
     "buyBill": "購買記錄",
     "buyBill2": "每日產量",
     "buyBill3": "天",
-    "buyBill4": "購買遊戲類型",
-    "buyBill5": "請選擇遊戲類型",
+    "buyBill4": "購買礦機類型",
+    "buyBill5": "請選擇礦機類型",
     "buyBill6": "請選擇支付類型",
     "buyBill7": "需支付",
     "buyBill8": "數量",
     "buyBill9": "西格鏈",
     "buyBill10": "西格鏈積分",
-    "buyBill11": "我的遊戲",
-    "buyBill12": "遊戲金額",
+    "buyBill11": "我的礦機",
+    "buyBill12": "礦機金額",
     "buyBill13": "總收益額",
     "buyBill14": "挖礦時間",
     "buyBill15": "收益"
@@ -358,26 +333,26 @@
     "search1": "蒐索用戶名"
   },
   "assets": {
-    "assets1": "總資產",
+    "assets1": "總資產數量",
     "assets2": "我的資產",
     "assets3": "去查看"
   },
   "base": {
     "base1": "首頁",
-    "base2": "遊戲",
+    "base2": "理財",
     "base3": "資產",
     "base4": "我的"
   },
   "machine": {
-    "machine1": "遊戲",
-    "machine2": "購買遊戲",
+    "machine1": "礦機",
+    "machine2": "購買礦機",
     "machine3": "可選機型",
     "machine4": "{name}{day}天后每天遞減{num}%",
     "machine5": "挖礦週期持續{day}天",
     "machine6": "個月",
-    "machine7": "複投遊戲",
-    "machine8": "遊戲收益",
-    "machine9": "遊戲合約",
+    "machine7": "複投礦機",
+    "machine8": "礦機收益",
+    "machine9": "礦機合約",
     "machine10": "起購金額",
     "machine11": "註冊時間"
   },
@@ -390,23 +365,62 @@
     "safe6": "手機號",
     "safe7": "郵箱"
   },
-  "other": {
-    "other1": "紅包收益：",
-    "other2": "推廣收益：",
-    "other3": "遊戲中獎：",
-    "other4": "歷史收益：",
-    "other5": "日期",
-    "other6": "當日累計",
-    "other7": "紅包",
-    "other8": "推廣",
-    "other9": "遊戲中獎",
-    "other10": "頭像",
-    "other11": "戰略合作",
-    "other12": "請選擇目標幣種",
-    "other13": "匯率：",
-    "other14": "關於匯率",
-    "other15": "請選擇目標幣種",
-    "other16": "請選擇目標幣種",
-    "other17": "請選擇目標幣種"
+  "bonusRecharge": {
+    "bonusRecharge1": "充值記錄",
+    "bonusRecharge2": "請輸入金額（每筆最低{min}，最高{max}）",
+    "bonusRecharge3": "請輸入充值金額",
+    "bonusRecharge4": "溫馨提示：正常服務時間為9:30-21:30，充值後正常60分鐘內到賬，在服務時間外充值，正常情况下次日9:30到賬",
+    "bonusRecharge5": "充值",
+    "bonusRecharge6": "已打款",
+    "bonusRecharge7": "充值成功",
+    "bonusRecharge8": "未打款",
+    "bonusRecharge9": "充值失敗",
+    "bonusRecharge10": "取消充值",
+    "bonusRecharge11": "充值金額：",
+    "bonusRecharge12": "您的訂單號（每個訂單號只能使用一次，切勿重複粘貼）",
+    "bonusRecharge13": "重要提示：為了保證您的資金安全，使用訂單號充值是最有效的方法。訂單號是您充值的重要憑證，充值時務必填寫",
+    "bonusRecharge14": "複製訂單號",
+    "bonusRecharge15": "付款",
+    "bonusRecharge16": "重要提示！重要提示！重要提示！",
+    "bonusRecharge17": "1、網銀轉帳時請在【用途】或【附言】欄中填寫訂單號；",
+    "bonusRecharge18": "2、手機銀行轉帳時請在【附言】欄中填寫訂單號；否則我方無法查看到您的訂單號，無法立即充值",
+    "bonusRecharge19": "訂單號",
+    "bonusRecharge20": "帳戶",
+    "bonusRecharge21": "帳戶名",
+    "bonusRecharge22": "所屬銀行",
+    "bonusRecharge23": "開戶支行",
+    "bonusRecharge24": "以上帳號均可正常收款，請選擇您方便的銀行操作",
+    "bonusRecharge25": "我知道了",
+    "bonusRecharge26": "上傳憑證"
+  },
+  "bonusWithdraw": {
+    "bonusWithdraw1": "提現記錄",
+    "bonusWithdraw2": "資金類型",
+    "bonusWithdraw3": "提現金額",
+    "bonusWithdraw4": "請輸入提現金額",
+    "bonusWithdraw5": "提現",
+    "bonusWithdraw6": "手續費",
+    "bonusWithdraw7": "撤銷",
+    "bonusWithdraw8": "等待處理",
+    "bonusWithdraw9": "提現成功",
+    "bonusWithdraw10": "已撤銷",
+    "bonusWithdraw11": "提現失敗",
+    "bonusWithdraw12": "確認撤銷此訂單？",
+    "bonusWithdraw13": "已撤銷-會員手工撤銷"
+  },
+  "financial": {
+    "financial1": "專屬您的智慧黃金理財",
+    "financial2": "靜態每天{num}%釋放",
+    "financial3": "回本後{num}%釋放，自然日釋放",
+    "financial4": "立即參與",
+    "financial5": "投資金額",
+    "financial6": "靜態收益",
+    "financial7": "動靜態收益",
+    "financial8": "報單投資",
+    "financial9": "投資記錄",
+    "financial10": "報單投資級別",
+    "financial11": "每日收益",
+    "financial12": "我的黃金理財",
+    "financial13": "總投資額"
   }
 }

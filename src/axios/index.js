@@ -6,6 +6,7 @@ Vue.prototype.servers = servers;
 
 // default opts
 // axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '' : '';
+axios.defaults.withCredentials = true; // 请求携带cookie
 
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
@@ -13,7 +14,9 @@ axios.interceptors.request.use(function (config) {
     // console.log('request start', config);
 
     // url
-    config.url = servers[config.server || 'host'] + config.url;
+    if (config.server !== 'translate') {
+        config.url = servers[config.server || 'host'] + config.url;
+    }
 
     // loading
     if (config.loading !== false) {

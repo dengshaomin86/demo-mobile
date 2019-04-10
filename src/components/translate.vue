@@ -147,7 +147,7 @@
 
             // zh
             getData() {
-                axios.get('static/language/1.json', {
+                axios.get('static/language/zh.json', {
                     loading: false,
                     server: "static",
                 }).then((res) => {
@@ -215,7 +215,10 @@
                         this.objSortStr = JSON.stringify(this.keySortOld(this.translateOldData, this.translateData));
                     }
 
-                })
+                }).catch(error => {
+                    console.log(q);
+                    console.log(error);
+                });
             },
 
             // 首字母大写

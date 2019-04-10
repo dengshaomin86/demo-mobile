@@ -3,7 +3,7 @@
     "font": "Chinese",
     "password": "Login password",
     "payPassword": "Transaction password",
-    "confirm": "Sure?",
+    "confirm": "Determine",
     "cancel": "Cancel",
     "notData": "No data",
     "no": "No time",
@@ -31,8 +31,7 @@
     "busy": "The current network is busy. Please try again later.",
     "error": "Server error, please contact system administrator",
     "submit": "Submission",
-    "search": "Search",
-    "loginSuccess": "Login successfully"
+    "search": "Search"
   },
   "index": {
     "welcome": "Hi, welcome.",
@@ -42,6 +41,8 @@
     "exchange": "Exchange",
     "charging": "Coin charging",
     "withdraw": "Withdraw money",
+    "bonusRecharge": "Bonus recharge",
+    "bonusWithdraw": "Bonus withdrawals",
     "reg": "Register",
     "invite": "Invite friends",
     "team": "Team performance",
@@ -51,9 +52,7 @@
     "index2": "Invite friends",
     "index3": "You are not currently able to",
     "index4": "Please go to Activate Account",
-    "close": "Not yet open",
-    "new": "Latest news",
-    "red": "Joy snatches red envelopes"
+    "close": "Not yet open"
   },
   "transfer": {
     "transfer1": "Transfer record",
@@ -70,20 +69,7 @@
     "transfer12": "Confirm",
     "transfer13": "Please enter the amount of transfer.",
     "transfer14": "Verification mode",
-    "transfer15": "Please select the authentication method.",
-    "transfer16": "Number of my team",
-    "transfer17": "Total team size",
-    "transfer18": "Number added today",
-    "transfer19": "Intimate partners",
-    "transfer20": "Ordinary friend",
-    "transfer21": "Users registered directly through your invitation",
-    "transfer22": "Users Invited by the User You Invited",
-    "transfer23": "Add today",
-    "transfer24": "People",
-    "transfer25": "Team",
-    "transfer26": "Real-time cumulative:",
-    "transfer27": "The {num} bit after receiving the mobile phone number",
-    "transfer28": "Please enter {num} bit after receiving mobile phone number"
+    "transfer15": "Please select the authentication method."
   },
   "addAddress": {
     "addAddress1": "Add address",
@@ -161,14 +147,11 @@
     "mine5": "Invite friends",
     "mine6": "Message consultation",
     "mine7": "Language",
-    "mine8": "About star shine",
+    "mine8": "About SIC",
     "mine9": "Safe exit",
     "mine10": "Choice language",
     "mine11": "Are you sure you want to quit?",
-    "mine12": "Personal Center",
-    "mine13": "Partners (people)",
-    "mine14": "Team (person)",
-    "mine15": "Revenue (USDT)"
+    "mine12": "Personal Center"
   },
   "about": {
     "about1": "About us",
@@ -200,7 +183,7 @@
   },
   "invite_bill": {
     "invite_bill1": "Invitation record",
-    "invite_bill2": "Invitees are rewarded for completing their first purchase of the game.",
+    "invite_bill2": "The invitee can only get the invitation reward when he completes his first purchase of the miner.",
     "invite_bill3": "Account number ID",
     "invite_bill4": "Registration date",
     "invite_bill5": "Activation date",
@@ -274,10 +257,6 @@
     "personal6": "Nickname",
     "personal7": "Activation time"
   },
-  "nickname": {
-    "nickname1": "Modify nickname",
-    "nickname2": "Nickname?"
-  },
   "exchange": {
     "exchange1": "Exchange records",
     "exchange2": "Capital exchange",
@@ -289,16 +268,12 @@
     "exchange8": "Available",
     "exchange9": "Number of equity funds acquired:",
     "exchange10": "Confirmation of exchange",
-    "exchange11": "Exchange",
-    "exchange12": "On Exchange Rate",
-    "exchange13": "1. Exchange function does not charge any handling fee;",
-    "exchange14": "2. Exchange rates are based on the average exchange rates of the three major exchanges, namely, Foxcoin, Yuanan and OKEX. In a stable currency market, the loss of two-way exchange rate does not exceed 0.5%.",
-    "exchange15": "3. Due to the real-time fluctuation of exchange rate with the market, under the condition of large fluctuation of currency price, two-way operation may cause significant increase or shrinkage of unilateral assets. Please let users know."
+    "exchange11": "Exchange"
   },
   "team_bill": {
     "team_bill1": "Team performance",
     "team_bill2": "Enrolment",
-    "team_bill3": "Number of games purchased",
+    "team_bill3": "Financial management",
     "team_bill4": "Total team performance",
     "team_bill5": "Today's New Achievements"
   },
@@ -316,7 +291,7 @@
     "receipt7": "Receiver ID"
   },
   "assetDetail": {
-    "assetDetail": "Buying games",
+    "assetDetail": "Buying mine",
     "assetDetail1": "Available",
     "assetDetail2": "Historically charged total",
     "assetDetail3": "Amount of historical income",
@@ -341,15 +316,15 @@
     "buyBill": "Purchase record",
     "buyBill2": "Daily output",
     "buyBill3": "Day",
-    "buyBill4": "Purchasing Game Types",
-    "buyBill5": "Please choose the game type.",
+    "buyBill4": "Purchase of Miner Types",
+    "buyBill5": "Please select the type of miner",
     "buyBill6": "Please choose the type of payment.",
     "buyBill7": "Need to pay",
     "buyBill8": "Number",
     "buyBill9": "Sieger chain",
     "buyBill10": "Siegel chain integral",
-    "buyBill11": "My game",
-    "buyBill12": "Game amount",
+    "buyBill11": "Mine",
+    "buyBill12": "Amount of mine",
     "buyBill13": "Total revenue",
     "buyBill14": "Mining time",
     "buyBill15": "Profit"
@@ -358,26 +333,26 @@
     "search1": "Search User Name"
   },
   "assets": {
-    "assets1": "Total assets",
+    "assets1": "Quantity of total assets",
     "assets2": "My assets",
     "assets3": "Check it out"
   },
   "base": {
     "base1": "Home page",
-    "base2": "Game",
+    "base2": "Conduct financial transactions",
     "base3": "Assets",
     "base4": "My"
   },
   "machine": {
-    "machine1": "Game",
-    "machine2": "Buying games",
+    "machine1": "Mining machine",
+    "machine2": "Buying mine",
     "machine3": "Optional models",
     "machine4": "The {name} {day} day after day decreases {num}%",
     "machine5": "Mining cycle lasts {day} days",
     "machine6": "Months",
-    "machine7": "Double throw game",
-    "machine8": "Game revenue",
-    "machine9": "Game contract",
+    "machine7": "Compound ore feeder",
+    "machine8": "Mine profit",
+    "machine9": "Mine contract",
     "machine10": "Purchase amount",
     "machine11": "Registration time"
   },
@@ -390,23 +365,62 @@
     "safe6": "Cell-phone number",
     "safe7": "Mailbox"
   },
-  "other": {
-    "other1": "Return on bonuses:",
-    "other2": "Promotion benefits:",
-    "other3": "Win the game:",
-    "other4": "Historical gains:",
-    "other5": "Date",
-    "other6": "Accumulated on that day",
-    "other7": "Red envelopes",
-    "other8": "Extension",
-    "other9": "Winning the game",
-    "other10": "Head portrait",
-    "other11": "Strategic cooperation",
-    "other12": "Please select the target currency",
-    "other13": "Exchange rate:",
-    "other14": "About exchange rate",
-    "other15": "Please select the target currency",
-    "other16": "Please select the target currency",
-    "other17": "Please select the target currency"
+  "bonusRecharge": {
+    "bonusRecharge1": "Recharge record",
+    "bonusRecharge2": "Please enter the amount (minimum {min} and maximum {max} per stroke)",
+    "bonusRecharge3": "Please enter the amount of recharge",
+    "bonusRecharge4": "Warm Tip: Normal service time is 9:30-21:30, after recharging, the normal 60 minutes to the account, in service time to recharge, under normal circumstances, the next day 9:30 to the account.",
+    "bonusRecharge5": "Recharge",
+    "bonusRecharge6": "Already paid",
+    "bonusRecharge7": "Recharge success",
+    "bonusRecharge8": "No money paid",
+    "bonusRecharge9": "Failure of recharge",
+    "bonusRecharge10": "Cancel recharge",
+    "bonusRecharge11": "Amount of recharge:",
+    "bonusRecharge12": "Your order number (each order number can only be used once, do not repeat pasting)",
+    "bonusRecharge13": "Important Note: In order to ensure the safety of your funds, the use of order number recharge is the most effective method. Order number is an important voucher for your replenishment. When replenishing, be sure to fill it in.",
+    "bonusRecharge14": "Duplicate Order Number",
+    "bonusRecharge15": "Payment",
+    "bonusRecharge16": "Important tips! Important tips! Important tips!",
+    "bonusRecharge17": "1. Please fill in the order number in the column of \"Use\" or \"Appendix\" when transferring online bank accounts.",
+    "bonusRecharge18": "2. When transferring money from mobile phone bank, please fill in the order number in the appendix. Otherwise, we can't see your order number and recharge it immediately.",
+    "bonusRecharge19": "Order number",
+    "bonusRecharge20": "Account",
+    "bonusRecharge21": "Account name",
+    "bonusRecharge22": "Affiliated bank",
+    "bonusRecharge23": "Bank branch",
+    "bonusRecharge24": "All the above accounts can be collected normally. Please choose your convenient bank operation.",
+    "bonusRecharge25": "Oh I see",
+    "bonusRecharge26": "Upload credentials"
+  },
+  "bonusWithdraw": {
+    "bonusWithdraw1": "Withdrawals record",
+    "bonusWithdraw2": "Types of funds",
+    "bonusWithdraw3": "Cash withdrawal amount",
+    "bonusWithdraw4": "Please enter the amount of cash withdrawal.",
+    "bonusWithdraw5": "Cash withdrawal",
+    "bonusWithdraw6": "Service Charge",
+    "bonusWithdraw7": "Revoke",
+    "bonusWithdraw8": "Wait for processing",
+    "bonusWithdraw9": "Successful withdrawals",
+    "bonusWithdraw10": "Rescinded",
+    "bonusWithdraw11": "Cash withdrawal failure",
+    "bonusWithdraw12": "Confirm to cancel this order?",
+    "bonusWithdraw13": "Revoked - Membership revoked manually"
+  },
+  "financial": {
+    "financial1": "Your Intelligent Gold Financing",
+    "financial2": "Static {num}% release per day",
+    "financial3": "Release of {num}% and natural day after return",
+    "financial4": "Immediate participation",
+    "financial5": "Investment amount",
+    "financial6": "Static return",
+    "financial7": "Dynamic and Static Benefits",
+    "financial8": "Declaration investment",
+    "financial9": "Investment record",
+    "financial10": "Statement Investment Level",
+    "financial11": "Daily income",
+    "financial12": "My Gold Finance",
+    "financial13": "Total investment"
   }
 }

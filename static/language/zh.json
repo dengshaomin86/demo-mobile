@@ -31,8 +31,7 @@
     "busy": "当前网络繁忙，请稍后再试",
     "error": "服务器出错，请联系系统管理员",
     "submit": "提交",
-    "search": "搜索",
-    "loginSuccess": "登录成功"
+    "search": "搜索"
   },
   "index": {
     "welcome": "hi,欢迎您",
@@ -42,6 +41,8 @@
     "exchange": "兑换",
     "charging": "充币",
     "withdraw": "提币",
+    "bonusRecharge": "奖金充值",
+    "bonusWithdraw": "奖金提现",
     "reg": "注册",
     "invite": "邀请好友",
     "team": "团队业绩",
@@ -51,9 +52,7 @@
     "index2": "邀请好友",
     "index3": "您当前无法",
     "index4": "，请前往激活账号",
-    "close": "暂未开放",
-    "new": "最新消息",
-    "red": "欢乐抢红包"
+    "close": "暂未开放"
   },
   "transfer": {
     "transfer1": "转账记录",
@@ -70,20 +69,7 @@
     "transfer12": "确认",
     "transfer13": "请输入转账数量",
     "transfer14": "验证方式",
-    "transfer15": "请选择验证方式",
-    "transfer16": "我的团队人数",
-    "transfer17": "团队总人数",
-    "transfer18": "今日新增人数",
-    "transfer19": "亲密伙伴",
-    "transfer20": "普通朋友",
-    "transfer21": "通过你的邀请直接注册的用户",
-    "transfer22": "你邀请的用户所邀请的用户",
-    "transfer23": "今日新增",
-    "transfer24": "人",
-    "transfer25": "团队",
-    "transfer26": "实时累计：",
-    "transfer27": "接收人手机号后{num}位",
-    "transfer28": "请输入接收人手机号后{num}位"
+    "transfer15": "请选择验证方式"
   },
   "addAddress": {
     "addAddress1": "添加地址",
@@ -161,14 +147,11 @@
     "mine5": "邀请好友",
     "mine6": "留言咨询",
     "mine7": "语言",
-    "mine8": "关于星耀",
+    "mine8": "关于SIC",
     "mine9": "安全退出",
     "mine10": "选择语言",
     "mine11": "您确认要退出？",
-    "mine12": "个人中心",
-    "mine13": "伙伴（人）",
-    "mine14": "团队（人）",
-    "mine15": "收益（USDT）"
+    "mine12": "个人中心"
   },
   "about": {
     "about1": "关于我们",
@@ -200,7 +183,7 @@
   },
   "invite_bill": {
     "invite_bill1": "邀请记录",
-    "invite_bill2": "被邀请人完成首次购买游戏才能获得邀请奖励",
+    "invite_bill2": "被邀请人完成首次购买矿机才能获得邀请奖励",
     "invite_bill3": "账号ID",
     "invite_bill4": "注册日期",
     "invite_bill5": "激活日期",
@@ -274,10 +257,6 @@
     "personal6": "用户昵称",
     "personal7": "激活时间"
   },
-  "nickname": {
-    "nickname1": "修改昵称",
-    "nickname2": "昵称"
-  },
   "exchange": {
     "exchange1": "兑换记录",
     "exchange2": "资金兑换",
@@ -289,16 +268,12 @@
     "exchange8": "可获得",
     "exchange9": "获得股权基金数量：",
     "exchange10": "确认兑换",
-    "exchange11": "兑换",
-    "exchange12": "关于兑换汇率",
-    "exchange13": "1、兑换功能不收取任何手续费；",
-    "exchange14": "2、兑换汇率取自火币、币安以及OKEX三大交易所汇率均价。在币价稳定的行情下，双向兑换汇率损失不超过0.5%；",
-    "exchange15": "3、由于汇率跟随行情实时波动，在币价波动较大的行情下，双向操作可能造成单边资产显著增多或缩水，请用户悉知。"
+    "exchange11": "兑换"
   },
   "team_bill": {
     "team_bill1": "团队业绩",
     "team_bill2": "注册人数",
-    "team_bill3": "购买游戏人数",
+    "team_bill3": "理财人数",
     "team_bill4": "团队总业绩",
     "team_bill5": "今日新增业绩"
   },
@@ -316,7 +291,7 @@
     "receipt7": "接收人ID"
   },
   "assetDetail": {
-    "assetDetail": "购买游戏",
+    "assetDetail": "购买矿机",
     "assetDetail1": "可用",
     "assetDetail2": "历史充币总额",
     "assetDetail3": "历史所得金额",
@@ -341,15 +316,15 @@
     "buyBill": "购买记录",
     "buyBill2": "每日产量",
     "buyBill3": "天",
-    "buyBill4": "购买游戏类型",
-    "buyBill5": "请选择游戏类型",
+    "buyBill4": "购买矿机类型",
+    "buyBill5": "请选择矿机类型",
     "buyBill6": "请选择支付类型",
     "buyBill7": "需支付",
     "buyBill8": "数量",
     "buyBill9": "西格链",
     "buyBill10": "西格链积分",
-    "buyBill11": "我的游戏",
-    "buyBill12": "游戏金额",
+    "buyBill11": "我的矿机",
+    "buyBill12": "矿机金额",
     "buyBill13": "总收益额",
     "buyBill14": "挖矿时间",
     "buyBill15": "收益"
@@ -358,26 +333,26 @@
     "search1": "搜索用户名"
   },
   "assets": {
-    "assets1": "总资产",
+    "assets1": "总资产数量",
     "assets2": "我的资产",
     "assets3": "去查看"
   },
   "base": {
     "base1": "首页",
-    "base2": "游戏",
+    "base2": "理财",
     "base3": "资产",
     "base4": "我的"
   },
   "machine": {
-    "machine1": "游戏",
-    "machine2": "购买游戏",
+    "machine1": "矿机",
+    "machine2": "购买矿机",
     "machine3": "可选机型",
     "machine4": "{name}{day}天后每天递减{num}%",
     "machine5": "挖矿周期持续{day}天",
     "machine6": "个月",
-    "machine7": "复投游戏",
-    "machine8": "游戏收益",
-    "machine9": "游戏合约",
+    "machine7": "复投矿机",
+    "machine8": "矿机收益",
+    "machine9": "矿机合约",
     "machine10": "起购金额",
     "machine11": "注册时间"
   },
@@ -390,23 +365,62 @@
     "safe6": "手机号",
     "safe7": "邮箱"
   },
-  "other": {
-    "other1": "红包收益：",
-    "other2": "推广收益：",
-    "other3": "游戏中奖：",
-    "other4": "历史收益：",
-    "other5": "日期",
-    "other6": "当日累计",
-    "other7": "红包",
-    "other8": "推广",
-    "other9": "游戏中奖",
-    "other10": "头像",
-    "other11": "战略合作",
-    "other12": "请选择目标币种",
-    "other13": "汇率：",
-    "other14": "关于汇率",
-    "other15": "请选择目标币种",
-    "other16": "请选择目标币种",
-    "other17": "请选择目标币种"
+  "bonusRecharge": {
+    "bonusRecharge1": "充值记录",
+    "bonusRecharge2": "请输入金额（每笔最低{min}，最高{max}）",
+    "bonusRecharge3": "请输入充值金额",
+    "bonusRecharge4": "温馨提示：正常服务时间为9:30-21:30，充值后正常60分钟内到账，在服务时间外充值，正常情况下次日9:30到账",
+    "bonusRecharge5": "充值",
+    "bonusRecharge6": "已打款",
+    "bonusRecharge7": "充值成功",
+    "bonusRecharge8": "未打款",
+    "bonusRecharge9": "充值失败",
+    "bonusRecharge10": "取消充值",
+    "bonusRecharge11": "充值金额：",
+    "bonusRecharge12": "您的订单号（每个订单号只能使用一次，切勿重复粘贴）",
+    "bonusRecharge13": "重要提示：为了保证您的资金安全，使用订单号充值是最有效的方法。订单号是您充值的重要凭证，充值时务必填写",
+    "bonusRecharge14": "复制订单号",
+    "bonusRecharge15": "付款",
+    "bonusRecharge16": "重要提示！重要提示！重要提示！",
+    "bonusRecharge17": "1、网银转账时请在【用途】或【附言】栏中填写订单号；",
+    "bonusRecharge18": "2、手机银行转账时请在【附言】栏中填写订单号；否则我方无法查看到您的订单号，无法立即充值",
+    "bonusRecharge19": "订单号",
+    "bonusRecharge20": "账户",
+    "bonusRecharge21": "账户名",
+    "bonusRecharge22": "所属银行",
+    "bonusRecharge23": "开户支行",
+    "bonusRecharge24": "以上账号均可正常收款，请选择您方便的银行操作",
+    "bonusRecharge25": "我知道了",
+    "bonusRecharge26": "上传凭证"
+  },
+  "bonusWithdraw": {
+    "bonusWithdraw1": "提现记录",
+    "bonusWithdraw2": "资金类型",
+    "bonusWithdraw3": "提现金额",
+    "bonusWithdraw4": "请输入提现金额",
+    "bonusWithdraw5": "提现",
+    "bonusWithdraw6": "手续费",
+    "bonusWithdraw7": "撤销",
+    "bonusWithdraw8": "等待处理",
+    "bonusWithdraw9": "提现成功",
+    "bonusWithdraw10": "已撤销",
+    "bonusWithdraw11": "提现失败",
+    "bonusWithdraw12": "确认撤销此订单？",
+    "bonusWithdraw13": "已撤销-会员手工撤销"
+  },
+  "financial": {
+    "financial1": "专属您的智能黄金理财",
+    "financial2": "静态每天{num}%释放",
+    "financial3": "回本后{num}%释放，自然日释放",
+    "financial4": "立即参与",
+    "financial5": "投资金额",
+    "financial6": "静态收益",
+    "financial7": "动静态收益",
+    "financial8": "报单投资",
+    "financial9": "投资记录",
+    "financial10": "报单投资级别",
+    "financial11": "每日收益",
+    "financial12": "我的黄金理财",
+    "financial13": "总投资额"
   }
 }
