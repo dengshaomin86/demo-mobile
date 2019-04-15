@@ -41,10 +41,10 @@
     "exchange": "바꾸다",
     "charging": "충전",
     "withdraw": "화폐",
-    "bonusRecharge": "보너스 충전",
-    "bonusWithdraw": "보너스 현금",
+    "bonusRecharge": "충전",
+    "bonusWithdraw": "현금을 제시하다",
     "reg": "등록",
-    "invite": "친구 초대",
+    "invite": "초청",
     "team": "팀 업적",
     "prize": "장려 명세",
     "bill": "내 계산서",
@@ -52,6 +52,8 @@
     "index2": "친구 초대",
     "index3": "지금",
     "index4": "아이콘 활성화",
+    "index5": "자산 전시",
+    "index6": "더 많이 이해하다",
     "close": "잠정 개방"
   },
   "transfer": {
@@ -275,7 +277,8 @@
     "team_bill2": "등록 인원수",
     "team_bill3": "재테크 인원수",
     "team_bill4": "팀 총업적",
-    "team_bill5": "오늘 업적을 새로 늘리다."
+    "team_bill5": "오늘 업적을 새로 늘리다.",
+    "team_bill6": "단체수익"
   },
   "prizeBillInfo": {
     "prizeBillInfo1": "상 종류"
@@ -318,7 +321,7 @@
     "buyBill3": "하늘",
     "buyBill4": "광기 유형 구매",
     "buyBill5": "광기 유형 선택",
-    "buyBill6": "지불 형식을 선택하십시오",
+    "buyBill6": "지불 유형",
     "buyBill7": "지급",
     "buyBill8": "수량",
     "buyBill9": "체인",
@@ -406,21 +409,54 @@
     "bonusWithdraw10": "취소됨",
     "bonusWithdraw11": "실패를 제시하다",
     "bonusWithdraw12": "이 주문 취소 확인?",
-    "bonusWithdraw13": "취소 -회원 수공 취소"
+    "bonusWithdraw13": "취소 -회원 수공 취소",
+    "bonusWithdraw14": "수금 방식"
   },
   "financial": {
     "financial1": "당신 의 지능 금 재테크 에 전속하다",
     "financial2": "정적 매일 {num} 해제",
-    "financial3": "본 후 {num} 해방되며, 자연일 석방",
+    "financial3": "수익이 선하증권 금액에 도달한 후 매일 {num}%",
     "financial4": "즉각 참여하다",
     "financial5": "투자 금액",
     "financial6": "정적 수익",
     "financial7": "동정적 수익",
-    "financial8": "투자를 신청하다.",
-    "financial9": "투자 기록",
-    "financial10": "보고서 투자 수준",
+    "financial8": "황금 선하증권",
+    "financial9": "선하증권",
+    "financial10": "황금 선하증권 등급",
     "financial11": "매일 수익",
-    "financial12": "나의 황금 재테크",
-    "financial13": "총투자액"
+    "financial12": "나의 황금 선하증권",
+    "financial13": "선하증권 총액",
+    "financial14": "총액도",
+    "financial15": "동의하다",
+    "financial16": "《황금구매계약 》.",
+    "financial17": "우선 ‘ 황금구매계약 ’ 에 동의해 주십시오"
+  },
+  "account": {
+    "account1": "계정 관리",
+    "account2": "은행 카드",
+    "account3": "지급 보물",
+    "account4": "소신",
+    "account5": "은행 카드 목록",
+    "account6": "편집",
+    "account7": "계정 추가",
+    "account8": "카드",
+    "account9": "저축카드",
+    "account10": "카드 추가",
+    "account11": "카드인 이름",
+    "account12": "이름 입력",
+    "account13": "개설 은행",
+    "account14": "개설 은행 을 선택하십시오",
+    "account15": "계좌를 개설하다",
+    "account16": "계좌 수행 입력",
+    "account17": "은행",
+    "account18": "은행 번호를 입력하십시오",
+    "account19": "카드 형식",
+    "account20": "카드 형식을 선택하십시오",
+    "account21": "핸드폰 번호",
+    "account22": "은행의 휴대폰 번호를 입력하십시오",
+    "account23": "계좌 번호",
+    "account24": "계좌 이름",
+    "account25": "이름",
+    "account26": "{name} 계정을 입력하십시오"
   }
 }

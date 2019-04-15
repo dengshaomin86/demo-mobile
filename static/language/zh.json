@@ -41,10 +41,10 @@
     "exchange": "兑换",
     "charging": "充币",
     "withdraw": "提币",
-    "bonusRecharge": "奖金充值",
-    "bonusWithdraw": "奖金提现",
+    "bonusRecharge": "充值",
+    "bonusWithdraw": "提现",
     "reg": "注册",
-    "invite": "邀请好友",
+    "invite": "邀请",
     "team": "团队业绩",
     "prize": "奖励明细",
     "bill": "我的账单",
@@ -52,6 +52,8 @@
     "index2": "邀请好友",
     "index3": "您当前无法",
     "index4": "，请前往激活账号",
+    "index5": "资产展示",
+    "index6": "了解更多",
     "close": "暂未开放"
   },
   "transfer": {
@@ -275,7 +277,8 @@
     "team_bill2": "注册人数",
     "team_bill3": "理财人数",
     "team_bill4": "团队总业绩",
-    "team_bill5": "今日新增业绩"
+    "team_bill5": "今日新增业绩",
+    "team_bill6": "团买报单团队收益"
   },
   "prizeBillInfo": {
     "prizeBillInfo1": "奖项类型"
@@ -318,7 +321,7 @@
     "buyBill3": "天",
     "buyBill4": "购买矿机类型",
     "buyBill5": "请选择矿机类型",
-    "buyBill6": "请选择支付类型",
+    "buyBill6": "支付类型",
     "buyBill7": "需支付",
     "buyBill8": "数量",
     "buyBill9": "西格链",
@@ -406,21 +409,54 @@
     "bonusWithdraw10": "已撤销",
     "bonusWithdraw11": "提现失败",
     "bonusWithdraw12": "确认撤销此订单？",
-    "bonusWithdraw13": "已撤销-会员手工撤销"
+    "bonusWithdraw13": "已撤销-会员手工撤销",
+    "bonusWithdraw14": "收款方式"
   },
   "financial": {
     "financial1": "专属您的智能黄金理财",
     "financial2": "静态每天{num}%释放",
-    "financial3": "回本后{num}%释放，自然日释放",
+    "financial3": "收益达到提单金额后每天{num}%释放",
     "financial4": "立即参与",
     "financial5": "投资金额",
     "financial6": "静态收益",
     "financial7": "动静态收益",
-    "financial8": "报单投资",
-    "financial9": "投资记录",
-    "financial10": "报单投资级别",
+    "financial8": "黄金提单",
+    "financial9": "提单记录",
+    "financial10": "黄金提单级别",
     "financial11": "每日收益",
-    "financial12": "我的黄金理财",
-    "financial13": "总投资额"
+    "financial12": "我的黄金提单",
+    "financial13": "提单总额",
+    "financial14": "总额度",
+    "financial15": "我同意",
+    "financial16": "《黃金购买合同》",
+    "financial17": "请您先勾选同意《黃金购买合同》"
+  },
+  "account": {
+    "account1": "账户管理",
+    "account2": "银行卡",
+    "account3": "支付宝",
+    "account4": "微信",
+    "account5": "银行卡列表",
+    "account6": "编辑",
+    "account7": "添加账号",
+    "account8": "信用卡",
+    "account9": "储蓄卡",
+    "account10": "添加银行卡",
+    "account11": "持卡人姓名",
+    "account12": "请输入真实姓名",
+    "account13": "开户银行",
+    "account14": "请选择开户银行",
+    "account15": "开户支行",
+    "account16": "请输入开户支行",
+    "account17": "银行卡号",
+    "account18": "请输入银行卡号",
+    "account19": "卡类型",
+    "account20": "请选择卡类型",
+    "account21": "手机号码",
+    "account22": "请输入银行预留手机号",
+    "account23": "账号",
+    "account24": "账号姓名",
+    "account25": "姓名",
+    "account26": "请输入{name}账号"
   }
 }

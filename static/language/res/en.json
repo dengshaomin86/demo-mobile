@@ -41,10 +41,10 @@
     "exchange": "Exchange",
     "charging": "Coin charging",
     "withdraw": "Withdraw money",
-    "bonusRecharge": "Bonus recharge",
-    "bonusWithdraw": "Bonus withdrawals",
+    "bonusRecharge": "Recharge",
+    "bonusWithdraw": "Cash withdrawal",
     "reg": "Register",
-    "invite": "Invite friends",
+    "invite": "Invitation",
     "team": "Team performance",
     "prize": "Bonus Details",
     "bill": "My bill",
@@ -52,6 +52,8 @@
     "index2": "Invite friends",
     "index3": "You are not currently able to",
     "index4": "Please go to Activate Account",
+    "index5": "Asset display",
+    "index6": "Learn more",
     "close": "Not yet open"
   },
   "transfer": {
@@ -275,7 +277,8 @@
     "team_bill2": "Enrolment",
     "team_bill3": "Financial management",
     "team_bill4": "Total team performance",
-    "team_bill5": "Today's New Achievements"
+    "team_bill5": "Today's New Achievements",
+    "team_bill6": "Group Buying Payment Team Benefits"
   },
   "prizeBillInfo": {
     "prizeBillInfo1": "Types of awards"
@@ -318,7 +321,7 @@
     "buyBill3": "Day",
     "buyBill4": "Purchase of Miner Types",
     "buyBill5": "Please select the type of miner",
-    "buyBill6": "Please choose the type of payment.",
+    "buyBill6": "Payment type",
     "buyBill7": "Need to pay",
     "buyBill8": "Number",
     "buyBill9": "Sieger chain",
@@ -406,21 +409,54 @@
     "bonusWithdraw10": "Rescinded",
     "bonusWithdraw11": "Cash withdrawal failure",
     "bonusWithdraw12": "Confirm to cancel this order?",
-    "bonusWithdraw13": "Revoked - Membership revoked manually"
+    "bonusWithdraw13": "Revoked - Membership revoked manually",
+    "bonusWithdraw14": "Payment method"
   },
   "financial": {
     "financial1": "Your Intelligent Gold Financing",
     "financial2": "Static {num}% release per day",
-    "financial3": "Release of {num}% and natural day after return",
+    "financial3": "Release of {num}% per day after the proceeds reach the amount of the bill of lading",
     "financial4": "Immediate participation",
     "financial5": "Investment amount",
     "financial6": "Static return",
     "financial7": "Dynamic and Static Benefits",
-    "financial8": "Declaration investment",
-    "financial9": "Investment record",
-    "financial10": "Statement Investment Level",
+    "financial8": "Gold bill of lading",
+    "financial9": "Bill of lading record",
+    "financial10": "Gold Bill of Lading Level",
     "financial11": "Daily income",
-    "financial12": "My Gold Finance",
-    "financial13": "Total investment"
+    "financial12": "My Gold Bill of Lading",
+    "financial13": "Total bill of lading",
+    "financial14": "Total limit",
+    "financial15": "I agree",
+    "financial16": "Gold Purchase Contract",
+    "financial17": "Please agree to the Gold Purchase Contract first."
+  },
+  "account": {
+    "account1": "Account management",
+    "account2": "Bank card",
+    "account3": "Alipay",
+    "account4": "WeChat",
+    "account5": "Bank Card List",
+    "account6": "Edit",
+    "account7": "Add account",
+    "account8": "Credit Card",
+    "account9": "Savings deposit card",
+    "account10": "Adding bank cards",
+    "account11": "Name of cardholder",
+    "account12": "Please enter your real name.",
+    "account13": "Bank of deposit",
+    "account14": "Please choose the bank to open an account.",
+    "account15": "Bank branch",
+    "account16": "Please enter the account opening branch",
+    "account17": "Bank card number",
+    "account18": "Please enter the bank card number.",
+    "account19": "Card type",
+    "account20": "Please select the card type.",
+    "account21": "Phone number",
+    "account22": "Please enter the bank reserved cell phone number",
+    "account23": "Account number",
+    "account24": "Account name",
+    "account25": "Full name",
+    "account26": "Please enter {name} account number"
   }
 }

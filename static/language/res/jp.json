@@ -41,10 +41,10 @@
     "exchange": "両替する",
     "charging": "貨幣をチャージする",
     "withdraw": "貨幣を受け取る",
-    "bonusRecharge": "ボーナスチャージ",
-    "bonusWithdraw": "ボーナスが出る",
+    "bonusRecharge": "チャージ",
+    "bonusWithdraw": "現金で出す",
     "reg": "登録する",
-    "invite": "親友を招く",
+    "invite": "招待",
     "team": "チームの業績",
     "prize": "奨励の内訳",
     "bill": "私の請求書",
@@ -52,6 +52,8 @@
     "index2": "親友を招く",
     "index3": "今はできません。",
     "index4": "を選択します。アカウントをアクティブにしてください。",
+    "index5": "資産の展示",
+    "index6": "もっと知りたい",
     "close": "まだ公開されていません。"
   },
   "transfer": {
@@ -275,7 +277,8 @@
     "team_bill2": "登録人数",
     "team_bill3": "投資信託者の人数",
     "team_bill4": "チーム総業績",
-    "team_bill5": "本日の新規業績"
+    "team_bill5": "本日の新規業績",
+    "team_bill6": "団体購入申告書のチーム収益"
   },
   "prizeBillInfo": {
     "prizeBillInfo1": "賞の種類"
@@ -318,7 +321,7 @@
     "buyBill3": "空。",
     "buyBill4": "マイニングタイプの購入",
     "buyBill5": "鉱機の種類を選んでください。",
-    "buyBill6": "お支払いの種類を選択してください。",
+    "buyBill6": "支払いの種類",
     "buyBill7": "支払いが必要です。",
     "buyBill8": "数",
     "buyBill9": "ウエスト・チェーン",
@@ -406,21 +409,54 @@
     "bonusWithdraw10": "キャンセルしました。",
     "bonusWithdraw11": "提示失敗",
     "bonusWithdraw12": "この注文をキャンセルしますか？",
-    "bonusWithdraw13": "キャンセルしました。会員は手作業でキャンセルします。"
+    "bonusWithdraw13": "キャンセルしました。会員は手作業でキャンセルします。",
+    "bonusWithdraw14": "お支払い方法"
   },
   "financial": {
     "financial1": "あなたのスマートゴールド投資信託に専属しています。",
     "financial2": "静态は毎日{num}釈放します。",
-    "financial3": "本に戻ったら{num}%釈放して、自然の日に釈放します。",
+    "financial3": "収益が船荷証券の金額に達した後に毎日{num}%釈放します。",
     "financial4": "直ちに参加する。",
     "financial5": "投資額",
     "financial6": "静的収益",
     "financial7": "静的収益",
-    "financial8": "証券投資",
-    "financial9": "投資記録",
-    "financial10": "申請書投資レベル",
+    "financial8": "金の船荷証券",
+    "financial9": "船荷証券記録",
+    "financial10": "金船荷証券レベル",
     "financial11": "毎日の収益",
-    "financial12": "私の金の投資信託",
-    "financial13": "総投資額"
+    "financial12": "私の金船荷証券",
+    "financial13": "船荷証券総額",
+    "financial14": "総額。",
+    "financial15": "同意します。",
+    "financial16": "『黄金購買契約』",
+    "financial17": "まず「黄金購入契約」の同意にチェックしてください。"
+  },
+  "account": {
+    "account1": "アカウント管理",
+    "account2": "銀行カード",
+    "account3": "アリペイを支払う。",
+    "account4": "WeChat。",
+    "account5": "銀行カードのリスト",
+    "account6": "編集",
+    "account7": "アカウントを追加",
+    "account8": "クレジットカード",
+    "account9": "貯蓄カード",
+    "account10": "銀行カードを追加します。",
+    "account11": "カードを持っている人の名前",
+    "account12": "実名を入力してください。",
+    "account13": "銀行を開く",
+    "account14": "口座開設銀行を選んでください。",
+    "account15": "銀行を開設する",
+    "account16": "口座開設支店を入力してください。",
+    "account17": "銀行カード番号",
+    "account18": "銀行カード番号を入力してください。",
+    "account19": "カードの種類",
+    "account20": "カードの種類を選択してください。",
+    "account21": "携帯の番号",
+    "account22": "銀行の携帯番号を入力してください。",
+    "account23": "アカウント",
+    "account24": "アカウント名",
+    "account25": "名前",
+    "account26": "{name}アカウントを入力してください。"
   }
 }

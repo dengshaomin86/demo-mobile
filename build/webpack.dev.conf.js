@@ -70,6 +70,16 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     ]
 })
 
+const os = require('os');
+let hostName = os.hostname();
+let networkInterfaces = os.networkInterfaces();
+let localhost = '';
+networkInterfaces['无线网络连接'].forEach(item => {
+    if (item.family === 'IPv4') {
+        localhost = item.address;
+    }
+});
+
 module.exports = new Promise((resolve, reject) => {
     portfinder.basePort = process.env.PORT || config.dev.port
     portfinder.getPort((err, port) => {
@@ -84,7 +94,7 @@ module.exports = new Promise((resolve, reject) => {
             // Add FriendlyErrorsPlugin
             devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
                 compilationSuccessInfo: {
-                    messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+                    messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`, `Your application is running here: http://${localhost}:${port}`],
                 },
                 onErrors: config.dev.notifyOnErrors
                     ? utils.createNotifierCallback()

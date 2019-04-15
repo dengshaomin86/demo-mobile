@@ -41,10 +41,10 @@
     "exchange": "兌換",
     "charging": "充幣",
     "withdraw": "提幣",
-    "bonusRecharge": "獎金充值",
-    "bonusWithdraw": "獎金提現",
+    "bonusRecharge": "充值",
+    "bonusWithdraw": "提現",
     "reg": "注册",
-    "invite": "邀請好友",
+    "invite": "邀請",
     "team": "團隊業績",
     "prize": "獎勵明細",
     "bill": "我的帳單",
@@ -52,6 +52,8 @@
     "index2": "邀請好友",
     "index3": "您當前無法",
     "index4": "，請前往啟動帳號",
+    "index5": "資產展示",
+    "index6": "瞭解更多",
     "close": "暫未開放"
   },
   "transfer": {
@@ -275,7 +277,8 @@
     "team_bill2": "注册人數",
     "team_bill3": "理財人數",
     "team_bill4": "團隊總業績",
-    "team_bill5": "今日新增業績"
+    "team_bill5": "今日新增業績",
+    "team_bill6": "團買報單團隊收益"
   },
   "prizeBillInfo": {
     "prizeBillInfo1": "獎項類型"
@@ -318,7 +321,7 @@
     "buyBill3": "天",
     "buyBill4": "購買礦機類型",
     "buyBill5": "請選擇礦機類型",
-    "buyBill6": "請選擇支付類型",
+    "buyBill6": "支付類型",
     "buyBill7": "需支付",
     "buyBill8": "數量",
     "buyBill9": "西格鏈",
@@ -406,21 +409,54 @@
     "bonusWithdraw10": "已撤銷",
     "bonusWithdraw11": "提現失敗",
     "bonusWithdraw12": "確認撤銷此訂單？",
-    "bonusWithdraw13": "已撤銷-會員手工撤銷"
+    "bonusWithdraw13": "已撤銷-會員手工撤銷",
+    "bonusWithdraw14": "收款管道"
   },
   "financial": {
     "financial1": "專屬您的智慧黃金理財",
     "financial2": "靜態每天{num}%釋放",
-    "financial3": "回本後{num}%釋放，自然日釋放",
+    "financial3": "收益達到提單金額後每天{num}%釋放",
     "financial4": "立即參與",
     "financial5": "投資金額",
     "financial6": "靜態收益",
     "financial7": "動靜態收益",
-    "financial8": "報單投資",
-    "financial9": "投資記錄",
-    "financial10": "報單投資級別",
+    "financial8": "黃金提單",
+    "financial9": "提單記錄",
+    "financial10": "黃金提單級別",
     "financial11": "每日收益",
-    "financial12": "我的黃金理財",
-    "financial13": "總投資額"
+    "financial12": "我的黃金提單",
+    "financial13": "提單總額",
+    "financial14": "總額度",
+    "financial15": "我同意",
+    "financial16": "《黃金購買合同》",
+    "financial17": "請您先勾選同意《黃金購買合同》"
+  },
+  "account": {
+    "account1": "帳戶管理",
+    "account2": "銀行卡",
+    "account3": "支付寶",
+    "account4": "微信",
+    "account5": "銀行卡清單",
+    "account6": "編輯",
+    "account7": "添加帳號",
+    "account8": "信用卡",
+    "account9": "儲蓄卡",
+    "account10": "添加銀行卡",
+    "account11": "持卡人姓名",
+    "account12": "請輸入真實姓名",
+    "account13": "開戶銀行",
+    "account14": "請選擇開戶銀行",
+    "account15": "開戶支行",
+    "account16": "請輸入開戶支行",
+    "account17": "銀行卡號",
+    "account18": "請輸入銀行卡號",
+    "account19": "卡類型",
+    "account20": "請選擇卡類型",
+    "account21": "手機號碼",
+    "account22": "請輸入銀行預留手機號",
+    "account23": "帳號",
+    "account24": "帳號姓名",
+    "account25": "姓名",
+    "account26": "請輸入{name}帳號"
   }
 }
