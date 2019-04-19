@@ -74,10 +74,10 @@ const os = require('os');
 let hostName = os.hostname();
 let networkInterfaces = os.networkInterfaces();
 let localhost = '';
-networkInterfaces['无线网络连接'].forEach(item => {
-    if (item.family === 'IPv4') {
-        localhost = item.address;
-    }
+Object.keys(networkInterfaces).forEach(key => {
+    networkInterfaces[key].forEach(item => {
+        if (item.family === 'IPv4' && item.address !== '127.0.0.1') localhost = item.address
+    })
 });
 
 module.exports = new Promise((resolve, reject) => {
