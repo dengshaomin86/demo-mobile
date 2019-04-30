@@ -5,6 +5,7 @@
         </v-header>
 
         <main>
+            <input type="text">
         </main>
 
     </div>
