@@ -1,38 +1,81 @@
 <template>
-    <div class="tl-con">
-        <h1>mine</h1>
+    <div class="tl-con mine-con">
+        <header>
+            <div class="avatar">
+                <img src="../../assets/images/logo/logo.png">
+            </div>
+            <div class="info">
+                <p class="name">USER</p>
+                <p class="signature">Everyday happy ヽ(￣▽￣)ﾉ</p>
+            </div>
+        </header>
 
-        <ul class="list fa-ul">
-            <router-link tag="li" :to="item" v-for="(item, idx) in list" :key="idx"><i class="fa fa-globe fa-fw fa-li"></i>{{item}}</router-link>
-        </ul>
+        <div class="tl-main">
+            <ul class="list">
+                <router-link tag="li" :to="item" v-for="(item, idx) in list" :key="idx">{{item}}</router-link>
+            </ul>
+
+            <button class="btn">退出</button>
+        </div>
 
     </div>
 </template>
 
 <style scoped lang="scss">
-    h1 {
-        text-transform: uppercase;
-    }
-
-    .list {
-        margin: 0;
-        li {
-            cursor: pointer;
-            line-height: 1rem;
-            margin-left: 0.5rem;
+    .mine-con {
+        display: flex;
+        flex-direction: column;
+        header {
+            background-color: $bgPanel;
+            padding: $space;
             display: flex;
             align-items: center;
-            .fa {
-                position: relative;
-                top: 0;
-                left: 0;
+            .avatar {
+                width: 1.6rem;
+                height: 1.6rem;
+                margin-right: $space;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+            .info {
+                .name {
+                    @include fontSize(18);
+                    color: $active;
+                }
+
+                .signature {
+                    margin-top: 0.1rem;
+                }
             }
         }
-    }
 
-    a {
-        line-height: 1rem;
-        margin-left: 1rem;
+        .tl-main {
+            .list {
+                li {
+                    cursor: pointer;
+                    line-height: 1rem;
+                    margin-left: 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    .fa {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            .btn {
+                margin: 1rem auto;
+                display: block;
+                width: 8rem;
+                height: 1.2rem;
+                background-color: $bgBtn;
+            }
+        }
     }
 
 </style>

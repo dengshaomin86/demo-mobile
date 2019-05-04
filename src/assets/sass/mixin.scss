@@ -1,3 +1,14 @@
 @mixin cubeUrl($n) {
   background-image: url("../assets/images/transform/card#{$n}.jpg");
 }
+
+@mixin fontSize($n:16) {
+  font-size: 375/1000*($n/16)+rem;
+}
+
+@mixin clean() {
+  &:before, &:after {
+    display: table;
+    content: '';
+  }
+}
