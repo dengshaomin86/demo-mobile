@@ -1,34 +1,14 @@
 <template>
     <div class="tl-con">
-        <h1>index</h1>
-
         <v-slide class="slide"></v-slide>
-
-        <div class="btnBox">
-            <button @click="submit" ref="btn">submit</button>
-        </div>
-
-        <router-link to="/login">login</router-link>
-        <router-link to="/mine">mine</router-link>
 
     </div>
 </template>
 
 <style scoped lang="scss">
     .slide {
-        width: 300px;
+        width: 100%;
         height: 200px;
-    }
-
-    .btnBox {
-        button {
-            display: block;
-            margin: 30px auto;
-            width: 70%;
-            height: 50px;
-            background-color: #1d1d41;
-            text-transform: uppercase;
-        }
     }
 
 </style>

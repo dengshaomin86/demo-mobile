@@ -6,8 +6,6 @@
             <router-link tag="li" :to="item" v-for="(item, idx) in list" :key="idx"><i class="fa fa-globe fa-fw fa-li"></i>{{item}}</router-link>
         </ul>
 
-        <router-link to="/index">index</router-link>
-        <router-link to="/login">login</router-link>
     </div>
 </template>
 
