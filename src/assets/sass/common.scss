@@ -36,7 +36,7 @@ ul {
   background-color: $bgMain;
   position: relative;
   overflow-x: hidden;
-  &:before {
+  &:before, &:after {
     display: table;
     content: '';
   }
