@@ -6,6 +6,7 @@ import index from '@/components/tab/index'
 import mine from '@/components/tab/mine'
 
 import login from '@/components/login'
+import setup from '@/components/setup'
 import translate from '@/components/translate'
 import indexedDB from '@/components/indexedDB'
 import share from '@/components/share'
@@ -62,6 +63,14 @@ let router = new Router({
                     },
                 },
             ]
+        },
+        {
+            path: '/setup',
+            name: 'setup',
+            component: setup,
+            meta: {
+                title: 'setup',
+            },
         },
         {
             path: '/translate',

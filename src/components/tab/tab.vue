@@ -36,7 +36,7 @@
             background-color: $bgPanel;
             border-top: 1px solid $border;
             li {
-                &.router-link-active {
+                &.router-link-exact-active {
                     color: $active;
                 }
             }

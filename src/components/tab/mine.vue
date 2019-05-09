@@ -25,21 +25,25 @@
     .mine-con {
         display: flex;
         flex-direction: column;
+
         header {
             background-color: $bgPanel;
             padding: $space;
             display: flex;
             align-items: center;
+
             .avatar {
                 width: 1.6rem;
                 height: 1.6rem;
                 margin-right: $space;
+
                 img {
                     width: 100%;
                     height: 100%;
                     display: block;
                 }
             }
+
             .info {
                 .name {
                     @include fontSize(18);
@@ -60,6 +64,8 @@
                     margin-left: 0.5rem;
                     display: flex;
                     align-items: center;
+                    border-bottom: 1px solid $border;
+
                     .fa {
                         position: relative;
                         top: 0;
@@ -87,6 +93,7 @@
         data() {
             return {
                 list: [
+                    'setup',
                     'translate',
                     'indexedDB',
                     'share',
