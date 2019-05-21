@@ -7,7 +7,7 @@
 
 <style scoped lang="scss">
     svg {
-        width: 1.2rem;
+        width: 1rem;
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
