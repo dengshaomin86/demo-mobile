@@ -111,6 +111,7 @@
           'grid',
           'canvas',
           'scroll',
+          'store',
         ],
       }
     },

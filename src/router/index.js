@@ -23,6 +23,7 @@ import touch from '@/components/touch'
 import grid from '@/components/grid'
 import canvas from '@/components/canvas'
 import scroll from '@/components/scroll'
+import store from '@/components/store'
 
 Vue.use(Router);
 
@@ -198,6 +199,14 @@ let router = new Router({
             component: scroll,
             meta: {
                 title: 'scroll',
+            },
+        },
+        {
+            path: '/store',
+            name: 'store',
+            component: store,
+            meta: {
+                title: 'store',
             },
         },
         {

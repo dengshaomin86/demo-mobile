@@ -5,7 +5,7 @@ import {SET_NUMBER} from './mutation-types'
 Vue.use(Vuex);
 
 const state = {
-  number: 0,
+  number: 10,
   theme: 'default',
 };
 

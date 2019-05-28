@@ -54,31 +54,9 @@
 </style>
 
 <script>
-  import {mapState, mapMutations, mapActions} from 'vuex'
-
   export default {
     name: "setup",
     methods: {
-      ...mapMutations([
-        'increment', // 将 `this.increment()` 映射为 `this.$store.commit('increment')`
-
-        // `mapMutations` 也支持载荷：
-        'incrementBy' // 将 `this.incrementBy(amount)` 映射为 `this.$store.commit('incrementBy', amount)`
-      ]),
-      ...mapMutations({
-        add: 'increment' // 将 `this.add()` 映射为 `this.$store.commit('increment')`
-      }),
-
-      ...mapActions([
-        'increment', // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`
-
-        // `mapActions` 也支持载荷：
-        'incrementBy' // 将 `this.incrementBy(amount)` 映射为 `this.$store.dispatch('incrementBy', amount)`
-      ]),
-      ...mapActions({
-        add: 'increment' // 将 `this.add()` 映射为 `this.$store.dispatch('increment')`
-      }),
-
       pageInit() {
         this.clean();
       },
