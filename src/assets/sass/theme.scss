@@ -1,8 +1,87 @@
-$bgMain: #16112f;
-$bgPanel: #211d38;
-$bgBtn: #3b3750;
-$bgTab: #110d26;
-$border: #1f1a38;
-$font: #84809a;
-$active: #fff;
 $space: 0.4rem;
+
+
+// 默认主题
+$theme-default: (
+  bg-main: #fff,
+  color: #333,
+  bg-panel: #ddd,
+  bg-tab: #ddd,
+  bg-btn: #4dabff,
+  border-color: #ccc,
+  active-color: #4dabff,
+);
+
+// 黑色主题
+$theme-dark: (
+  bg-main: #16112f,
+  color: #84809a,
+  bg-panel: #211d38,
+  bg-tab: #110d26,
+  bg-btn: #3b3750,
+  border-color: #1f1a38,
+  active-color: #fff,
+);
+
+// 定义映射集合
+$themes: (
+  theme-default: $theme-default,
+  theme-dark: $theme-dark,
+);
+
+@mixin bg-main() {
+  @each $themename, $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background-color: map-get($map: $theme, $key: bg-main);
+      color: map-get($map: $theme, $key: color);
+    }
+  }
+}
+
+@mixin color() {
+  @each $themename, $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: color);
+    }
+  }
+}
+
+@mixin bg-panel() {
+  @each $themename, $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background-color: map-get($map: $theme, $key: bg-panel);
+    }
+  }
+}
+
+@mixin bg-tab() {
+  @each $themename, $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background-color: map-get($map: $theme, $key: bg-tab);
+    }
+  }
+}
+
+@mixin bg-btn() {
+  @each $themename, $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      background-color: map-get($map: $theme, $key: bg-btn);
+    }
+  }
+}
+
+@mixin border-color() {
+  @each $themename, $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      border-color: map-get($map: $theme, $key: border-color)
+    }
+  }
+}
+
+@mixin active-color() {
+  @each $themename, $theme in $themes {
+    [data-theme = '#{$themename}'] & {
+      color: map-get($map: $theme, $key: active-color)
+    }
+  }
+}

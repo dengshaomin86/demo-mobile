@@ -10,14 +10,15 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  color: $font;
+  @include color;
 }
 
 button, input, textarea {
   border: none;
   outline: none;
   background-color: transparent;
-  color: $font;
+  @include color;
+
   &::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
@@ -37,10 +38,11 @@ ul {
 .tl-con {
   width: 100%;
   height: 100%;
-  background-color: $bgMain;
+  @include bg-main();
   position: relative;
   overflow-x: hidden;
   @include clean;
+
   .tl-main {
     width: 100%;
     height: 100%;

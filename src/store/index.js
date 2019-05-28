@@ -5,7 +5,8 @@ import {SOME_MUTATION} from './mutation-types'
 Vue.use(Vuex);
 
 const state = {
-    count: 0
+    count: 0,
+    theme: 'default',
 };
 
 // 计算属性，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算
@@ -92,7 +93,7 @@ const actions = {
 
 export default new Vuex.Store({state, getters, mutations, actions});
 
-// local
+// localStorage
 const $local = {
     key: "app-data",
     set(key, data) {

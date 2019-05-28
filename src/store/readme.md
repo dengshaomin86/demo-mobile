@@ -92,7 +92,7 @@ const actions = {
 
 export default new Vuex.Store({state, getters, mutations, actions});
 
-// local
+// localStorage
 const $local = {
     key: "app-data",
     set(key, data) {
