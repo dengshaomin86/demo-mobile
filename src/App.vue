@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :data-theme="'theme-'+$store.state.theme">
+  <div id="app" :data-theme="'theme-'+$store.getters.theme">
     <transition :name="transition">
       <keep-alive>
         <router-view></router-view>

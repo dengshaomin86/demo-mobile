@@ -12,7 +12,7 @@
         </li>
         <li>
           <p>主题</p>
-          <select v-model="$store.state.theme">
+          <select v-model="theme" @change="setTheme(theme)">
             <option value="default">default</option>
             <option value="dark">dark</option>
           </select>
@@ -54,6 +54,9 @@
 </style>
 
 <script>
+  import {SET_THEME} from '@/store/mutation-types'
+  import {mapMutations} from 'vuex'
+
   export default {
     name: "setup",
     methods: {
@@ -63,12 +66,18 @@
 
       clean() {
         Object.assign(this.$data, this.$options.data());
+        this.theme = this.$store.getters.theme;
       },
+
+      ...mapMutations({
+        setTheme: SET_THEME
+      }),
 
     },
     data() {
       return {
         voiceFlag: false,
+        theme: '',
       }
     },
     mounted() {

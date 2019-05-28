@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {SET_NUMBER} from './mutation-types'
+import {SET_NUMBER, SET_THEME} from './mutation-types'
 
 Vue.use(Vuex);
 
@@ -10,6 +10,10 @@ const state = {
 };
 
 const getters = {
+  theme: (state) => {
+    state.theme = $local.get('theme') || state.theme;
+    return state.theme
+  },
   // store.getters.getNumber
   getNumber: (state) => {
     return state.number + 10
@@ -23,7 +27,11 @@ const getters = {
 const mutations = {
   [SET_NUMBER](state, payload) {
     console.log('mutation', payload);
-    state.number = payload.amount
+    state.number = payload.amount;
+  },
+  [SET_THEME](state, payload) {
+    $local.set('theme', payload);
+    state.theme = payload;
   },
 };
 
