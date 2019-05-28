@@ -59,7 +59,7 @@
   import {mapState, mapMutations, mapActions} from 'vuex'
 
   export default {
-    name: "setup",
+    name: "store",
     methods: {
       ...mapMutations([
         'increment', // 将 `this.increment()` 映射为 `this.$store.commit('increment')`
