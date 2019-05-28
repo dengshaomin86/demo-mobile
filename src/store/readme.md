@@ -24,6 +24,8 @@ const getters = {
 };
 
 // 事件，必须是同步函数，异步函数中的回调让这不可能完成：因为当 mutation 触发的时候，回调函数还没有被调用
+// 提交载荷 store.commit('setNumber', {amount: 10})
+// 提交对象 store.commit({type: 'setNumber',amount: 10})
 const mutations = {
     add(state, n) {
         state.count += n;
@@ -40,6 +42,7 @@ const mutations = {
         state.count = payload.amount
     },
     // 我们可以使用 ES2015 风格的计算属性命名功能来使用一个常量作为函数名
+    // 使用常量替代 mutation 事件类型在各种 Flux 实现中是很常见的模式。这样可以使 linter 之类的工具发挥作用，同时把这些常量放在单独的文件中可以让你的代码合作者对整个 app 包含的 mutation 一目了然
     [SOME_MUTATION](state) {
         // mutate state
     }

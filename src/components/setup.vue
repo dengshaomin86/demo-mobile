@@ -19,7 +19,6 @@
         </li>
       </ul>
 
-
     </main>
 
   </div>
@@ -86,7 +85,6 @@
 
       clean() {
         Object.assign(this.$data, this.$options.data());
-        console.log(this.$store);
       },
 
     },
