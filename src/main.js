@@ -21,12 +21,12 @@ import {$loading, $toast} from '../static/plugin/DUI'
 import autoTranslate from '../static/plugin/auto-translate'
 
 autoTranslate.initData({
-    from: 'auto',
-    to: 'jp',
-    // webApi:'https://', // 你自己的项目翻译接口地址URL
-    // list: {"例如我是中文咯": "data"}, // 同步加载本地语言包（json对象）。list 和  directory 别同时设置
-    directory: 'static/language/', // 异步加载语言包（json文件路径）
-    automatic: true, // 开启是否需要百度自动翻译，如果不需要百度自动翻译false即可
+  from: 'auto',
+  to: 'jp',
+  // webApi:'https://', // 你自己的项目翻译接口地址URL
+  // list: {"例如我是中文咯": "data"}, // 同步加载本地语言包（json对象）。list 和  directory 别同时设置
+  directory: 'static/language/', // 异步加载语言包（json文件路径）
+  automatic: true, // 开启是否需要百度自动翻译，如果不需要百度自动翻译false即可
 });
 
 Vue.use(slideVerify);
@@ -44,9 +44,9 @@ Vue.use($toast);
 Vue.config.productionTip = false;
 
 new Vue({
-    el: '#app',
-    store,
-    router,
-    components: {App},
-    template: '<App/>'
+  el: '#app',
+  store,
+  router,
+  components: {App},
+  template: '<App/>'
 });
