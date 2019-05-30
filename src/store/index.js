@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 const state = {
   number: 10,
-  theme: 'default',
+  theme: 'dark',
 };
 
 const getters = {
