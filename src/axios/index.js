@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-const servers = process.env.servers;
+/*const servers = process.env.servers;
 Vue.prototype.servers = servers;
 
 // default opts
@@ -48,17 +48,17 @@ axios.interceptors.response.use(function (response) {
     // 对响应数据做点什么
     // console.log('loading end', response);
     // console.log(arguments);
-    reqEnd(arguments[0]);
+    // reqEnd(arguments[0]);
 
     return response.data
 }, function (error) {
     // 对响应错误做点什么
     // console.log('error', 'loading end', error);
     // console.log(arguments);
-    reqEnd(arguments[0]);
+    // reqEnd(arguments[0]);
 
     return Promise.reject(error)
-});
+});*/
 
 function reqEnd(res) {
     // loading

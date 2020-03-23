@@ -171,12 +171,12 @@
         &.effect06 {
             -webkit-text-fill-color: transparent;
             -webkit-text-stroke: 2px #d6d6d6;
-            background: url(../../assets/images/transform/card1.jpg);
+            background: url(../assets/images/transform/card1.jpg);
             background-size: cover;
         }
 
         &.effect07 {
-            background: #333 url(../../assets/images/transform/card1.jpg);
+            background: #333 url(../assets/images/transform/card1.jpg);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: cover;

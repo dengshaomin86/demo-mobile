@@ -21,6 +21,32 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: "mine",
+    methods: {
+      init() {
+        this.getList();
+      },
+      getList() {
+        this.list = this.$router.options.routes.filter(item => {
+          return item.path !== "/" && item.path !== "*";
+        }).map(item => item.path.substring(1));
+      }
+    },
+    data() {
+      return {
+        list: []
+      }
+    },
+    mounted() {
+      this.init();
+    },
+    activated() {
+    }
+  }
+</script>
+
 <style scoped lang="scss">
   .mine-con {
     display: flex;
@@ -86,38 +112,3 @@
   }
 
 </style>
-
-<script>
-  export default {
-    name: "mine",
-    methods: {},
-    data() {
-      return {
-        list: [
-          'setup',
-          'translate',
-          'indexedDB',
-          'share',
-          'imgLoad',
-          'BMap',
-          'transform',
-          'loadingStyle',
-          'computed',
-          'svg',
-          'friends',
-          'ws',
-          'font',
-          'touch',
-          'grid',
-          'canvas',
-          'scroll',
-          'store',
-        ],
-      }
-    },
-    mounted() {
-    },
-    activated() {
-    },
-  }
-</script>
