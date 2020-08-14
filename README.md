@@ -1,4 +1,4 @@
-# vue__webpack__1546567658488
+# demo-mobile
 
 > demo
 
